@@ -1,0 +1,24 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal, $asset-pipeline: false ) {
+	@font-face {
+		font-family: $font-family;
+		font-weight: $weight;
+		font-style: $style;
+		src: url('#{$file-path}.woff2') format('woff2'),
+				url('#{$file-path}.woff') format("woff");
+		
+	}
+}
+
+@include font-face("CirceRounded", "../fonts/CirceRounded W03 Regular", 400);
+@include font-face("CirceRounded", "../fonts/CirceRounded W03 Bold.woff", 700);
+@include font-face("CirceRounded", "../fonts/CirceRounded W03 ExtraBold.woff", 900);
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,600,700,900&display=swap&subset=cyrillic');
+
+
+
+@import "../../fonts/fontawesome-free-5.12.0-web/scss/fontawesome.scss";
+$fa-font-path: '../fonts/fontawesome-free-5.12.0-web/webfonts/';
+@import "../../fonts/fontawesome-free-5.12.0-web/scss/brands.scss";
+@import "../../fonts/fontawesome-free-5.12.0-web/scss/regular.scss";
+@import "../../fonts/fontawesome-free-5.12.0-web/scss/solid.scss";
+

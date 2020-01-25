@@ -1,0 +1,78 @@
+@import "./partials/normalize";
+@import "./partials/fonts";
+
+//color 
+$colorA: #ffcc00;
+$colorA2: #ffdd55;
+$colorA3: #ffe789;
+$colorB: #5ba4e4;
+$colorB2: #3087d3;
+$colorB3: #1f77c5;
+$colorB4: #e8f4ff;
+$colorB5: #f9fcff;
+$colorC: #87cf00;
+$colorD: #f24d54;
+$colorD2: #db363d;
+$colorD3: #c5272f;
+$colorE: #6e7074;
+$colorF: #edf0f2;
+$colorG: #293545;
+$colorG2: #425b80;
+$colorH: #d7dde0;
+$colorI: #a6a6a6;
+$colorJ: #4b4b4b;
+
+
+//transition
+$trs1: .1s ease-out;
+$trs2: .3s ease-out;
+//fonts
+$font1: 'Roboto';
+$font2: 'CirceRounded';
+
+body {
+  font-family: $font1;
+  font-size: 16px;
+  min-width: 320px;
+  color: #293545;
+  background-color: #f8fafc;
+}
+
+//grid
+@import "./partials/custom-grid";
+
+.page-wrapper {
+  min-height: 100vh;
+  height: 5000px;
+  display: flex;
+  flex-direction: column;
+}
+.page-container {
+  flex: 1 1 100%;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1210px;
+  padding: 0 20px;
+  position: relative;
+}
+
+@media all and(max-width: 1210px) {
+  
+}
+@media all and(max-width: 1024px) {
+  
+}
+@media all and(max-width: 768px) {
+  
+}
+@media all and(max-width: 576px) {
+  
+}
+
+@import "./partials/text";
+@import "./partials/ui";
+@import "./partials/header";
+@import "./partials/nav";
+
+

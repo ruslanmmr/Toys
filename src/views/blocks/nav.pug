@@ -1,0 +1,122 @@
+nav.nav
+  .nav__main
+    .container
+      a(href="javascript:void(0)").button.button_style1.type1.js-animated.nav__solo-item.nav__catalogue-trigger
+        span Каталог игрушек
+        i.fas.fa-chevron-down
+      ul.nav__list
+        li.nav__item
+          a(href="#").button.button_style1.type2.js-animated 
+            span мальчики
+        li.nav__item
+          a(href="#").button.button_style1.type2.js-animated 
+            span девочки
+        li.nav__item.dn-800
+          a(href="#").button.button_style1.type2.js-animated 
+            span возраст
+        li.nav__item.dn-900
+          a(href="#").button.button_style1.type2.js-animated 
+            span бренды
+        li.nav__item.dn-1024
+          a(href="#").button.button_style1.type2.js-animated 
+            span персонажи
+        li.nav__item.dn-700
+          a(href="#").button.button_style1.type2.js-animated 
+            span РАСПРОДАЖА
+      a(href="#").button.button_style1.type3.js-animated.nav__solo-item
+        span акции
+        i.fas.fa-tags
+  .ctlg-nav
+    .container
+      mixin itemSmall(title)
+        li.ctlg-nav-s__item
+          a(href="#").ctlg-nav-s__link.js-animated=title
+      //main item
+      mixin item(title)
+        .ctlg-nav-m__item
+          a(href="#").ctlg-nav-m__link.js-animated=title 
+            i.fas.fa-chevron-right
+          .ctlg-nav-s
+            .scroll-container.shadow.shadow_style1
+              .scroll-child
+                ul.ctlg-nav-s__list
+                  //ссылка на родительскую категорию для мобильных
+                  li.ctlg-nav-s__item
+                    a(href="#").ctlg-nav-s__link.js-animated Все товары категории
+                  +itemSmall('Enchantimals')
+                  +itemSmall('Barbie')
+                  +itemSmall('Baby Born')
+                  +itemSmall('Monster High')
+                  +itemSmall('My Little Pony')
+                  +itemSmall('Baby Annabell')
+                  +itemSmall('Disney Princess')
+                  +itemSmall('Куклы My Little Pony Equestria Girls')
+                  +itemSmall('Холодное сердце')
+                  +itemSmall('Ever After High')
+                  +itemSmall('Shibajuku Girls')
+                  +itemSmall('Lady Bug')
+                  +itemSmall('Ever After High')
+                  +itemSmall('Мягкие куклы')
+                  +itemSmall('Baby Alive')
+                  +itemSmall('Lalaloopsy')
+                  +itemSmall('Project MС2')
+                  +itemSmall('Доктор Плюшева')
+                  +itemSmall('Baby Secrets')
+                  +itemSmall('Bouncin Babies')
+                  +itemSmall('Regal Academy (Королевская академия)')
+                  +itemSmall('Powerpuff Girls')
+                  +itemSmall('Chou Chou')
+                  +itemSmall('Paula')
+                  +itemSmall('Little Charmers')
+                  +itemSmall('Trolls')
+                  +itemSmall('Moxie')
+                  +itemSmall('Off the Hook')
+                  +itemSmall('Lilipups')
+                  +itemSmall('Аксессуары для кукол')
+                  +itemSmall('Шарлотта Земляничка')
+      mixin item2(title)
+        .ctlg-nav-m__item
+          a(href="#").ctlg-nav-m__link.js-animated=title 
+            i.fas.fa-chevron-right
+          .ctlg-nav-s
+            .scroll-container.shadow.shadow_style1
+              .scroll-child
+                ul.ctlg-nav-s__list
+                  //ссылка на родительскую категорию для мобильных
+                  li.ctlg-nav-s__item
+                    a(href="#").ctlg-nav-s__link.js-animated Все товары категории
+                  +itemSmall('Enchantimals')
+                  +itemSmall('Barbie')
+                  +itemSmall('Baby Born')
+                  +itemSmall('Monster High')
+                  +itemSmall('Baby Annabell')
+                  +itemSmall('Disney Princess')
+                  +itemSmall('Куклы My Little Pony Equestria Girls')
+                  +itemSmall('Холодное сердце')
+                  +itemSmall('Ever After High')
+                  +itemSmall('Shibajuku Girls')
+                  +itemSmall('Lady Bug')
+                  +itemSmall('Ever After High')
+                  +itemSmall('Мягкие куклы')
+                  +itemSmall('Baby Alive')
+                  +itemSmall('Lalaloopsy')
+      .ctlg-nav-m
+        ul.ctlg-nav-m__list
+          +item2('Куклы L.O.L.')
+          +item('Конструкторы LEGO')
+          +item2('Куклы и аксессуары')
+          +item('Настольные игры')
+          +item2('Мягкие игрушки')
+          +item2('Интерактивные игрушки')
+          +item('Развивающие игры и хобби')
+          +item2('Распродажа игрушек')
+          +item('Транспорт')
+          +item2('Бластеры Нерф')
+          +item('Игровые наборы')
+          +item2('Конструкторы ')
+          +item('Радиоуправляемые модели')
+          +item2('Отдых и спорт')
+          +item('Косметика и аксессуары')
+          +item('Всё для праздника')
+          +item2('Товары для малышей')
+          +item('Книги и канцелярия')
