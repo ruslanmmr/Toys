@@ -117,6 +117,7 @@ window.$ = window.jQuery = require('jquery');
 import device from 'current-device';
 import Scrollbar from 'smooth-scrollbar';
 import slick from "slick-carousel";
+window.Lazy = require('jquery-lazy');
 import "inputmask/lib/extensions/inputmask.numeric.extensions";
 import Inputmask from "inputmask/lib/extensions/inputmask.date.extensions";
 
@@ -128,6 +129,8 @@ $(document).ready(function() {
   $nav.init();
   catalogue.init();
   $scrollArea.init();
+  images.init();
+  slider.init()
 
   if($('html').hasClass('desktop')) {
     //code
@@ -210,19 +213,30 @@ let $nav = {
     this.el.addClass('active');
     this.trigger.addClass('active');
     this.overlay.addClass('active');
+    $('body').addClass('fixed');
+    $('html,body').animate({scrollTop:0},300);
   },
   close: function() {
     this.state=false;
     this.el.removeClass('active');
     this.trigger.removeClass('active');
     this.overlay.removeClass('active');
+    $('body').removeClass('fixed');
   },
   init: function() {
-    $nav.trigger.on('click', function() {
+    $nav.trigger.on('click', function(event) {
+      event.preventDefault();
       if($nav.state==false) {
         $nav.open();
       } else {
         $nav.close();
+      }
+    })
+    $(window).resize(function () {
+      if($window.width()>1024) {
+        if($nav.state==true) {
+          $nav.close();
+        }
       }
     })
     $nav.overlay.on('click touchstart', function() {
@@ -262,11 +276,15 @@ let $scrollArea = {
       });
       setInterval(()=>{
         scroll.update();
-      }, 50)
+      }, 500)
     }
   }
 }
 let catalogue = {
+  $toggle: $('.nav__catalogue-trigger'),
+  $navTrigger: $('.ctlg-nav-m__item'),
+  $nav: $('.ctlg-nav'),
+  state: false,
   init: function() {
 
     let $parent = $('.ctlg-nav-m'),
@@ -288,22 +306,22 @@ let catalogue = {
       }
     })
 
+    //prevent for touch
     $('.ctlg-nav-m__link').on('click', function(event) {
       if(!desktop()) {
         event.preventDefault();
       }
     })
 
-    $trigger.on('click mouseenter mouseleave', function(event) {
+    this.$navTrigger.on('click mouseenter mouseleave', function(event) {
       if(event.type=='mouseenter' && desktop()) {
         $(this).addClass('active');
       } else if(event.type=='mouseleave' && desktop()) {
-        $trigger.removeClass('active');
+        catalogue.$navTrigger.removeClass('active');
       } else if(event.type=='click' && !desktop()) {
         if(!$(this).hasClass('active')) {
-          $trigger.removeClass('active');
+          catalogue.$navTrigger.removeClass('active');
           $(this).addClass('active');
-          //$scrollArea.scrollbar.update();
         } else {
           $(this).removeClass('active');
         }
@@ -311,24 +329,200 @@ let catalogue = {
 
     })
 
+    //open nav
     $(document).on('click touchstart', function(event) {
-      let $btn = $('.nav__catalogue-trigger');
-      if(event.type=='click' && $(event.target).is($btn)) {
-        if($btn.hasClass('active')) {
-          $btn.removeClass('active');
-          $('.ctlg-nav').removeClass('active');
+      if(event.type=='click' && $(event.target).is(catalogue.$toggle)) {
+        if(catalogue.state) {
+          catalogue.close();
         } else {
-          $btn.addClass('active');
-          $('.ctlg-nav').addClass('active');
+          catalogue.open();
         }
-
-      } else if((event.type=='touchstart' || event.type=='click') && !$(event.target).is($btn) && $(event.target).closest('.ctlg-nav').length==0) {
-        $btn.removeClass('active');
-        $('.ctlg-nav').removeClass('active');
+      } 
+      else if((event.type=='touchstart' || event.type=='click') && !$(event.target).is(catalogue.$toggle) && $(event.target).closest(catalogue.$nav).length==0) {
+        catalogue.close();
       }
     })
 
-    
-    
+  },
+  open: function() {
+    catalogue.state=true;
+    catalogue.$toggle.addClass('active');
+    catalogue.$nav.addClass('active');
+  }, 
+  close: function() {
+    catalogue.state=false;
+    catalogue.$toggle.removeClass('active');
+    catalogue.$nav.removeClass('active');
+    catalogue.$navTrigger.removeClass('active');
+  }
+}
+let images = {
+  init: function() {
+    this.el = $('.lazy');
+    if(images.el.length>0) {
+      images.el.Lazy({
+        effectTime: 0,
+        threshold: 500,
+        imageBase: false,
+        defaultImage: false,
+        visibleOnly: false,
+        afterLoad: function(element) {
+          images.resize($(element));
+        }
+      });
+    }
+    $(window).resize(function () {
+      images.resize(images.el);
+    })
+  },
+  resize: function(element) {
+    if(images.el.length>0) {
+      element.each(function() {
+        let $this = $(this),
+            box = $this.parent();
+        if(!box.hasClass('cover-box_size-auto')) {
+          let boxH = box.height(),
+              boxW = box.width();
+          setTimeout(function() {
+            let imgH = $this.height(),
+                imgW = $this.width();
+            if ((boxW / boxH) >= (imgW / imgH)) {
+              $this.addClass('ww').removeClass('wh');
+            } else {
+              $this.addClass('wh').removeClass('ww');
+            }
+            $this.addClass('visible');
+          }, 300)
+        } else {
+          $this.addClass('visible');
+        }
+      })
+    }
+  }
+}
+let slider = {
+  el: $('.slider'),
+  init: function() {
+    slider.el.each(function () {
+      $(this).on('init', function () {
+        $(this).addClass('visible');
+        $(this).find('.slick-arrow').addClass('js-animated');
+      });
+
+      $(this).on('beforeChange afterChange', function(){
+        images.init();
+      });
+
+      $(this).on('breakpoint', function(){
+        $(this).find('.slick-arrow').addClass('js-animated');
+      });
+  
+      let slideCount = 1,
+        slideCount1210 = 1,
+        slideCount1024 = 1,
+        slideCount768 = 1,
+        slideCount576 = 1,
+        slideCount420 = 1,
+        arrows = false,
+        dots = false,
+        centerMode = false,
+        adaptiveHeight = false,
+        autoplay = false;
+  
+      if($(this).hasClass('dots')) {
+        dots = true;
+      }
+      if($(this).hasClass('arrows')) {
+        arrows = true;
+      }
+      if($(this).hasClass('banner-slider')) {
+        autoplay = true;
+      }
+      if($(this).is('.brands-slider.size1 .slider')) {
+        autoplay = true;
+        slideCount = 4;
+        slideCount1210 = 3;
+        slideCount1024 = 7;
+        slideCount768 = 5;
+        slideCount576 = 3;
+        slideCount420 = 3;
+      }
+      if($(this).is('.brands-slider.size2 .slider')) {
+        autoplay = true;
+        slideCount = 8;
+        slideCount1210 = 7;
+        slideCount1024 = 7;
+        slideCount768 = 5;
+        slideCount576 = 3;
+        slideCount420 = 3;
+      }
+      if($(this).is('.s-ctg-slider')) {
+        autoplay = true;
+        slideCount = 7;
+        slideCount1210 = 7;
+        slideCount1024 = 6;
+        slideCount768 = 5;
+        slideCount576 = 3;
+        slideCount420 = 2;
+      }
+      if($(this).is('.ctlg-slider')) {
+        slideCount = 4;
+        slideCount1210 = 4;
+        slideCount1024 = 3;
+        slideCount768 = 2;
+        slideCount576 = 1;
+        slideCount420 = 1;
+      }
+      
+      $(this).slick({
+        infinite: true,
+        dots: dots,
+        arrows: arrows,
+        speed: 600,
+        centerMode: centerMode,
+        slidesToShow: slideCount,
+        slidesToScroll: slideCount,
+        autoplay: autoplay,
+        autoplaySpeed: 6000,
+        rows: 0,
+        responsive: [{
+            breakpoint: 1210,
+            settings: {
+              slidesToShow: slideCount1210,
+              slidesToScroll: slideCount1210
+            }
+          },
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: slideCount1024,
+              slidesToScroll: slideCount1024
+            }
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: slideCount768,
+              slidesToScroll: slideCount768
+            }
+          },
+          {
+            breakpoint: 576,
+            settings: {
+              slidesToShow: slideCount576,
+              slidesToScroll: slideCount576
+            }
+          },
+          {
+            breakpoint: 420,
+            settings: {
+              slidesToShow: slideCount420,
+              slidesToScroll: slideCount420
+            }
+          }
+        ]
+      });
+    });
+
   }
 }

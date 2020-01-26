@@ -83,7 +83,7 @@
 }
 .logo {
   &__link {
-    display: block;
+    display: inline-block;
     height: 60px;
     pointer-events: none;
     img {
@@ -130,17 +130,18 @@
     letter-spacing: 0;
     color: $colorG;
     text-align: center;
+    padding: 0 0 0 28px;
     &:not(:first-child) {
-      margin-left: 25px;
-    }
-    &-txt {
-      margin-left: 10px;
+      margin-left: 20px;
     }
     i {
       line-height: inherit;
       font-size: 22px;
       color: $colorG2;
       transition: inherit;
+      position: absolute;
+      left: 0;
+      top: 0;
     }
     span {
       background-color: $colorB;
@@ -152,8 +153,8 @@
       padding: 0 3px;
       border-radius: 18px;
       position: absolute;
-      left: 16px;
-      top: -4px;
+      left: 12px;
+      top: -5px;
       color: #fff;
       padding-top: 1px;
       transition: inherit;
@@ -172,6 +173,21 @@
 }
 .nav-toggle {
   display: none;
+  i {
+    text-align: center;
+    width: 1em;
+  }
+  i:nth-child(2) {
+    opacity: 0;
+  }
+  &.active {
+    i:nth-child(1) {
+      opacity: 0;
+    }
+    i:nth-child(2) {
+      opacity: 1;
+    }
+  }
 }
 
 
@@ -212,7 +228,7 @@
     &__button {
       width: 50px;
       height: 50px;
-      line-height: 50px;
+      padding: 0;
       &:not(:first-child) {
         margin-left: 0px;
       }
@@ -221,8 +237,10 @@
         top: 3px;
       }
       i {
-        margin: 0 auto;
         font-size: 24px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
       }
     }
     &__button-txt {
