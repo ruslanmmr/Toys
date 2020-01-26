@@ -275,7 +275,7 @@ let $scrollArea = {
         alwaysShowTracks: true
       });
       setInterval(()=>{
-        scroll.update();
+        //scroll.update();
       }, 500)
     }
   }
