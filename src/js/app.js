@@ -410,7 +410,7 @@ let slider = {
       });
 
       $(this).on('beforeChange afterChange', function(){
-        images.init();
+        //images.init();
       });
 
       $(this).on('breakpoint', function(){
