@@ -356,9 +356,17 @@ let catalogue = {
     catalogue.$navTrigger.removeClass('active');
   }
 }
+
 let images = {
   init: function() {
-    this.el = $('.lazy');
+    $(window).resize(function(){
+      images.loaded = $('.lazy.loaded');
+      images.resize(images.loaded);
+    })
+    images.load();
+  },
+  load: function() {
+    images.el = $('.lazy').not('.loaded');
     if(images.el.length>0) {
       images.el.Lazy({
         effectTime: 0,
@@ -367,39 +375,36 @@ let images = {
         defaultImage: false,
         visibleOnly: false,
         afterLoad: function(element) {
+          $(element).addClass('loaded');
           images.resize($(element));
         }
       });
     }
-    $(window).resize(function () {
-      images.resize(images.el);
-    })
   },
   resize: function(element) {
-    if(images.el.length>0) {
-      element.each(function() {
-        let $this = $(this),
-            box = $this.parent();
-        if(!box.hasClass('cover-box_size-auto')) {
-          let boxH = box.height(),
-              boxW = box.width();
-          setTimeout(function() {
-            let imgH = $this.height(),
-                imgW = $this.width();
-            if ((boxW / boxH) >= (imgW / imgH)) {
-              $this.addClass('ww').removeClass('wh');
-            } else {
-              $this.addClass('wh').removeClass('ww');
-            }
-            $this.addClass('visible');
-          }, 300)
-        } else {
+    element.each(function() {
+      let $this = $(this),
+          box = $this.parent();
+      if(!box.hasClass('cover-box_size-auto')) {
+        let boxH = box.height(),
+            boxW = box.width();
+        setTimeout(function() {
+          let imgH = $this.height(),
+              imgW = $this.width();
+          if ((boxW / boxH) >= (imgW / imgH)) {
+            $this.addClass('ww').removeClass('wh');
+          } else {
+            $this.addClass('wh').removeClass('ww');
+          }
           $this.addClass('visible');
-        }
-      })
-    }
+        }, 300)
+      } else {
+        $this.addClass('visible');
+      }
+    })
   }
 }
+
 let slider = {
   el: $('.slider'),
   init: function() {
@@ -410,7 +415,7 @@ let slider = {
       });
 
       $(this).on('beforeChange afterChange', function(){
-        //images.init();
+        images.load();
       });
 
       $(this).on('breakpoint', function(){
