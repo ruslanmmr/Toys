@@ -114,6 +114,7 @@ window.$ = window.jQuery = require('jquery');
 
 }(jQuery));
 
+import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import device from 'current-device';
 import Scrollbar from 'smooth-scrollbar';
 import slick from "slick-carousel";
@@ -216,15 +217,15 @@ let $nav = {
     this.el.addClass('active');
     this.trigger.addClass('active');
     this.overlay.addClass('active');
-    $('body').addClass('fixed');
     $('html,body').animate({scrollTop:0},300);
+    disablePageScroll();
   },
   close: function() {
     this.state=false;
     this.el.removeClass('active');
     this.trigger.removeClass('active');
     this.overlay.removeClass('active');
-    $('body').removeClass('fixed');
+    enablePageScroll();
   },
   init: function() {
     $nav.trigger.on('click', function(event) {
