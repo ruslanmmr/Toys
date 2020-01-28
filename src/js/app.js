@@ -324,7 +324,7 @@ let catalogue = {
         catalogue.$navTrigger.removeClass('active');
       } else if(event.type=='click' && !desktop()) {
         if(!$(this).hasClass('active')) {
-          catalogue.$navTrigger.removeClass('active');
+          catalogue.$navTrigger.not($(this)).removeClass('active');
           $(this).addClass('active');
         } else {
           $(this).removeClass('active');
