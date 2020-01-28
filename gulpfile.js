@@ -173,11 +173,14 @@ gulp.task("deploy", function () {
   return gulp.src('./dest/**')
     .pipe(rsync({
       root: './dest/',
-      hostname: 'hostnam',
-      destination: 'path',
-      username: 'user',
+      hostname: 'bitrix334.timeweb.ru',
+      destination: '/home/c/cd94559/bitrix/public_html/dest',
       archive: true,
+      username: 'cd94559',
       silent: false,
-      compress: true
+      compress: true,
   }));
 });
+
+
+//данные CX2d6C8j

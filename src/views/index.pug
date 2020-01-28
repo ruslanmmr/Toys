@@ -2,7 +2,7 @@ extends layout/layout
 block content
   .page-content
     .container
-      .main
+      main.main
         section.section
           .row
             .col-xl-12
@@ -15,10 +15,58 @@ block content
               include blocks/s-banners
             .col-xl-12
               include blocks/s-categories-slider
-        include blocks/ctlg-slider
-        +section('Новинки')
-        +section('Хиты  продаж')
-        +section('Лучшая  цена')
+        include blocks/ctlg-cards
+        section.section
+          .section__head
+            h5.section__title.t-size-30 Новинки
+          .section__content
+            .slider.slider_default.arrows.ctlg-slider
+              .slide
+                +card1()
+              .slide
+                +card2()
+              .slide
+                +card1()
+              .slide
+                +card1()
+              .slide
+                +card1()
+              .slide
+                +card1()
+        section.section
+          .section__head
+            h5.section__title.t-size-30 Хиты  продаж
+          .section__content
+            .slider.slider_default.arrows.ctlg-slider
+              .slide
+                +card1()
+              .slide
+                +card2()
+              .slide
+                +card1()
+              .slide
+                +card1()
+              .slide
+                +card1()
+              .slide
+                +card1()
+        section.section
+          .section__head
+            h5.section__title.t-size-30 Лучшая  цена
+          .section__content
+            .slider.slider_default.arrows.ctlg-slider
+              .slide
+                +card1()
+              .slide
+                +card2()
+              .slide
+                +card1()
+              .slide
+                +card1()
+              .slide
+                +card1()
+              .slide
+                +card1()
         section.section
           .section__head
             h5.section__title.t-size-30 Бренды

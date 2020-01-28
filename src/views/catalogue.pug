@@ -1,0 +1,132 @@
+extends layout/layout
+block content
+  include blocks/breadcrumbs
+  //карточки
+  include blocks/ctlg-cards
+  .page-content
+    .container
+      section.section
+        .row
+          aside.aside.col-xl-3.col-md-4.col-sm-12
+            .row
+              .col-xl-12.js-d-filter-parent
+                include blocks/filter
+              .aside__banners.col-xl-12
+                .row.row_compact
+                  .s-banner.size2.col-xl-12
+                    a(href="#").s-banner__container.background-box.js-animated
+                      .lazy(data-src='img/баннер1.png')
+                  .s-banner.size2.col-xl-12
+                    a(href="#").s-banner__container.background-box.js-animated
+                      .lazy(data-src='img/баннер1 copy 2.png')
+                  .s-banner.size2.col-xl-12
+                    a(href="#").s-banner__container.background-box.js-animated
+                      .lazy(data-src='img/баннер1 copy.png')
+          main.main.ctlg.col-xl-9.col-md-8.col-sm-12
+            h1.ctlg__title.mb-20 Куклы LOL
+            //блок в котоырй будет перемещаться фильтр для мобильных
+            .js-m-filter-parent.mb-20
+            //ссылки каталога
+            .ctlg__links.mb-20
+              .row.row_compact
+                .col-xl-auto
+                  a(href="#").button.button_style3.js-animated Домики для кукол ЛОЛ
+                .col-xl-auto
+                  a(href="#").button.button_style3.js-animated Куклы ЛОЛ Winter Disco
+                .col-xl-auto
+                  a(href="#").button.button_style3.js-animated Куклы OMG
+                .col-xl-auto
+                  a(href="#").button.button_style3.js-animated Игровые наборы ЛОЛ
+                .col-xl-auto
+                  a(href="#").button.button_style3.js-animated Лол Питомцы
+                .col-xl-auto
+                  a(href="#").button.button_style3.js-animated Куклы ЛОЛ чемодан
+                .col-xl-auto
+                  a(href="#").button.button_style3.js-animated Куклы ЛОЛ 4 серия
+                .col-xl-auto
+                  a(href="#").button.button_style3.js-animated Куклы ЛОЛ 5 серия
+                .col-xl-auto
+                  a(href="#").button.button_style3.js-animated Куклы ЛОЛ шар
+            //сортировка
+            .ctlg-sorting.mb-20
+              .ctlg-sorting-section
+                .ctlg-sorting-section__title Сортировать по:
+                ul.ctlg-sorting-section__list
+                  li.ctlg-sorting-section__item
+                    // .down - стрелка вниз(от дорогих к дешевым), .up - стрелка вверх(от дешевых к дорогим), .active - понятно
+                    a(href="#").ctlg-sorting-section__link.js-animated.active.down цене
+                      i.fas.fa-chevron-down
+                  li.ctlg-sorting-section__item
+                    a(href="#").ctlg-sorting-section__link.js-animated популярности
+                  li.ctlg-sorting-section__item
+                    a(href="#").ctlg-sorting-section__link.js-animated скидке
+              .ctlg-sorting-section
+                .ctlg-sorting-section__title Товаров на странице:
+                ul.ctlg-sorting-section__list
+                  li.ctlg-sorting-section__item
+                    a(href="#").ctlg-sorting-section__link.js-animated.active.down 9
+                  li.ctlg-sorting-section__item
+                    a(href="#").ctlg-sorting-section__link.js-animated 18
+                  li.ctlg-sorting-section__item
+                    a(href="#").ctlg-sorting-section__link.js-animated 30
+                  li.ctlg-sorting-section__item
+                    a(href="#").ctlg-sorting-section__link.js-animated 45
+            //выдача каталога
+            .ctlg__content.mb-30
+              .row
+                +card3()
+                +card4()
+                +card3()
+                +card4()
+                +card3()
+                +card4()
+                +card3()
+                +card4()
+                +card3()
+                +card4()
+                +card3()
+                +card4()
+            //пагниация
+            .pagination
+              ul.pagination__list
+                li.pagination__item
+                  .pagination__link.js-animated.disabled
+                    span Предыдущая
+                    i.fas.fa-chevron-left
+                li.pagination__item
+                  a(href="#").pagination__link.js-animated.active 1
+                li.pagination__item
+                  a(href="#").pagination__link.js-animated 2
+                li.pagination__item
+                  a(href="#").pagination__link.js-animated 3
+                li.pagination__item
+                  a(href="#").pagination__link.js-animated 4
+                li.pagination__item
+                  a(href="#").pagination__link.js-animated 5
+                li.pagination__item
+                  a(href="#").pagination__link.js-animated ...
+                li.pagination__item
+                  a(href="#").pagination__link.js-animated 30
+                li.pagination__item
+                  a(href="#").pagination__link.js-animated
+                    span Предыдущая
+                    i.fas.fa-chevron-right
+      section.section
+        .section__head
+          h5.section__title.t-size-30 Вы смотрели
+        .section__content
+          .slider.slider_default.arrows.ctlg-slider
+            .slide
+              +card5()
+            .slide
+              +card5()
+            .slide
+              +card5()
+            .slide
+              +card5()
+            .slide
+              +card5()
+            .slide
+              +card5()
+  include blocks/mailing
+          

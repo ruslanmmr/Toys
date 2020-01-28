@@ -5,11 +5,15 @@
 $colorA: #ffcc00;
 $colorA2: #ffdd55;
 $colorA3: #ffe789;
+$colorK: #dbeeff;
 $colorB: #5ba4e4;
 $colorB2: #3087d3;
-$colorB3: #3087d3;
+$colorB3: #2378c2;
 $colorB4: #e8f4ff;
 $colorB5: #f9fcff;
+$colorB6: #e3e8ea;
+$colorB7: #cdd4d7;
+$colorB8: #c5cbce;
 $colorC: #87cf00;
 $colorD: #f24d54;
 $colorD2: #db363d;
@@ -37,7 +41,7 @@ body {
   font-family: $font1;
   font-size: 16px;
   min-width: 320px;
-  color: #293545;
+  color: $colorG;
   background-color: #f8fafc;
   &.fixed {
     overflow: hidden;
@@ -65,16 +69,6 @@ body {
 }
 .page-content {
   padding: 30px 0 60px 0;
-  * {
-    min-width: 1px;
-    min-height: 1px;
-  }
-  .container {
-    display: flex;
-  }
-}
-.main {
-  flex: 1 1 100%;
 }
 .section {
   &:not(:last-child) {
@@ -109,6 +103,8 @@ body {
 @import "./partials/ui";
 @import "./partials/slider";
 @import "./partials/header";
+@import "./partials/ctlg";
+@import "./partials/filter";
 @import "./partials/footer";
 @import "./partials/nav";
 

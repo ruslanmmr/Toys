@@ -1,18 +1,8 @@
 h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
   line-height: 1.45;
   margin: 0;
   font-family: $font2;
   color: #000;
-}
-h1 {
-  font-size: 30px;
-}
-h2 {
-  font-size: 24px;
-}
-h3 {
-  font-size: 18px;
 }
 
 p {
@@ -48,6 +38,9 @@ p {
 }
 .t-size-30 {
   font-size: 30px;
+}
+.t-size-28 {
+  font-size: 28px;
 }
 .t-size-24 {
   font-size: 24px;
@@ -95,11 +88,19 @@ p {
     font-size: 16px;
   }
 }
+@media all and(max-width: 1210px) {
+  .t-size-28 {
+    font-size: 26px;
+  }
+}
 @media all and(max-width: 1024px) {
   .page-head {
     margin-bottom: 40px;
   }
   .t-size-36 {
+    font-size: 22px;
+  }
+  .t-size-28 {
     font-size: 22px;
   }
   .t-size-64 {
@@ -142,8 +143,11 @@ p {
   .t-size-24 {
     font-size: 16px;
   }
-  .t-size-20 {
-    //font-size: 16px;
+  .t-size-28 {
+    font-size: 18px;
+  }
+  .t-size-30 {
+    font-size: 26px;
   }
 }
 @media all and(max-width: 360px) {

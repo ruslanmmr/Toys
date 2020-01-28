@@ -7,15 +7,13 @@
   height: 40px;
   transition: inherit;
 }
-
 .js-animated {
   user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   transition: $trs1;
 }
-
 .button {
-  display: inline-block;
+  display: block;
   text-decoration: none;
   outline: none;
   cursor: pointer;
@@ -26,6 +24,8 @@
   padding: 0;
   transition: $trs1;
   position: relative;
+  white-space: nowrap;
+  text-align: center;
   * {
     pointer-events: none;
   }
@@ -68,6 +68,9 @@
     &.type2 {
       background-color: $colorA;
       text-align: center;
+      i {
+        font-size: 14px;
+      }
       &.touch,
       &.hover {
         background-color: $colorA2;
@@ -93,19 +96,59 @@
   &_style2 {
     line-height: 40px;
     height: 40px;
-    padding: 0 20px;
+    padding: 0 10px;
     border-radius: 4px;
-    background-color: $colorA;
+    &.color1 {
+      background-color: $colorA;
+      &.touch,
+      &.hover {
+        background-color: $colorA2;
+      }
+      &.focus {
+        background-color: $colorA3;
+      }
+    }
+    &.color2 {
+      background-color: $colorB;
+      color: #fff;
+      &.touch,
+      &.hover {
+        background-color: $colorB2;
+      }
+      &.focus {
+        background-color: $colorB3;
+      }
+    }
+    &.color3 {
+      background-color: $colorB6;
+      color: $colorE;
+      &.touch,
+      &.hover {
+        background-color: $colorB7;
+      }
+      &.focus {
+        background-color: $colorB8;
+      }
+    }
+  }
+  &_style3 {
+    line-height: 38px;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 4px;
+    border: 1px solid $colorB;
+    color: $colorB;
     &.touch,
     &.hover {
-      background-color: $colorA2;
+      background-color: $colorB;
+      color: #fff;
     }
     &.focus {
-      background-color: $colorA3;
+      background-color: $colorB2;
+      border-color: $colorB2;
     }
   }
 }
-
 a {
   color: inherit;
 }
@@ -116,7 +159,6 @@ a {
     color: $colorB;
   }
 }
-
 .input {
   display: inline-block;
   outline: none;
@@ -144,8 +186,77 @@ a {
     border: 1px solid $colorH;
     line-height: 38px;
     padding: 0 15px;
+    background-color: #fff;
     &::placeholder {
       color: $colorI;
+    }
+  }
+  &_style2 {
+    border-radius: 4px;
+    line-height: 40px;
+    padding: 0 15px;
+    background-color: #fff;
+    &::placeholder {
+      color: $colorI;
+    }
+  }
+}
+//checkboxes
+.checkbox {
+  position: relative;
+  padding: 0 0 0 25px;
+  display: block;
+  cursor: pointer;
+  transition: $trs1;
+  min-height: 16px;
+  font-size: 16px;
+  user-select: none;
+  line-height: 1;
+  color: $colorE;
+  i {
+    box-sizing: border-box;
+    display: inline-block;
+    line-height: 14px;
+    width: 16px;
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid $colorH;
+    color: transparent;
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    font-size: 10px;
+    transition: inherit;
+  }
+  input {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+  }
+  &.checked {
+    i {
+      background-color: #dbeeff;
+      color: #1e0602;
+    }
+  }
+  &.touch,
+  &.hover {
+    i {
+      background-color: #f0f8ff;
+    }
+  }
+  &.focus {
+    i {
+      transform: scale(1.05);
+    }
+  }
+  &.disabled {
+    color: $colorI;
+    pointer-events: none;
+    i {
+      background-color: #f4f5f6;
     }
   }
 }
@@ -155,6 +266,11 @@ a {
   visibility: hidden;
   opacity: 0;
   transition: opacity $trs2;
+  &.bg {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
   &.visible {
     opacity: 1;
     visibility: visible;
@@ -254,6 +370,14 @@ a {
       }
       &:after {
         background: linear-gradient(to top, rgba(255,204,0,1) 0%, rgba(255,204,0,1) 2%, rgba(255,204,0,0.9) 25%, rgba(255,204,0,0.7) 51%, rgba(255,204,0,0.5) 76%, rgba(255,204,0,0) 100%);
+      }
+    }
+    &_style3 {
+      &:before {
+        background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 2%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.7) 51%, rgba(255,255,255,0.5) 76%, rgba(255,255,255,0) 100%);
+      }
+      &:after {
+        background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 2%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.7) 51%, rgba(255,255,255,0.5) 76%, rgba(255,255,255,0) 100%);
       }
     }
   }
@@ -399,169 +523,159 @@ a {
     }
   }
 }
-
-.catalogue-card {
-  &__container {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: $shadow1;
-    transition: box-shadow $trs2;
-    overflow: hidden;
+.breadcrumbs {
+  padding: 18px 0 5px 0;
+  font-size: 14px;
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
     display: flex;
-    flex-direction: column;
-    height: 100%;
-    &.hover,
-    &.touch {
-      box-shadow: $shadow11;
-    }
   }
-  &__image {
-    height: 230px;
-    flex-shrink: 0;
-    position: relative;
-    .cover-box {
-      transition: $trs2;
-      height: 100%;
-      .lazy {
-        padding: 20px;
-      }
-      &.touch,
-      &.hover {
-        opacity: 0.7;
-      }
-    }
-  }
-  &__labels {
-    position: absolute;
-    z-index: 2;
-    top: 10px;
-    left: 10px;
-  }
-  &__label {
-    display: inline-block;
-    border-radius: 3px;
-    line-height: 20px;
-    padding: 0 10px;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: #fff;
+  &__item {
+    color: $colorI;
     &:not(:last-child) {
-      margin-right: 5px;
-    }
-    &.style1 {
-      background-color: $colorC;
-    }
-    &.style2 {
-      background-color: $colorD;
-    }
-    &.style3 {
-      background-color: $colorB;
-    }
-  }
-  &__discount {
-    position: absolute;
-    z-index: 2;
-    width: 40px;
-    height: 40px;
-    right: 10px;
-    top: 10px;
-    line-height: 40px;
-    text-align: center;
-    color: #fff;
-    font-size: 14px;
-    font-weight: 700;
-    .icon {
-      position: absolute;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      fill: $colorD;
-    }
-    span {
-      position: relative;
-      z-index: 2;
-      letter-spacing: 0;
-    }
-  }
-  &__video {
-    position: absolute;
-    z-index: 2;
-    right: 10px;
-    bottom: 10px;
-    transition: $trs1;
-    .icon {
-      transition: inherit;
-      fill: $colorI;
-      width: 24px;
-      height: 18px;
-    }
-    &.touch,
-    &.hover {
-      .icon {
-        fill: $colorB;
+      &:after {
+        margin: 0 5px;
+        content: "\f054";
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 12px;
+        color: $colorH;
       }
     }
   }
-  &__content {
-    padding: 10px;
-    flex: 1 1 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  &__top {
-    margin-bottom: 20px;
-  }
-  &__bottom {
-    display: flex;
-    justify-content: space-between;
-  }
-  &__price {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    .old {
-      font-size: 14px;
-      color: $colorD;
-      text-decoration: line-through;
-      line-height: 1;
-    }
-    .current {
-      font-weight: 700;
-      font-size: 22px;
-    }
-  }
-  &__title {
-    display: block;
-    transition: $trs1;
+  &__link {
     text-decoration: none;
-    &:not(:last-child) {
-      margin-bottom: 3px;
-    }
+    color: $colorB2;
+    border-bottom: 1px solid transparent;
+    line-height: 1;
+    display: inline-block;
     &.hover,
     &.touch {
-      &.touch,
-      &.hover {
-        color: $colorB;
-      }
-      &.focus {
-        color: $colorB2;
-      }
+      color: $colorB;
+      border-bottom: 1px solid $colorB;
     }
-  }
-  &__art {
-    font-size: 14px;
-    color: $colorE;
   }
 }
 .slider .catalogue-card {
   height: 100%;
+}
+.pagination {
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    border: 1px solid $colorB6;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 14px;
+    overflow: hidden;
+  }
+  &__item {
+    line-height: 50px;
+    flex: 1 1 100%;
+    &:not(:last-child) {
+      border-right: 1px solid $colorB6;
+    }
+    &:first-child,
+    &:last-child {
+      .pagination__link {
+        padding: 0 30px;
+      }
+    }
+  }
+  &__link {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    width: 100%;
+    i {
+      display: none;
+    }
+    &.touch,
+    &.hover,
+    &.active {
+      background-color: $colorB;
+      color: #fff;
+    }
+    &.focus {
+      background-color: $colorB2;
+      color: #fff;
+    }
+    &.disabled {
+      pointer-events: none;
+      background-color: $colorF;
+      color: $colorI;
+    }
+    &.active {
+      pointer-events: none;
+    }
+  }
+}
+.mailing {
+  padding: 20px 0;
+  background-color: $colorK;
+  &__container {
+    align-items: center;
+  }
+  &__text {
+    display: flex;
+    align-items: center;
+    .bg {
+      width: 60px;
+      height: 64px;
+      flex-shrink: 0;
+      margin-right: 35px;
+    }
+  }
+  &__title {
+    font-weight: 900;
+    font-family: $font2;
+    text-transform: uppercase;
+    line-height: 1.1;
+    color: #000;
+  }
+  .s-item-form {
+    width: 370px;
+  }
+}
+.s-item-form {
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+  .input {
+    border-radius: 4px 0 0 4px;
+    flex: 1 1 100%;
+  }
+  .button {
+    border-radius: 0 4px 4px 0;
+    flex-shrink: 0;
+  }
 }
 
 
 @media all and(max-width: 1024px) {
   .kids-kategory {
     width: auto;
+  }
+  .pagination {
+    &__item {
+      &:last-child,
+      &:first-child {
+        .pagination__link {
+          padding: 0;
+        }
+        span {
+          display: none;
+        }
+        i {
+          display: inline-block;
+        }
+      }
+    }
   }
 }
 @media all and(max-width: 768px) {
@@ -587,6 +701,22 @@ a {
       height: 45px;
       i {
         line-height: 45px;
+      }
+    }
+  }
+  .mailing {
+    .s-item-form {
+      width: 100%;
+    }
+    &__text .bg {
+      margin-right: 20px;
+    }
+  }
+  .pagination {
+    &__item {
+      &:nth-child(5),
+      &:nth-child(6) {
+        display: none;
       }
     }
   }

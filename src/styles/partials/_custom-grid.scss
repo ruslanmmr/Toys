@@ -48,6 +48,11 @@
     margin-bottom: 15px;
   }
 }
+.mb-10 {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
 
 .col-1,
 .col-2,
@@ -119,6 +124,8 @@
 .col-xl-12,
 .col-xl,
 .col-xl-auto {
+  min-width: 1px;
+    min-height: 1px;
   position: relative;
   width: 100%;
   padding: 0 15px 30px 15px;
@@ -914,7 +921,7 @@
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1210px) {
   .row {
     margin: 0 -10px -20px -10px;
     &_compact {

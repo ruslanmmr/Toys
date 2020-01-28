@@ -746,611 +746,742 @@
             </div>
           </div>
         </nav>
+        <div class="breadcrumbs">
+          <div class="container">
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item"><a class="breadcrumbs__link js-animated" href="#">Главная</a></li>
+              <li class="breadcrumbs__item"><a class="breadcrumbs__link js-animated" href="#">Каталог игрушек</a></li>
+              <li class="breadcrumbs__item">Куклы LOL</li>
+            </ul>
+          </div>
+        </div>
+        <!--карточки-->
+        <!--для каталога с отступами-->
         <div class="page-content">
           <div class="container">
-            <main class="main">
-              <section class="section">
-                <div class="row">
-                  <div class="col-xl-12">
-                    <div class="banner">
-                      <div class="slider banner-slider dots arrows"><a class="slide banner-slider__slide background-box" href="#">
-                          <div class="lazy" data-src="img/Layer 310.jpg"></div></a><a class="slide banner-slider__slide background-box" href="#">
-                          <div class="lazy" data-src="img/Layer 310.jpg"></div></a><a class="slide banner-slider__slide background-box" href="#">
-                          <div class="lazy" data-src="img/Layer 310.jpg"></div></a><a class="slide banner-slider__slide background-box" href="#">
-                          <div class="lazy" data-src="img/Layer 310.jpg"></div></a><a class="slide banner-slider__slide background-box" href="#">
-                          <div class="lazy" data-src="img/Layer 310.jpg"></div></a></div>
+            <section class="section">
+              <div class="row">
+                <aside class="aside col-xl-3 col-md-4 col-sm-12">
+                  <div class="row">
+                    <div class="col-xl-12 js-d-filter-parent">
+                      <div class="filter mb-20">
+                        <div class="filter__container"><a class="button button_style1 js-animated type2 js-filter-toggle" href="javascript:void(0)" data-hide-text="Скрыть фильтр" data-show-text="Показать фильтр"><span>Показать фильтр</span><i class="fas fa-filter"></i></a>
+                          <div class="filter__head">
+                            <h6 class="filter__title">Подобрать игрушку</h6>
+                          </div>
+                          <div class="filter__content">
+                            <div class="filter-section">
+                              <div class="filter-section__head"> <span class="filter-section__title">Цена</span></div>
+                              <div class="filter-section__content scroll-container shadow shadow_style3">
+                                <div class="scroll-child"><span>//здесь ползунки</span></div>
+                              </div>
+                            </div>
+                            <div class="filter-section">
+                              <div class="filter-section__head"> <span class="filter-section__title">Возраст</span></div>
+                              <div class="filter-section__content scroll-container shadow shadow_style3">
+                                <div class="scroll-child">
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox" disabled>1-3 года
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">4-5 лет
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">6-8 лет
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">9-12 лет
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">12+ лет
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-section">
+                              <div class="filter-section__head"> <span class="filter-section__title">Пол</span></div>
+                              <div class="filter-section__content scroll-container shadow shadow_style3">
+                                <div class="scroll-child">
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">для мальчиков
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">для девочек
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-section">
+                              <div class="filter-section__head"> <span class="filter-section__title">Количество деталей</span></div>
+                              <div class="filter-section__content scroll-container shadow shadow_style3">
+                                <div class="scroll-child">
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">101-200
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">21-50
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">51-100
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">больше 200
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">меньше 20
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">больше 200
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">больше 300
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-section">
+                              <div class="filter-section__head"> <span class="filter-section__title">Бренд</span></div>
+                              <div class="filter-section__content scroll-container shadow shadow_style3">
+                                <div class="scroll-child">
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Chocolate Egg Surprise
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Бэби Борн
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Хот Вилс
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Chocolate Egg Surprise
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Бэби Борн
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Хот Вилс
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Chocolate Egg Surprise
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Бэби Борн
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Хот Вилс
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-section">
+                              <div class="filter-section__head"> <span class="filter-section__title">Серия</span></div>
+                              <div class="filter-section__content scroll-container shadow shadow_style3">
+                                <div class="scroll-child">
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Chocolate Egg Surprise
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Бэби Борн
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Хот Вилс
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Chocolate Egg Surprise
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Бэби Борн
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Хот Вилс
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-section">
+                              <div class="filter-section__head"> <span class="filter-section__title">Персонаж </span></div>
+                              <div class="filter-section__content scroll-container shadow shadow_style3">
+                                <div class="scroll-child">
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Barbie
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Enchantimals
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Ever After High
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Gormiti
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">L.O.L Surprise!
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Ever After High
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">Gormiti
+                                  </label>
+                                  <label class="checkbox js-animated"><i class="fas fa-check"></i>
+                                    <input type="checkbox">L.O.L Surprise!
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="filter-section"> 
+                              <div class="row row_compact">
+                                <div class="col-xl-6 col-lg-12 col-sm-6 col-12"><a class="button button_style2 color3 js-animated" href="javascript:void(0);">Сбросить</a></div>
+                                <div class="col-xl-6 col-lg-12 col-sm-6 col-12"><a class="button button_style2 color2 js-animated" href="#">Показать</a></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-xl-auto col-md-12">
-                    <div class="kids-kategory row row_compact">
-                      <div class="kids-kategory-item col-xl-2 col-4"><a class="kids-kategory-item__container js-animated" href="#">
-                          <svg class="icon">
-                            <use xlink:href="img/icons/icons.svg#0-1"></use>
-                          </svg><span>0-1</span></a></div>
-                      <div class="kids-kategory-item col-xl-2 col-4"><a class="kids-kategory-item__container js-animated" href="#">
-                          <svg class="icon">
-                            <use xlink:href="img/icons/icons.svg#2-3"></use>
-                          </svg><span>2-3</span></a></div>
-                      <div class="kids-kategory-item col-xl-2 col-4"><a class="kids-kategory-item__container js-animated" href="#">
-                          <svg class="icon">
-                            <use xlink:href="img/icons/icons.svg#4-5"></use>
-                          </svg><span>4-5</span></a></div>
-                      <div class="kids-kategory-item col-xl-2 col-4"><a class="kids-kategory-item__container js-animated" href="#">
-                          <svg class="icon">
-                            <use xlink:href="img/icons/icons.svg#6-8"></use>
-                          </svg><span>6-8</span></a></div>
-                      <div class="kids-kategory-item col-xl-2 col-4"><a class="kids-kategory-item__container js-animated" href="#">
-                          <svg class="icon">
-                            <use xlink:href="img/icons/icons.svg#9-12"></use>
-                          </svg><span>9-12</span></a></div>
-                      <div class="kids-kategory-item col-xl-2 col-4"><a class="kids-kategory-item__container js-animated" href="#">
-                          <svg class="icon">
-                            <use xlink:href="img/icons/icons.svg#12+"></use>
-                          </svg><span>12+</span></a></div>
-                    </div>
-                  </div>
-                  <div class="col-xl col-md-12">
-                    <div class="brands-slider size1">
-                      <div class="slider slider_default arrows">
-                                            <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 323 copy 2.png"></a></div>
-                                            <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 324 copy 2.png"></a></div>
-                                            <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 325 copy 2.png"></a></div>
-                                            <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 326 copy 2.png"></a></div>
-                                            <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 323 copy 2.png"></a></div>
-                                            <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 325 copy 2.png"></a></div>
-                                            <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 326 copy 2.png"></a></div>
-                                            <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 323 copy 2.png"></a></div>
-                                            <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 325 copy 2.png"></a></div>
+                    <div class="aside__banners col-xl-12">
+                      <div class="row row_compact">
+                        <div class="s-banner size2 col-xl-12"><a class="s-banner__container background-box js-animated" href="#">
+                            <div class="lazy" data-src="img/баннер1.png"></div></a></div>
+                        <div class="s-banner size2 col-xl-12"><a class="s-banner__container background-box js-animated" href="#">
+                            <div class="lazy" data-src="img/баннер1 copy 2.png"></div></a></div>
+                        <div class="s-banner size2 col-xl-12"><a class="s-banner__container background-box js-animated" href="#">
+                            <div class="lazy" data-src="img/баннер1 copy.png"></div></a></div>
                       </div>
                     </div>
                   </div>
-                  <div class="col-xl-12">
+                </aside>
+                <main class="main ctlg col-xl-9 col-md-8 col-sm-12">
+                  <h1 class="ctlg__title mb-20">Куклы LOL</h1>
+                  <!--блок в котоырй будет перемещаться фильтр для мобильных-->
+                  <div class="js-m-filter-parent mb-20"></div>
+                  <!--ссылки каталога-->
+                  <div class="ctlg__links mb-20">
+                    <div class="row row_compact">
+                      <div class="col-xl-auto"><a class="button button_style3 js-animated" href="#">Домики для кукол ЛОЛ</a></div>
+                      <div class="col-xl-auto"><a class="button button_style3 js-animated" href="#">Куклы ЛОЛ Winter Disco</a></div>
+                      <div class="col-xl-auto"><a class="button button_style3 js-animated" href="#">Куклы OMG</a></div>
+                      <div class="col-xl-auto"><a class="button button_style3 js-animated" href="#">Игровые наборы ЛОЛ</a></div>
+                      <div class="col-xl-auto"><a class="button button_style3 js-animated" href="#">Лол Питомцы</a></div>
+                      <div class="col-xl-auto"><a class="button button_style3 js-animated" href="#">Куклы ЛОЛ чемодан</a></div>
+                      <div class="col-xl-auto"><a class="button button_style3 js-animated" href="#">Куклы ЛОЛ 4 серия</a></div>
+                      <div class="col-xl-auto"><a class="button button_style3 js-animated" href="#">Куклы ЛОЛ 5 серия</a></div>
+                      <div class="col-xl-auto"><a class="button button_style3 js-animated" href="#">Куклы ЛОЛ шар</a></div>
+                    </div>
+                  </div>
+                  <!--сортировка-->
+                  <div class="ctlg-sorting mb-20">
+                    <div class="ctlg-sorting-section">
+                      <div class="ctlg-sorting-section__title">Сортировать по:</div>
+                      <ul class="ctlg-sorting-section__list">
+                        <li class="ctlg-sorting-section__item">
+                          <!-- .down - стрелка вниз(от дорогих к дешевым), .up - стрелка вверх(от дешевых к дорогим), .active - понятно--><a class="ctlg-sorting-section__link js-animated active down" href="#">цене<i class="fas fa-chevron-down"></i></a>
+                        </li>
+                        <li class="ctlg-sorting-section__item"><a class="ctlg-sorting-section__link js-animated" href="#">популярности</a></li>
+                        <li class="ctlg-sorting-section__item"><a class="ctlg-sorting-section__link js-animated" href="#">скидке</a></li>
+                      </ul>
+                    </div>
+                    <div class="ctlg-sorting-section">
+                      <div class="ctlg-sorting-section__title">Товаров на странице:</div>
+                      <ul class="ctlg-sorting-section__list">
+                        <li class="ctlg-sorting-section__item"><a class="ctlg-sorting-section__link js-animated active down" href="#">9</a></li>
+                        <li class="ctlg-sorting-section__item"><a class="ctlg-sorting-section__link js-animated" href="#">18</a></li>
+                        <li class="ctlg-sorting-section__item"><a class="ctlg-sorting-section__link js-animated" href="#">30</a></li>
+                        <li class="ctlg-sorting-section__item"><a class="ctlg-sorting-section__link js-animated" href="#">45</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!--выдача каталога-->
+                  <div class="ctlg__content mb-30">
                     <div class="row">
-                      <div class="s-banner size2 col-xl-4 col-12"><a class="s-banner__container background-box js-animated" href="#">
-                          <div class="lazy" data-src="img/баннер1.png"></div></a></div>
-                      <div class="s-banner size2 col-xl-4 col-12"><a class="s-banner__container background-box js-animated" href="#">
-                          <div class="lazy" data-src="img/баннер1 copy 2.png"></div></a></div>
-                      <div class="s-banner size2 col-xl-4 col-12"><a class="s-banner__container background-box js-animated" href="#">
-                          <div class="lazy" data-src="img/баннер1 copy.png"></div></a></div>
+                              <div class="catalogue-card col-xl-4 col-md-6 col-12">
+                                <div class="catalogue-card__container js-animated">
+                                  <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
+                                    <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
+                                      <!--span.catalogue-card__label.style3 Хит-->
+                                    </div>
+                                    <div class="catalogue-card__discount">
+                                      <svg class="icon">
+                                        <use xlink:href="img/icons/icons.svg#discount"></use>
+                                      </svg><span>-15%</span>
+                                    </div>
+                                  </div>
+                                  <div class="catalogue-card__content">
+                                    <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                    <div class="catalogue-card__bottom row row_compact">
+                                      <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
+                                      <div class="col-xl">
+                                        <button class="button button_style2 color1 js-animated">В корзину</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="catalogue-card col-xl-4 col-md-6 col-12">
+                                <div class="catalogue-card__container js-animated">
+                                  <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 348.png" alt=""></a>
+                                    <div class="catalogue-card__labels">
+                                      <!--span.catalogue-card__label.style1 новинка-->
+                                      <!--span.catalogue-card__label.style2 АКЦИЯ--><span class="catalogue-card__label style3">Хит</span>
+                                    </div>
+                                    <!--.catalogue-card__discount
+                                    svg.icon
+                                      use(xlink:href="img/icons/icons.svg#discount")
+                                    span -15%
+                                    --><a class="catalogue-card__video js-animated" href="#">
+                                      <svg class="icon">
+                                        <use xlink:href="img/icons/icons.svg#video-player"></use>
+                                      </svg></a>
+                                  </div>
+                                  <div class="catalogue-card__content">
+                                    <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 560579 Кукла OMG Neonlicious 23 см</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                    <div class="catalogue-card__bottom row row_compact">
+                                      <div class="catalogue-card__price col-xl-auto"><span class="current">10 999 ₽</span></div>
+                                      <div class="col-xl">
+                                        <button class="button button_style2 color1 js-animated">В корзину</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="catalogue-card col-xl-4 col-md-6 col-12">
+                                <div class="catalogue-card__container js-animated">
+                                  <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
+                                    <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
+                                      <!--span.catalogue-card__label.style3 Хит-->
+                                    </div>
+                                    <div class="catalogue-card__discount">
+                                      <svg class="icon">
+                                        <use xlink:href="img/icons/icons.svg#discount"></use>
+                                      </svg><span>-15%</span>
+                                    </div>
+                                  </div>
+                                  <div class="catalogue-card__content">
+                                    <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                    <div class="catalogue-card__bottom row row_compact">
+                                      <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
+                                      <div class="col-xl">
+                                        <button class="button button_style2 color1 js-animated">В корзину</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="catalogue-card col-xl-4 col-md-6 col-12">
+                                <div class="catalogue-card__container js-animated">
+                                  <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 348.png" alt=""></a>
+                                    <div class="catalogue-card__labels">
+                                      <!--span.catalogue-card__label.style1 новинка-->
+                                      <!--span.catalogue-card__label.style2 АКЦИЯ--><span class="catalogue-card__label style3">Хит</span>
+                                    </div>
+                                    <!--.catalogue-card__discount
+                                    svg.icon
+                                      use(xlink:href="img/icons/icons.svg#discount")
+                                    span -15%
+                                    --><a class="catalogue-card__video js-animated" href="#">
+                                      <svg class="icon">
+                                        <use xlink:href="img/icons/icons.svg#video-player"></use>
+                                      </svg></a>
+                                  </div>
+                                  <div class="catalogue-card__content">
+                                    <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 560579 Кукла OMG Neonlicious 23 см</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                    <div class="catalogue-card__bottom row row_compact">
+                                      <div class="catalogue-card__price col-xl-auto"><span class="current">10 999 ₽</span></div>
+                                      <div class="col-xl">
+                                        <button class="button button_style2 color1 js-animated">В корзину</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="catalogue-card col-xl-4 col-md-6 col-12">
+                                <div class="catalogue-card__container js-animated">
+                                  <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
+                                    <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
+                                      <!--span.catalogue-card__label.style3 Хит-->
+                                    </div>
+                                    <div class="catalogue-card__discount">
+                                      <svg class="icon">
+                                        <use xlink:href="img/icons/icons.svg#discount"></use>
+                                      </svg><span>-15%</span>
+                                    </div>
+                                  </div>
+                                  <div class="catalogue-card__content">
+                                    <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                    <div class="catalogue-card__bottom row row_compact">
+                                      <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
+                                      <div class="col-xl">
+                                        <button class="button button_style2 color1 js-animated">В корзину</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="catalogue-card col-xl-4 col-md-6 col-12">
+                                <div class="catalogue-card__container js-animated">
+                                  <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 348.png" alt=""></a>
+                                    <div class="catalogue-card__labels">
+                                      <!--span.catalogue-card__label.style1 новинка-->
+                                      <!--span.catalogue-card__label.style2 АКЦИЯ--><span class="catalogue-card__label style3">Хит</span>
+                                    </div>
+                                    <!--.catalogue-card__discount
+                                    svg.icon
+                                      use(xlink:href="img/icons/icons.svg#discount")
+                                    span -15%
+                                    --><a class="catalogue-card__video js-animated" href="#">
+                                      <svg class="icon">
+                                        <use xlink:href="img/icons/icons.svg#video-player"></use>
+                                      </svg></a>
+                                  </div>
+                                  <div class="catalogue-card__content">
+                                    <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 560579 Кукла OMG Neonlicious 23 см</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                    <div class="catalogue-card__bottom row row_compact">
+                                      <div class="catalogue-card__price col-xl-auto"><span class="current">10 999 ₽</span></div>
+                                      <div class="col-xl">
+                                        <button class="button button_style2 color1 js-animated">В корзину</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="catalogue-card col-xl-4 col-md-6 col-12">
+                                <div class="catalogue-card__container js-animated">
+                                  <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
+                                    <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
+                                      <!--span.catalogue-card__label.style3 Хит-->
+                                    </div>
+                                    <div class="catalogue-card__discount">
+                                      <svg class="icon">
+                                        <use xlink:href="img/icons/icons.svg#discount"></use>
+                                      </svg><span>-15%</span>
+                                    </div>
+                                  </div>
+                                  <div class="catalogue-card__content">
+                                    <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                    <div class="catalogue-card__bottom row row_compact">
+                                      <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
+                                      <div class="col-xl">
+                                        <button class="button button_style2 color1 js-animated">В корзину</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="catalogue-card col-xl-4 col-md-6 col-12">
+                                <div class="catalogue-card__container js-animated">
+                                  <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 348.png" alt=""></a>
+                                    <div class="catalogue-card__labels">
+                                      <!--span.catalogue-card__label.style1 новинка-->
+                                      <!--span.catalogue-card__label.style2 АКЦИЯ--><span class="catalogue-card__label style3">Хит</span>
+                                    </div>
+                                    <!--.catalogue-card__discount
+                                    svg.icon
+                                      use(xlink:href="img/icons/icons.svg#discount")
+                                    span -15%
+                                    --><a class="catalogue-card__video js-animated" href="#">
+                                      <svg class="icon">
+                                        <use xlink:href="img/icons/icons.svg#video-player"></use>
+                                      </svg></a>
+                                  </div>
+                                  <div class="catalogue-card__content">
+                                    <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 560579 Кукла OMG Neonlicious 23 см</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                    <div class="catalogue-card__bottom row row_compact">
+                                      <div class="catalogue-card__price col-xl-auto"><span class="current">10 999 ₽</span></div>
+                                      <div class="col-xl">
+                                        <button class="button button_style2 color1 js-animated">В корзину</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="catalogue-card col-xl-4 col-md-6 col-12">
+                                <div class="catalogue-card__container js-animated">
+                                  <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
+                                    <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
+                                      <!--span.catalogue-card__label.style3 Хит-->
+                                    </div>
+                                    <div class="catalogue-card__discount">
+                                      <svg class="icon">
+                                        <use xlink:href="img/icons/icons.svg#discount"></use>
+                                      </svg><span>-15%</span>
+                                    </div>
+                                  </div>
+                                  <div class="catalogue-card__content">
+                                    <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                    <div class="catalogue-card__bottom row row_compact">
+                                      <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
+                                      <div class="col-xl">
+                                        <button class="button button_style2 color1 js-animated">В корзину</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="catalogue-card col-xl-4 col-md-6 col-12">
+                                <div class="catalogue-card__container js-animated">
+                                  <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 348.png" alt=""></a>
+                                    <div class="catalogue-card__labels">
+                                      <!--span.catalogue-card__label.style1 новинка-->
+                                      <!--span.catalogue-card__label.style2 АКЦИЯ--><span class="catalogue-card__label style3">Хит</span>
+                                    </div>
+                                    <!--.catalogue-card__discount
+                                    svg.icon
+                                      use(xlink:href="img/icons/icons.svg#discount")
+                                    span -15%
+                                    --><a class="catalogue-card__video js-animated" href="#">
+                                      <svg class="icon">
+                                        <use xlink:href="img/icons/icons.svg#video-player"></use>
+                                      </svg></a>
+                                  </div>
+                                  <div class="catalogue-card__content">
+                                    <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 560579 Кукла OMG Neonlicious 23 см</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                    <div class="catalogue-card__bottom row row_compact">
+                                      <div class="catalogue-card__price col-xl-auto"><span class="current">10 999 ₽</span></div>
+                                      <div class="col-xl">
+                                        <button class="button button_style2 color1 js-animated">В корзину</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="catalogue-card col-xl-4 col-md-6 col-12">
+                                <div class="catalogue-card__container js-animated">
+                                  <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
+                                    <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
+                                      <!--span.catalogue-card__label.style3 Хит-->
+                                    </div>
+                                    <div class="catalogue-card__discount">
+                                      <svg class="icon">
+                                        <use xlink:href="img/icons/icons.svg#discount"></use>
+                                      </svg><span>-15%</span>
+                                    </div>
+                                  </div>
+                                  <div class="catalogue-card__content">
+                                    <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                    <div class="catalogue-card__bottom row row_compact">
+                                      <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
+                                      <div class="col-xl">
+                                        <button class="button button_style2 color1 js-animated">В корзину</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="catalogue-card col-xl-4 col-md-6 col-12">
+                                <div class="catalogue-card__container js-animated">
+                                  <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 348.png" alt=""></a>
+                                    <div class="catalogue-card__labels">
+                                      <!--span.catalogue-card__label.style1 новинка-->
+                                      <!--span.catalogue-card__label.style2 АКЦИЯ--><span class="catalogue-card__label style3">Хит</span>
+                                    </div>
+                                    <!--.catalogue-card__discount
+                                    svg.icon
+                                      use(xlink:href="img/icons/icons.svg#discount")
+                                    span -15%
+                                    --><a class="catalogue-card__video js-animated" href="#">
+                                      <svg class="icon">
+                                        <use xlink:href="img/icons/icons.svg#video-player"></use>
+                                      </svg></a>
+                                  </div>
+                                  <div class="catalogue-card__content">
+                                    <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 560579 Кукла OMG Neonlicious 23 см</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                    <div class="catalogue-card__bottom row row_compact">
+                                      <div class="catalogue-card__price col-xl-auto"><span class="current">10 999 ₽</span></div>
+                                      <div class="col-xl">
+                                        <button class="button button_style2 color1 js-animated">В корзину</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                     </div>
                   </div>
-                  <div class="col-xl-12">
-                    <div class="slider slider_default arrows s-ctg-slider">
-                                          <div class="slide s-ctg-slider__slide"><a class="slide s-ctg-slider__item background-box js-animated" href="#">
-                                              <div class="lazy" data-src="img/e.png"></div></a></div>
-                                          <div class="slide s-ctg-slider__slide"><a class="slide s-ctg-slider__item background-box js-animated" href="#">
-                                              <div class="lazy" data-src="img/Layer 336.png"></div></a></div>
-                                          <div class="slide s-ctg-slider__slide"><a class="slide s-ctg-slider__item background-box js-animated" href="#">
-                                              <div class="lazy" data-src="img/Layer 337.png"></div></a></div>
-                                          <div class="slide s-ctg-slider__slide"><a class="slide s-ctg-slider__item background-box js-animated" href="#">
-                                              <div class="lazy" data-src="img/Layer 338.png"></div></a></div>
-                                          <div class="slide s-ctg-slider__slide"><a class="slide s-ctg-slider__item background-box js-animated" href="#">
-                                              <div class="lazy" data-src="img/Layer 340.png"></div></a></div>
-                                          <div class="slide s-ctg-slider__slide"><a class="slide s-ctg-slider__item background-box js-animated" href="#">
-                                              <div class="lazy" data-src="img/Layer 342.png"></div></a></div>
-                                          <div class="slide s-ctg-slider__slide"><a class="slide s-ctg-slider__item background-box js-animated" href="#">
-                                              <div class="lazy" data-src="img/Layer 344.png"></div></a></div>
-                                          <div class="slide s-ctg-slider__slide"><a class="slide s-ctg-slider__item background-box js-animated" href="#">
-                                              <div class="lazy" data-src="img/Rounded Rectangle 10 copy 5.png"></div></a></div>
-                    </div>
+                  <!--пагниация-->
+                  <div class="pagination">
+                    <ul class="pagination__list">
+                      <li class="pagination__item">
+                        <div class="pagination__link js-animated disabled"><span>Предыдущая</span><i class="fas fa-chevron-left"></i></div>
+                      </li>
+                      <li class="pagination__item"><a class="pagination__link js-animated active" href="#">1</a></li>
+                      <li class="pagination__item"><a class="pagination__link js-animated" href="#">2</a></li>
+                      <li class="pagination__item"><a class="pagination__link js-animated" href="#">3</a></li>
+                      <li class="pagination__item"><a class="pagination__link js-animated" href="#">4</a></li>
+                      <li class="pagination__item"><a class="pagination__link js-animated" href="#">5</a></li>
+                      <li class="pagination__item"><a class="pagination__link js-animated" href="#">...</a></li>
+                      <li class="pagination__item"><a class="pagination__link js-animated" href="#">30</a></li>
+                      <li class="pagination__item"><a class="pagination__link js-animated" href="#"><span>Предыдущая</span><i class="fas fa-chevron-right"></i></a></li>
+                    </ul>
+                  </div>
+                </main>
+              </div>
+            </section>
+            <section class="section">
+              <div class="section__head">
+                <h5 class="section__title t-size-30">Вы смотрели</h5>
+              </div>
+              <div class="section__content">
+                <div class="slider slider_default arrows ctlg-slider">
+                  <div class="slide">
+                            <div class="catalogue-card">
+                              <div class="catalogue-card__container js-animated">
+                                <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 348.png" alt=""></a>
+                                  <div class="catalogue-card__labels">
+                                    <!--span.catalogue-card__label.style1 новинка-->
+                                    <!--span.catalogue-card__label.style2 АКЦИЯ--><span class="catalogue-card__label style3">Хит</span>
+                                  </div>
+                                  <!--.catalogue-card__discount
+                                  svg.icon
+                                    use(xlink:href="img/icons/icons.svg#discount")
+                                  span -15%
+                                  --><a class="catalogue-card__video js-animated" href="#">
+                                    <svg class="icon">
+                                      <use xlink:href="img/icons/icons.svg#video-player"></use>
+                                    </svg></a>
+                                </div>
+                                <div class="catalogue-card__content">
+                                  <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 560579 Кукла OMG Neonlicious 23 см</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                </div>
+                              </div>
+                            </div>
+                  </div>
+                  <div class="slide">
+                            <div class="catalogue-card">
+                              <div class="catalogue-card__container js-animated">
+                                <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 348.png" alt=""></a>
+                                  <div class="catalogue-card__labels">
+                                    <!--span.catalogue-card__label.style1 новинка-->
+                                    <!--span.catalogue-card__label.style2 АКЦИЯ--><span class="catalogue-card__label style3">Хит</span>
+                                  </div>
+                                  <!--.catalogue-card__discount
+                                  svg.icon
+                                    use(xlink:href="img/icons/icons.svg#discount")
+                                  span -15%
+                                  --><a class="catalogue-card__video js-animated" href="#">
+                                    <svg class="icon">
+                                      <use xlink:href="img/icons/icons.svg#video-player"></use>
+                                    </svg></a>
+                                </div>
+                                <div class="catalogue-card__content">
+                                  <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 560579 Кукла OMG Neonlicious 23 см</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                </div>
+                              </div>
+                            </div>
+                  </div>
+                  <div class="slide">
+                            <div class="catalogue-card">
+                              <div class="catalogue-card__container js-animated">
+                                <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 348.png" alt=""></a>
+                                  <div class="catalogue-card__labels">
+                                    <!--span.catalogue-card__label.style1 новинка-->
+                                    <!--span.catalogue-card__label.style2 АКЦИЯ--><span class="catalogue-card__label style3">Хит</span>
+                                  </div>
+                                  <!--.catalogue-card__discount
+                                  svg.icon
+                                    use(xlink:href="img/icons/icons.svg#discount")
+                                  span -15%
+                                  --><a class="catalogue-card__video js-animated" href="#">
+                                    <svg class="icon">
+                                      <use xlink:href="img/icons/icons.svg#video-player"></use>
+                                    </svg></a>
+                                </div>
+                                <div class="catalogue-card__content">
+                                  <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 560579 Кукла OMG Neonlicious 23 см</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                </div>
+                              </div>
+                            </div>
+                  </div>
+                  <div class="slide">
+                            <div class="catalogue-card">
+                              <div class="catalogue-card__container js-animated">
+                                <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 348.png" alt=""></a>
+                                  <div class="catalogue-card__labels">
+                                    <!--span.catalogue-card__label.style1 новинка-->
+                                    <!--span.catalogue-card__label.style2 АКЦИЯ--><span class="catalogue-card__label style3">Хит</span>
+                                  </div>
+                                  <!--.catalogue-card__discount
+                                  svg.icon
+                                    use(xlink:href="img/icons/icons.svg#discount")
+                                  span -15%
+                                  --><a class="catalogue-card__video js-animated" href="#">
+                                    <svg class="icon">
+                                      <use xlink:href="img/icons/icons.svg#video-player"></use>
+                                    </svg></a>
+                                </div>
+                                <div class="catalogue-card__content">
+                                  <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 560579 Кукла OMG Neonlicious 23 см</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                </div>
+                              </div>
+                            </div>
+                  </div>
+                  <div class="slide">
+                            <div class="catalogue-card">
+                              <div class="catalogue-card__container js-animated">
+                                <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 348.png" alt=""></a>
+                                  <div class="catalogue-card__labels">
+                                    <!--span.catalogue-card__label.style1 новинка-->
+                                    <!--span.catalogue-card__label.style2 АКЦИЯ--><span class="catalogue-card__label style3">Хит</span>
+                                  </div>
+                                  <!--.catalogue-card__discount
+                                  svg.icon
+                                    use(xlink:href="img/icons/icons.svg#discount")
+                                  span -15%
+                                  --><a class="catalogue-card__video js-animated" href="#">
+                                    <svg class="icon">
+                                      <use xlink:href="img/icons/icons.svg#video-player"></use>
+                                    </svg></a>
+                                </div>
+                                <div class="catalogue-card__content">
+                                  <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 560579 Кукла OMG Neonlicious 23 см</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                </div>
+                              </div>
+                            </div>
+                  </div>
+                  <div class="slide">
+                            <div class="catalogue-card">
+                              <div class="catalogue-card__container js-animated">
+                                <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 348.png" alt=""></a>
+                                  <div class="catalogue-card__labels">
+                                    <!--span.catalogue-card__label.style1 новинка-->
+                                    <!--span.catalogue-card__label.style2 АКЦИЯ--><span class="catalogue-card__label style3">Хит</span>
+                                  </div>
+                                  <!--.catalogue-card__discount
+                                  svg.icon
+                                    use(xlink:href="img/icons/icons.svg#discount")
+                                  span -15%
+                                  --><a class="catalogue-card__video js-animated" href="#">
+                                    <svg class="icon">
+                                      <use xlink:href="img/icons/icons.svg#video-player"></use>
+                                    </svg></a>
+                                </div>
+                                <div class="catalogue-card__content">
+                                  <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 560579 Кукла OMG Neonlicious 23 см</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
+                                </div>
+                              </div>
+                            </div>
                   </div>
                 </div>
-              </section>
-              <!--для каталога с отступами-->
-              <section class="section">
-                <div class="section__head">
-                  <h5 class="section__title t-size-30">Новинки</h5>
-                </div>
-                <div class="section__content">
-                  <div class="slider slider_default arrows ctlg-slider">
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
-                                          <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
-                                            <!--span.catalogue-card__label.style3 Хит-->
-                                          </div>
-                                          <div class="catalogue-card__discount">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#discount"></use>
-                                            </svg><span>-15%</span>
-                                          </div>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 348.png" alt=""></a>
-                                          <div class="catalogue-card__labels">
-                                            <!--span.catalogue-card__label.style1 новинка-->
-                                            <!--span.catalogue-card__label.style2 АКЦИЯ--><span class="catalogue-card__label style3">Хит</span>
-                                          </div>
-                                          <!--.catalogue-card__discount
-                                          svg.icon
-                                            use(xlink:href="img/icons/icons.svg#discount")
-                                          span -15%
-                                          --><a class="catalogue-card__video js-animated" href="#">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#video-player"></use>
-                                            </svg></a>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 560579 Кукла OMG Neonlicious 23 см</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="current">1099 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
-                                          <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
-                                            <!--span.catalogue-card__label.style3 Хит-->
-                                          </div>
-                                          <div class="catalogue-card__discount">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#discount"></use>
-                                            </svg><span>-15%</span>
-                                          </div>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
-                                          <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
-                                            <!--span.catalogue-card__label.style3 Хит-->
-                                          </div>
-                                          <div class="catalogue-card__discount">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#discount"></use>
-                                            </svg><span>-15%</span>
-                                          </div>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
-                                          <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
-                                            <!--span.catalogue-card__label.style3 Хит-->
-                                          </div>
-                                          <div class="catalogue-card__discount">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#discount"></use>
-                                            </svg><span>-15%</span>
-                                          </div>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
-                                          <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
-                                            <!--span.catalogue-card__label.style3 Хит-->
-                                          </div>
-                                          <div class="catalogue-card__discount">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#discount"></use>
-                                            </svg><span>-15%</span>
-                                          </div>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section class="section">
-                <div class="section__head">
-                  <h5 class="section__title t-size-30">Хиты  продаж</h5>
-                </div>
-                <div class="section__content">
-                  <div class="slider slider_default arrows ctlg-slider">
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
-                                          <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
-                                            <!--span.catalogue-card__label.style3 Хит-->
-                                          </div>
-                                          <div class="catalogue-card__discount">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#discount"></use>
-                                            </svg><span>-15%</span>
-                                          </div>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 348.png" alt=""></a>
-                                          <div class="catalogue-card__labels">
-                                            <!--span.catalogue-card__label.style1 новинка-->
-                                            <!--span.catalogue-card__label.style2 АКЦИЯ--><span class="catalogue-card__label style3">Хит</span>
-                                          </div>
-                                          <!--.catalogue-card__discount
-                                          svg.icon
-                                            use(xlink:href="img/icons/icons.svg#discount")
-                                          span -15%
-                                          --><a class="catalogue-card__video js-animated" href="#">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#video-player"></use>
-                                            </svg></a>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 560579 Кукла OMG Neonlicious 23 см</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="current">1099 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
-                                          <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
-                                            <!--span.catalogue-card__label.style3 Хит-->
-                                          </div>
-                                          <div class="catalogue-card__discount">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#discount"></use>
-                                            </svg><span>-15%</span>
-                                          </div>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
-                                          <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
-                                            <!--span.catalogue-card__label.style3 Хит-->
-                                          </div>
-                                          <div class="catalogue-card__discount">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#discount"></use>
-                                            </svg><span>-15%</span>
-                                          </div>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
-                                          <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
-                                            <!--span.catalogue-card__label.style3 Хит-->
-                                          </div>
-                                          <div class="catalogue-card__discount">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#discount"></use>
-                                            </svg><span>-15%</span>
-                                          </div>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
-                                          <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
-                                            <!--span.catalogue-card__label.style3 Хит-->
-                                          </div>
-                                          <div class="catalogue-card__discount">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#discount"></use>
-                                            </svg><span>-15%</span>
-                                          </div>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section class="section">
-                <div class="section__head">
-                  <h5 class="section__title t-size-30">Лучшая  цена</h5>
-                </div>
-                <div class="section__content">
-                  <div class="slider slider_default arrows ctlg-slider">
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
-                                          <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
-                                            <!--span.catalogue-card__label.style3 Хит-->
-                                          </div>
-                                          <div class="catalogue-card__discount">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#discount"></use>
-                                            </svg><span>-15%</span>
-                                          </div>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 348.png" alt=""></a>
-                                          <div class="catalogue-card__labels">
-                                            <!--span.catalogue-card__label.style1 новинка-->
-                                            <!--span.catalogue-card__label.style2 АКЦИЯ--><span class="catalogue-card__label style3">Хит</span>
-                                          </div>
-                                          <!--.catalogue-card__discount
-                                          svg.icon
-                                            use(xlink:href="img/icons/icons.svg#discount")
-                                          span -15%
-                                          --><a class="catalogue-card__video js-animated" href="#">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#video-player"></use>
-                                            </svg></a>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 560579 Кукла OMG Neonlicious 23 см</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="current">1099 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
-                                          <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
-                                            <!--span.catalogue-card__label.style3 Хит-->
-                                          </div>
-                                          <div class="catalogue-card__discount">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#discount"></use>
-                                            </svg><span>-15%</span>
-                                          </div>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
-                                          <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
-                                            <!--span.catalogue-card__label.style3 Хит-->
-                                          </div>
-                                          <div class="catalogue-card__discount">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#discount"></use>
-                                            </svg><span>-15%</span>
-                                          </div>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
-                                          <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
-                                            <!--span.catalogue-card__label.style3 Хит-->
-                                          </div>
-                                          <div class="catalogue-card__discount">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#discount"></use>
-                                            </svg><span>-15%</span>
-                                          </div>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                    <div class="slide">
-                                    <div class="catalogue-card">
-                                      <div class="catalogue-card__container js-animated">
-                                        <div class="catalogue-card__image"><a class="cover-box cover-box_contain js-animated" href="#"><img class="lazy" data-src="img/Layer 347.png" alt=""></a>
-                                          <div class="catalogue-card__labels"><span class="catalogue-card__label style1">новинка</span><span class="catalogue-card__label style2">АКЦИЯ</span>
-                                            <!--span.catalogue-card__label.style3 Хит-->
-                                          </div>
-                                          <div class="catalogue-card__discount">
-                                            <svg class="icon">
-                                              <use xlink:href="img/icons/icons.svg#discount"></use>
-                                            </svg><span>-15%</span>
-                                          </div>
-                                        </div>
-                                        <div class="catalogue-card__content">
-                                          <div class="catalogue-card__top"><a class="catalogue-card__title js-animated" href="#">L.O.L. Surprise 559658 Гламурная</a><span class="catalogue-card__art">Код товара <strong>559658</strong></span></div>
-                                          <div class="catalogue-card__bottom row row_compact">
-                                            <div class="catalogue-card__price col-xl-auto"><span class="old">12 699 ₽</span><span class="current">10 999 ₽</span></div>
-                                            <div class="col-xl">
-                                              <button class="button button_style2 color1 js-animated">В корзину</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section class="section">
-                <div class="section__head">
-                  <h5 class="section__title t-size-30">Бренды</h5>
-                </div>
-                <div class="section__content">
-                  <div class="brands-slider size2">
-                    <div class="slider slider_default arrows">
-                                        <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 323 copy 2.png"></a></div>
-                                        <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 324 copy 2.png"></a></div>
-                                        <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 325 copy 2.png"></a></div>
-                                        <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 326 copy 2.png"></a></div>
-                                        <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 323 copy 2.png"></a></div>
-                                        <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 325 copy 2.png"></a></div>
-                                        <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 326 copy 2.png"></a></div>
-                                        <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 323 copy 2.png"></a></div>
-                                        <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 325 copy 2.png"></a></div>
-                                        <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 323 copy 2.png"></a></div>
-                                        <div class="slide brands-slider__slide"><a class="brands-slider__item cover-box cover-box_contain js-animated" href="#"><img class="lazy" alt="brand" data-src="img/Layer 325 copy 2.png"></a></div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-            </main>
+              </div>
+            </section>
           </div>
         </div>
+        <section class="section mailing">
+          <div class="container">
+            <div class="mailing__container row">
+              <div class="mailing__text col-xl col-md-12">
+                <div class="bg lazy" data-src="img/mail.png"></div>
+                <h5 class="mailing__title t-size-28">Подпишитесь на рассылку и получайте<br> дополнительные скидки!</h5>
+              </div>
+              <div class="mailing__form col-xl-auto col-md-12">
+                <form class="s-item-form" action="#">
+                  <div class="s-item-form__container">
+                    <input class="input input_style2" type="email" placeholder="Ваш Email" requied>
+                    <button class="button button_style2 color2 js-animated">Подписаться</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
       <!--footer-->
       <footer class="footer">

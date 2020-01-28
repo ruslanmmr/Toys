@@ -131,11 +131,13 @@ $(document).ready(function() {
   $scrollArea.init();
   images.init();
   slider.init()
+  filter.init()
 
   if($('html').hasClass('desktop')) {
     //code
   }
 })
+
 
 window.addEventListener('load',function(){ 
   //code
@@ -183,22 +185,23 @@ let animatedElements = {
 let $checkbox = {
   element: $('.checkbox'),
   init: function() {
+    $checkbox.check();
     $(document).on('click', '.checkbox', function() {
       $checkbox.check();
     })
   },
   check: function() {
     $checkbox.element.each(function() {
-      if($(this).find('input').prop('checked') || $('#' + $(this).attr('for')).prop('checked')) {
+      let input = $(this).find('input');
+      if(input.prop('disabled')) {
+        $(this).addClass('disabled');
+      } else {
+        $(this).removeClass('disabled');
+      }
+      if(input.prop('checked')) {
         $(this).addClass('checked');
-        if($(this).hasClass('toggle-checkbox')) {
-          $(this).parents('form').find('.toggle-item').addClass('active');
-        }
       } else {
         $(this).removeClass('checked');
-        if($(this).hasClass('toggle-checkbox')) {
-          $(this).parents('form').find('.toggle-item').removeClass('active');
-        }
       }
     })
   }
@@ -356,7 +359,53 @@ let catalogue = {
     catalogue.$navTrigger.removeClass('active');
   }
 }
+let filter = {
+  el: $('.filter'),
+  isReplaced: false,
+  $trigger: $('.js-filter-toggle'),
+  opened: true,
+  init: function() {
+    if(this.el.length>0) {
 
+      this.changePos();
+
+      this.$trigger.on('click', function() {
+        if($window.width()<=768 && filter.opened==false) {
+          filter.show();
+        } else if($window.width()<=768) {
+          filter.hide();
+        }
+      })
+
+      $(window).resize(function () {
+        filter.changePos();
+      })
+
+    }
+  },
+  changePos: function() {
+    if($window.width()<=768 && this.isReplaced==false) {
+      this.isReplaced=true;
+      this.hide();
+      this.el.appendTo($('.js-m-filter-parent'))
+    } else if($window.width()>768 && this.isReplaced==true) {
+      this.show();
+      this.isReplaced=false;
+      this.el.appendTo($('.js-d-filter-parent'))
+    }
+  },
+  show: function() {
+    this.opened = true;
+    this.el.addClass('active');
+    this.$trigger.find('span').text(this.$trigger.data('hide-text'))
+
+  },
+  hide: function() {
+    this.opened = false;
+    this.el.removeClass('active');
+    this.$trigger.find('span').text(this.$trigger.data('show-text'))
+  }
+}
 let images = {
   init: function() {
     $(window).resize(function(){
@@ -404,7 +453,6 @@ let images = {
     })
   }
 }
-
 let slider = {
   el: $('.slider'),
   init: function() {

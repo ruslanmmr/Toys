@@ -124,7 +124,6 @@
     }
   }
 }
-
 .banner-slider {
   border-radius: 8px;
   overflow: hidden;
@@ -136,7 +135,6 @@
     }
   }
 }
-
 .brands-slider {
   border-radius: 8px;
   background-color: #fff;
@@ -185,6 +183,19 @@
   }
 }
 
+
+@media all and(max-width: 1210px) {
+  .slider {
+    &_default {
+      .slick-list {
+        margin: 0 -10px;
+      }
+      .slick-slide {
+        padding: 0 10px;
+      }
+    }
+  }
+}
 @media all and(max-width: 1024px) {
   .banner-slider {
     &__slide {
@@ -196,14 +207,6 @@
   .slider {
     .slick-dots {
       bottom: 18px;
-    }
-    &_default {
-      .slick-list {
-        margin: 0 -10px;
-      }
-      .slick-slide {
-        padding: 0 10px;
-      }
     }
   }
 }
