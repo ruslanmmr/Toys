@@ -181,6 +181,3 @@ gulp.task("deploy", function () {
       compress: true,
   }));
 });
-
-
-//данные CX2d6C8j
