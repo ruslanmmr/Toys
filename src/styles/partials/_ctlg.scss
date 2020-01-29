@@ -233,6 +233,31 @@
     }
   }
 }
+.ctlg-item-card {
+  &__title {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  &__slider,
+  &__description {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: $shadow1;
+    background-color: #fff;
+    height: 100%;
+  }
+}
+.m-item-slider {
+  padding: 10px;
+  &__slide {
+    position: relative;
+    &:before {
+      content: '';
+      display: block;
+      padding-top: 70%;
+    }
+  }
+}
 
 @media all and(max-width: 1210px) {
   .ctlg {

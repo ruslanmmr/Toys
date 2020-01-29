@@ -1,0 +1,63 @@
+extends layout/layout
+block content
+  include blocks/breadcrumbs
+  .page-content
+    .container
+      main.main
+        section.section.ctlg-item-card
+          h1.ctlg-item-card__title L.O.L. Surprise 556220 Кукла с волосами
+          .ctlg-item-card__container.row
+            .col-xl-7
+              .ctlg-item-card__slider
+                //главный слайдер
+                .slider.js-custom-slider.m-item-slider
+                  .m-item-slider__slide.cover-box.cover-box_contain
+                    img(data-src="img/Layer 1187 copy.png" alt="image").lazy
+                  .m-item-slider__slide.cover-box.cover-box_contain
+                    img(data-src="img/Layer 348.png" alt="image").lazy
+                //навигационный слайдер
+                .slider.js-custom-slider.m-nav-slider
+                  .m-nav-slider__slide.cover-box.cover-box_contain
+                    img(data-src="img/Layer 1187 copy.png" alt="image").lazy
+                  .m-nav-slider__slide.cover-box.cover-box_contain
+                    img(data-src="img/Layer 348.png" alt="image").lazy
+            .col-xl-5
+              .ctlg-item-card__description
+
+        include blocks/ctlg-cards
+        section.section
+          .section__head
+            h5.section__title.t-size-30 Товары из этой коллекции
+          .section__content
+            .slider.slider_default.arrows.ctlg-slider
+              .slide
+                +card1()
+              .slide
+                +card2()
+              .slide
+                +card1()
+              .slide
+                +card1()
+              .slide
+                +card1()
+              .slide
+                +card1()
+        section.section
+          .section__head
+            h5.section__title.t-size-30 Вы смотрели
+          .section__content
+            .slider.slider_default.arrows.ctlg-slider
+              .slide
+                +card5()
+              .slide
+                +card5()
+              .slide
+                +card5()
+              .slide
+                +card5()
+              .slide
+                +card5()
+              .slide
+                +card5()
+        
+  include blocks/mailing

@@ -527,55 +527,69 @@ let slider = {
         slideCount576 = 1;
         slideCount420 = 1;
       }
+
+      if(!$(this).is('.js-custom-slider')) {
+        $(this).slick({
+          infinite: true,
+          dots: dots,
+          arrows: arrows,
+          speed: 600,
+          centerMode: centerMode,
+          slidesToShow: slideCount,
+          slidesToScroll: slideCount,
+          autoplay: autoplay,
+          autoplaySpeed: 6000,
+          rows: 0,
+          responsive: [{
+              breakpoint: 1210,
+              settings: {
+                slidesToShow: slideCount1210,
+                slidesToScroll: slideCount1210
+              }
+            },
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: slideCount1024,
+                slidesToScroll: slideCount1024
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: slideCount768,
+                slidesToScroll: slideCount768
+              }
+            },
+            {
+              breakpoint: 576,
+              settings: {
+                slidesToShow: slideCount576,
+                slidesToScroll: slideCount576
+              }
+            },
+            {
+              breakpoint: 420,
+              settings: {
+                slidesToShow: slideCount420,
+                slidesToScroll: slideCount420
+              }
+            }
+          ]
+        });
+      }
+
+      if($(this).is('.m-item-slider')) {
+        $(this).slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          rows: 0,
+          fade: true,
+          //asNavFor: '.m-nav-slider'
+        });
+      }
       
-      $(this).slick({
-        infinite: true,
-        dots: dots,
-        arrows: arrows,
-        speed: 600,
-        centerMode: centerMode,
-        slidesToShow: slideCount,
-        slidesToScroll: slideCount,
-        autoplay: autoplay,
-        autoplaySpeed: 6000,
-        rows: 0,
-        responsive: [{
-            breakpoint: 1210,
-            settings: {
-              slidesToShow: slideCount1210,
-              slidesToScroll: slideCount1210
-            }
-          },
-          {
-            breakpoint: 1024,
-            settings: {
-              slidesToShow: slideCount1024,
-              slidesToScroll: slideCount1024
-            }
-          },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: slideCount768,
-              slidesToScroll: slideCount768
-            }
-          },
-          {
-            breakpoint: 576,
-            settings: {
-              slidesToShow: slideCount576,
-              slidesToScroll: slideCount576
-            }
-          },
-          {
-            breakpoint: 420,
-            settings: {
-              slidesToShow: slideCount420,
-              slidesToScroll: slideCount420
-            }
-          }
-        ]
-      });
     });
 
   }

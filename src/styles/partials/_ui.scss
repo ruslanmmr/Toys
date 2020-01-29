@@ -464,13 +464,14 @@ a {
         top: 13%;
         left: 28%;
         transition: inherit;
+        fill: $colorB;
       }
       &.touch,
       &.hover {
-        color: $colorB2;
-        opacity: 0.6;
+        color: #fff;
+        background-color: $colorB;
         .icon {
-          fill: $colorB2;
+          fill: #fff;
         }
       }
     }
@@ -489,7 +490,8 @@ a {
     }
     &.hover,
     &.touch {
-      opacity: 0.7;
+      opacity: 0.8;
+      box-shadow: $shadow11;
     }
   }
 }
@@ -524,7 +526,7 @@ a {
   }
 }
 .breadcrumbs {
-  padding: 18px 0 5px 0;
+  padding: 18px 0 0 0;
   font-size: 14px;
   &__list {
     margin: 0;
