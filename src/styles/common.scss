@@ -13,7 +13,7 @@ $colorB4: #e8f4ff;
 $colorB5: #f9fcff;
 $colorB6: #e3e8ea;
 $colorB7: #cdd4d7;
-$colorB8: #c5cbce;
+$colorB8: #c5cbce; 
 $colorC: #87cf00;
 $colorD: #f24d54;
 $colorD2: #db363d;
@@ -25,6 +25,8 @@ $colorG2: #425b80;
 $colorH: #d7dde0;
 $colorI: #a6a6a6;
 $colorJ: #4b4b4b;
+$colorK: #f4f5f6;
+$colorL: #dbeeff;
 
 
 //transition
@@ -41,6 +43,7 @@ body {
   font-family: $font1;
   font-size: 16px;
   min-width: 320px;
+  line-height: 1.5;
   color: $colorG;
   background-color: #f8fafc;
   &.fixed {
@@ -76,7 +79,6 @@ body {
   }
   &__title {
     font-weight: bold;
-    font-family: $font2;
   }
   &__head {
     margin-bottom: 20px;

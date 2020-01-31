@@ -130,6 +130,11 @@
         background-color: $colorB8;
       }
     }
+    &.size2 {
+      line-height: 50px;
+      height: 50px;
+      font-size: 20px;
+    }
   }
   &_style3 {
     line-height: 38px;
@@ -154,9 +159,23 @@ a {
 }
 .link {
   text-decoration: none;
+  color: $colorB;
   &.touch,
   &.hover {
-    color: $colorB;
+    color: $colorB2;
+  }
+  &.focus {
+    color: $colorB3;
+  }
+  &_style2 {
+    color: inherit;
+    &.touch,
+    &.hover {
+      color: $colorB;
+    }
+    &.focus {
+      color: $colorB2;
+    }
   }
 }
 .input {
@@ -618,7 +637,7 @@ a {
 }
 .mailing {
   padding: 20px 0;
-  background-color: $colorK;
+  background-color: $colorL;
   &__container {
     align-items: center;
   }
@@ -638,6 +657,7 @@ a {
     text-transform: uppercase;
     line-height: 1.1;
     color: #000;
+    font-size: 28px;
   }
   .s-item-form {
     width: 370px;
@@ -655,6 +675,45 @@ a {
   .button {
     border-radius: 0 4px 4px 0;
     flex-shrink: 0;
+  }
+}
+.calc-count-block {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  .input {
+    border-radius: 0;
+    line-height: 48px;
+    flex: 1 1 100%;
+    padding: 0;
+    text-align: center;
+  }
+  &__btn {
+    display: block;
+    line-height: 48px;
+    text-decoration: none;
+    font-size: 26px;
+    background-color: $colorK;
+    border-color: $colorH;
+    border-style: solid;
+    width: 50px;
+    flex: 1 1 100%;
+    &:first-child {
+      border-radius: 4px 0 0 4px;
+      border-width: 1px 0 1px 1px;
+    }
+    &:last-child {
+      border-radius: 0 4px 4px 0;
+      border-width: 1px 1px 1px 0;
+
+    }
+    &.touch,
+    &.hover {
+      background-color: $colorH;
+    }
+    &.focus {
+      background-color: $colorB8;
+    }
   }
 }
 
@@ -695,14 +754,36 @@ a {
       }
     }
   }
+  .mailing {
+    &__title {
+      font-size: 24px;
+    }
+  }
 }
 @media all and(max-width: 576px) {
+  .calc-count-block {
+    &__btn {
+      line-height: 43px;
+      height: 45px;
+      width: 45px;
+    }
+    .input {
+      line-height: 43px;
+    }
+  }
   .button {
     &_style1 {
       line-height: 45px;
       height: 45px;
       i {
         line-height: 45px;
+      }
+    }
+    &_style2 {
+      &.size2 {
+        height: 45px;
+        line-height: 45px;
+        font-size: 18px;
       }
     }
   }
@@ -712,6 +793,9 @@ a {
     }
     &__text .bg {
       margin-right: 20px;
+    }
+    &__title {
+      font-size: 18px;
     }
   }
   .pagination {

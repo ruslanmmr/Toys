@@ -5,25 +5,113 @@ block content
     .container
       main.main
         section.section.ctlg-item-card
-          h1.ctlg-item-card__title L.O.L. Surprise 556220 Кукла с волосами
+          h1.ctlg-item-card__title.t-size-30 L.O.L. Surprise 556220 Кукла с волосами
           .ctlg-item-card__container.row
-            .col-xl-7
+            .col-xl-7.col-sm-12
               .ctlg-item-card__slider
+                .card-labels
+                  span.card-labels__label.style1.size2 новинка
+                  span.card-labels__label.style2.size2 АКЦИЯ
+                .card-discont.size2
+                  svg.icon
+                    use(xlink:href="img/icons/icons.svg#discount")
+                  span -15%
                 //главный слайдер
                 .slider.js-custom-slider.m-item-slider
+                  .m-item-slider__slide
+                    iframe(src='https://www.youtube.com/embed/j30jUQjzysg', frameborder='0', allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture', allowfullscreen='')
+                  .m-item-slider__slide.cover-box.cover-box_contain
+                    img(data-src="img/Layer 348.png" alt="image").lazy
+                  .m-item-slider__slide.cover-box.cover-box_contain
+                    img(data-src="img/Layer 1187 copy.png" alt="image").lazy
+                  .m-item-slider__slide.cover-box.cover-box_contain
+                    img(data-src="img/Layer 348.png" alt="image").lazy
+                  .m-item-slider__slide.cover-box.cover-box_contain
+                    img(data-src="img/Layer 1187 copy.png" alt="image").lazy
+                  .m-item-slider__slide.cover-box.cover-box_contain
+                    img(data-src="img/Layer 348.png" alt="image").lazy
                   .m-item-slider__slide.cover-box.cover-box_contain
                     img(data-src="img/Layer 1187 copy.png" alt="image").lazy
                   .m-item-slider__slide.cover-box.cover-box_contain
                     img(data-src="img/Layer 348.png" alt="image").lazy
                 //навигационный слайдер
                 .slider.js-custom-slider.m-nav-slider
-                  .m-nav-slider__slide.cover-box.cover-box_contain
-                    img(data-src="img/Layer 1187 copy.png" alt="image").lazy
-                  .m-nav-slider__slide.cover-box.cover-box_contain
-                    img(data-src="img/Layer 348.png" alt="image").lazy
-            .col-xl-5
-              .ctlg-item-card__description
+                  .m-nav-slider__slide
+                    .cover-box.cover-box_contain
+                      img(data-src="img/Layer 1202.png" alt="image").lazy
+                  .m-nav-slider__slide
+                    .cover-box.cover-box_contain
+                      img(data-src="img/Layer 348.png" alt="image").lazy
+                  .m-nav-slider__slide
+                    .cover-box.cover-box_contain
+                      img(data-src="img/Layer 1187 copy.png" alt="image").lazy
+                  .m-nav-slider__slide
+                    .cover-box.cover-box_contain
+                      img(data-src="img/Layer 348.png" alt="image").lazy
+                  .m-nav-slider__slide
+                    .cover-box.cover-box_contain
+                      img(data-src="img/Layer 1187 copy.png" alt="image").lazy
+                  .m-nav-slider__slide
+                    .cover-box.cover-box_contain
+                      img(data-src="img/Layer 348.png" alt="image").lazy
+                  .m-nav-slider__slide
+                    .cover-box.cover-box_contain
+                      img(data-src="img/Layer 1187 copy.png" alt="image").lazy
+                  .m-nav-slider__slide
+                    .cover-box.cover-box_contain
+                      img(data-src="img/Layer 348.png" alt="image").lazy
+            .col-xl-5.col-sm-12
+              .ctlg-i-description
+                .ctlg-i-description__section
+                  span.ctlg-i-description__art Код товара: 
+                    strong 559771
+                .ctlg-i-description__section
+                  .ctlg-i-description__price
+                    span.old.t-size-20 12 699 ₽
+                    span.current.t-size-36 10 999 ₽ 
+                    span.discount.t-size-20 Выгода: 2 000 ₽
+                  form(action="").ctlg-i-description__order-form.row.row_compact
+                    .col-xl-auto.col-md-6.col-6
+                      .calc-count-block
+                        a(href="javascript:void(0)").calc-count-block__btn.js-animated.js-minus –
+                        input(type="text" value='1').input.input_style1
+                        a(href="javascript:void(0)").calc-count-block__btn.js-animated.js-plus +
+                    .col-xl-auto.col-md-6.col-6
+                      button.button.button_style2.color1.size2.js-animated В корзину
+                .ctlg-i-description__section
+                  h5.ctlg-i-description__title.t-size-24 Характеристики
+                  ul.ctlg-i-description__list
+                    li Страна изготовитель: 
+                      span Китай
+                    li Бренд: 
+                      a(href="#").link.js-animated L.O.L.
+                    li Бренд: 
+                      a(href="#").link.js-animated 4-5 лет
+                      |, 
+                      a(href="#").link.js-animated 6-8 лет
+                    li Пол: 
+                      a(href="#").link.js-animated для девочек
+                    li Размер упаковки: 
+                      span 0.670 х 0.230 х 0.360
+                    li Артикул:
+                      span 556220
+                    li 
+                      a(href="#").link.js-animated Посмотреть все товары раздела Игровые наборы
+            .col-12
+              h5.t-size-24.mb-10 Описание
+              .text
+                p Ух ты! Теперь у куколок ЛОЛ мягкие разноцветные волосы! Это так здорово!
+                p Куколка новой серии прячется не в классическом шаре, а в капсуле, а вместе с ней вы найдете внутри сразу 15 сюрпризов! Напоминаем, что ЛОЛ – это игрушка-сюрприз, и вам может попасться один из нескольких персонажей серии: узнать заранее невозможно. Это так интригует!
+                p Открыв первый слой упаковки, вы найдете яркие наклейки для волос в виде заколочек, секретное послание, волшебное зеркальце и, конечно же, саму капсулу. У капсулы есть прозрачные дверцы, через которые видна памятка коллекционера. Давайте поскорее откроем и посмотрим, что за ней внутри! А там прячется куколка с настоящими волосами, две бигуди с сюрпризами и пакетики с сюрпризами! А именно: с одеждой, обувью, аксессуарами, бутылочкой и расчесочкой.
+                h2 h2 Пример списка
+                ul
+                  li Ух ты! Теперь у куколок ЛОЛ мягкие разноцветные волосы! Это так здорово!
+                  li Куколка новой серии прячется не в классическом шаре, а в капсуле, а вместе с ней вы найдете внутри сразу 15 сюрпризов! 
+                  li Напоминаем, что ЛОЛ – это игрушка-сюрприз, и вам может попасться один из нескольких персонажей серии!
+                h3 h3 Заголовок
+                p Открыв первый слой упаковки, вы найдете яркие наклейки для волос в виде заколочек, секретное послание, волшебное зеркальце и, конечно же, саму капсулу. У капсулы есть прозрачные дверцы, через которые видна памятка коллекционера. Давайте поскорее откроем и посмотрим, что за ней внутри! А там прячется куколка с настоящими волосами, две бигуди с сюрпризами и пакетики с сюрпризами! А именно: с одеждой, обувью, аксессуарами, бутылочкой и расчесочкой.
 
+              
         include blocks/ctlg-cards
         section.section
           .section__head

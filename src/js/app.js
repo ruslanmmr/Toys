@@ -586,10 +586,27 @@ let slider = {
           arrows: false,
           rows: 0,
           fade: true,
-          //asNavFor: '.m-nav-slider'
+          asNavFor: '.m-nav-slider'
         });
       }
-      
+      if($(this).is('.m-nav-slider')) {
+        $(this).slick({
+          slidesToShow: 7,
+          slidesToScroll: 1,
+          asNavFor: '.m-item-slider',
+          dots: false,
+          rows: 0,
+          focusOnSelect: true,
+          responsive: [{
+            breakpoint: 576,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 1
+            }
+          }]
+        });
+      }
+    
     });
 
   }
