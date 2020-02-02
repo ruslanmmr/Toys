@@ -119,6 +119,7 @@ import device from 'current-device';
 import Scrollbar from 'smooth-scrollbar';
 import slick from "slick-carousel";
 window.Lazy = require('jquery-lazy');
+import flatpickr from "flatpickr";
 import "inputmask/lib/extensions/inputmask.numeric.extensions";
 import Inputmask from "inputmask/lib/extensions/inputmask.date.extensions";
 
@@ -131,8 +132,9 @@ $(document).ready(function() {
   catalogue.init();
   $scrollArea.init();
   images.init();
-  slider.init()
-  filter.init()
+  slider.init();
+  filter.init();
+  picker.init();
 
   if($('html').hasClass('desktop')) {
     //code
@@ -184,10 +186,13 @@ let animatedElements = {
   }
 }
 let $checkbox = {
-  element: $('.checkbox'),
+  element: $('.checkbox, .radio'),
   init: function() {
     $checkbox.check();
     $(document).on('click', '.checkbox', function() {
+      $checkbox.check();
+    })
+    $(document).on('click', '.radio', function() {
       $checkbox.check();
     })
   },
@@ -609,5 +614,18 @@ let slider = {
     
     });
 
+  }
+}
+let tabs = {
+  init: function() {
+
+  }
+}
+//date/time
+let picker = {
+  init: function() {
+    flatpickr(".js-picker-date input", {
+      minDate: "today"
+    });
   }
 }

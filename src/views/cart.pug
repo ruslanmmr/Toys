@@ -1,0 +1,92 @@
+extends layout/layout
+block content
+  include blocks/breadcrumbs
+  .page-content
+    .container
+      main.main
+        section.section
+          .section__head
+            h5.section__title.t-size-30 Ваша корзина
+          .section__content
+        section.section
+          .section__head
+            h5.section__title.t-size-30 Контактные данные
+          .section__content
+        section.section
+          .section__head
+            h5.section__title.t-size-30 Доставка
+          .section__content.tab-block
+            .tab-block__head.mb-25
+              .row.row_compact
+                .col-xl-auto
+                  a(href="javascript:void(0)" data-tab='1').button.button_style3.js-animated.ttu.tab-trigger.active КУРЬЕРОМ
+                .col-xl-auto
+                  a(href="javascript:void(0)" data-tab='2').button.button_style3.js-animated.ttu.tab-trigger самовывоз
+            .tab-block__content
+              .tab-item
+                .row.row_b-compact
+                  .col-xl-4.col-md-6.col-12
+                    .input.bordered.mb-10
+                      input(type="text" placeholder="Город")
+                    .input.bordered.mb-10.js-picker-date
+                      input(type="text" placeholder="Дата доставки")
+                      i.far.fa-calendar-alt
+                  .col-xl-4.col-md-6.col-12
+                    .input.bordered.mb-10
+                      input(type="text" placeholder="Улица")
+                    .input.bordered.mb-10.js-picker-time
+                      input(type="text" placeholder="Время доставки")
+                      i.far.fa-clock
+                  .col-xl-4.col-md-12
+                    .row.row_compact
+                      .col-xl-4
+                        .input.bordered
+                          input(type="text" placeholder="Дом")
+                      .col-xl-4
+                        .input.bordered
+                          input(type="text" placeholder="Корпус")
+                      .col-xl-4
+                        .input.bordered
+                          input(type="text" placeholder="Квартира")
+              
+
+
+        section.section
+          .section__head
+            h5.section__title.t-size-30 Оплата
+          .section__content
+            .mb-15
+              label.radio.js-animated
+                | Наличными при получении
+                input(type="radio" name='1')
+            .mb-15
+              label.radio.js-animated
+                | Картой при получении
+                input(type="radio" name='1')
+        section.section
+          .section__head
+            h5.section__title.t-size-30 Подтверждение закза
+          .section__content
+            .order-f-block
+              .order-f-block__section
+                table
+                  tr
+                    th Товары 2
+                    th 30 999 ₽
+                  tr
+                    th Доставка
+                    th Самовывоз
+                  tr
+                    th Всего к оплате:
+                    th.t-size-36.fwb.order-f-block__price 30 999 ₽
+              .order-f-block__section
+                button.button.button_style2.color1.size2.js-animated ОФОРМИТЬ ЗАКАЗ
+                span.color-gray1.order-f-block__agreement.t-size-14 Согласен с условиями 
+                  a(href="#").js-animated договора купли-продажи 
+                  | и на обработку 
+                  a(href="#").js-animated персональных данных
+
+
+            
+        
+  include blocks/mailing

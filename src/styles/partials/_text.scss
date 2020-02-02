@@ -4,10 +4,14 @@ h1, h2, h3, h4, h5, h6 {
   color: #000;
   line-height: 1.1;
 }
-
+span, p, a, li {
+  line-height: 1.5;
+}
+a {
+  display: inline-block;
+}
 p {
   margin: 0;
-  line-height: 1.5;
   color: $colorE;
   &:not(:last-child) {
     margin-bottom: 15px;
@@ -68,11 +72,20 @@ p {
   display: block;
   text-align: center;
 }
+.color-gray1 {
+  color: $colorI;
+}
+.color-gray2 {
+  color: $colorE;
+}
 .fwb {
-  font-weight: 700;
+  font-weight: 700 !important;
 }
 .weight-500 {
   font-weight: 500;
+}
+.ttu {
+  text-transform: uppercase;
 }
 .t-size-72 {
   font-size: 72px;

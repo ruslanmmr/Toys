@@ -43,7 +43,9 @@
               <div class="logo col-xl-auto"><a class="logo__link js-animated" href="/"><img src="img/logos/logo.svg" alt="logo"></a></div>
               <div class="search col-xl col-12">
                 <form class="search__form" action="#">
-                  <input class="search__input input input_style1" placeholder="Что будем искать?">
+                  <div class="input input_style1">
+                    <input type="text" placeholder="Что будем искать?">
+                  </div>
                   <button class="button search__btn js-animated"><i class="fas fa-search"></i></button>
                 </form>
               </div>
@@ -815,11 +817,13 @@
                     <div class="ctlg-i-description">
                       <div class="ctlg-i-description__section"><span class="ctlg-i-description__art">Код товара: <strong>559771</strong></span></div>
                       <div class="ctlg-i-description__section">
-                        <div class="ctlg-i-description__price"><span class="old t-size-20">12 699 ₽</span><span class="current t-size-36">10 999 ₽ </span><span class="discount t-size-20">Выгода: 2 000 ₽</span></div>
+                        <div class="ctlg-i-description__price"><span class="old t-size-20">12 699 ₽</span><span class="current t-size-36">10 999 ₽ </span><span class="discount t-size-18">Выгода: 2 000 ₽</span></div>
                         <form class="ctlg-i-description__order-form row row_compact" action="">
                           <div class="col-xl-auto col-md-6 col-6">
                             <div class="calc-count-block"><a class="calc-count-block__btn js-animated js-minus" href="javascript:void(0)">–</a>
-                              <input class="input input_style1" type="text" value="1"><a class="calc-count-block__btn js-animated js-plus" href="javascript:void(0)">+</a>
+                              <div class="input bordered">
+                                <input type="text" value="1">
+                              </div><a class="calc-count-block__btn js-animated js-plus" href="javascript:void(0)">+</a>
                             </div>
                           </div>
                           <div class="col-xl-auto col-md-6 col-6">
@@ -842,7 +846,7 @@
                     </div>
                   </div>
                   <div class="col-12">
-                    <h5 class="t-size-24 mb-10">Описание</h5>
+                    <h5 class="t-size-24 mb-15">Описание</h5>
                     <div class="text">
                       <p>Ух ты! Теперь у куколок ЛОЛ мягкие разноцветные волосы! Это так здорово!</p>
                       <p>Куколка новой серии прячется не в классическом шаре, а в капсуле, а вместе с ней вы найдете внутри сразу 15 сюрпризов! Напоминаем, что ЛОЛ – это игрушка-сюрприз, и вам может попасться один из нескольких персонажей серии: узнать заранее невозможно. Это так интригует!</p>
@@ -854,7 +858,7 @@
                         <li>Напоминаем, что ЛОЛ – это игрушка-сюрприз, и вам может попасться один из нескольких персонажей серии!</li>
                       </ul>
                       <h3>h3 Заголовок</h3>
-                      <p>Открыв первый слой упаковки, вы найдете яркие наклейки для волос в виде заколочек, секретное послание, волшебное зеркальце и, конечно же, саму капсулу. У капсулы есть прозрачные дверцы, через которые видна памятка коллекционера. Давайте поскорее откроем и посмотрим, что за ней внутри! А там прячется куколка с настоящими волосами, две бигуди с сюрпризами и пакетики с сюрпризами! А именно: с одеждой, обувью, аксессуарами, бутылочкой и расчесочкой.</p>
+                      <p>Открыв первый слой упаковки, вы найдете яркие наклейки для волос в виде заколочек, секретное послание, волшебное зеркальце и, конечно же, саму капсулу. У капсулы есть прозрачные дверцы, через которые видна памятка коллекционера. Давайте поскорее откроем и посмотрим, что за ней внутри! А там прячется куколка с настоящими волосами, две бигуди с сюрпризами и пакетики с сюрпризами! А именно: с одеждой, обувью, аксессуарами, бутылочкой и расчесочкой.      </p>
                     </div>
                   </div>
                 </div>
@@ -1177,7 +1181,9 @@
               <div class="mailing__form col-xl-auto col-md-12">
                 <form class="s-item-form" action="#">
                   <div class="s-item-form__container">
-                    <input class="input input_style2" type="email" placeholder="Ваш Email" requied>
+                    <div class="input">
+                      <input type="email" placeholder="Ваш Email" requied>
+                    </div>
                     <button class="button button_style2 color2 js-animated">Подписаться</button>
                   </div>
                 </form>
