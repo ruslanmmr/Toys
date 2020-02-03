@@ -120,6 +120,7 @@ import Scrollbar from 'smooth-scrollbar';
 import slick from "slick-carousel";
 window.Lazy = require('jquery-lazy');
 import flatpickr from "flatpickr";
+import { Russian } from "flatpickr/dist/l10n/ru.js"
 import "inputmask/lib/extensions/inputmask.numeric.extensions";
 import Inputmask from "inputmask/lib/extensions/inputmask.date.extensions";
 
@@ -625,7 +626,8 @@ let tabs = {
 let picker = {
   init: function() {
     flatpickr(".js-picker-date input", {
-      minDate: "today"
+      minDate: "today",
+      "locale": Russian
     });
   }
 }
