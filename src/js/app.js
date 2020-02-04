@@ -627,7 +627,8 @@ let picker = {
   init: function() {
     flatpickr(".js-picker-date input", {
       minDate: "today",
-      "locale": Russian
+      "locale": Russian,
+      disableMobile: "true"
     });
   }
 }

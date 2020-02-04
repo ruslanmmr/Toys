@@ -888,21 +888,25 @@ a {
     border-radius: 4px;
     padding: 10px 5px 5px 10px;
     width: auto;
-    .dayContainer {
-      min-width: 1px;
-      max-width: 100%;
-      width: 245px;
-      justify-content: flex-start;
-    }
     span.flatpickr-weekday {
-      width: 40px;
+      margin-right: 5px;
       font-size: 14px;
       font-weight: bold;
     }
   }
   &-weekdays {
     height: auto;
-    margin-bottom: 10px;
+    margin: 0 0 15px 0;
+    width: 245px;
+  }
+  &-days {
+    width: 245px;
+    .dayContainer {
+      min-width: 1px;
+      max-width: 100%;
+      width: 100%;
+      justify-content: flex-start;
+    }
   }
   &-day {
     width: 30px;
@@ -921,9 +925,14 @@ a {
     }
   }
 }
-.flatpickr-day.inRange, .flatpickr-day.nextMonthDay.inRange, .flatpickr-day.nextMonthDay.today.inRange, .flatpickr-day.nextMonthDay:focus, .flatpickr-day.nextMonthDay:hover, .flatpickr-day.prevMonthDay.inRange, .flatpickr-day.prevMonthDay.today.inRange, .flatpickr-day.prevMonthDay:focus, .flatpickr-day.prevMonthDay:hover, .flatpickr-day.today.inRange, .flatpickr-day:focus, .flatpickr-day:hover {
+.flatpickr-day.inRange, .flatpickr-day.nextMonthDay.inRange, .flatpickr-day.nextMonthDay.today.inRange, .flatpickr-day.nextMonthDay:focus, .flatpickr-day.nextMonthDay:hover, .flatpickr-day.prevMonthDay.inRange, .flatpickr-day.prevMonthDay.today.inRange, .flatpickr-day.prevMonthDay:focus, .flatpickr-day.prevMonthDay:hover, .flatpickr-day.today.inRange, .flatpickr-day:focus, .flatpickr-day:hover, .flatpickr-day.today:focus, .flatpickr-day.today:hover {
   background-color: transparent;
   border-color: transparent;
+  color: #000;
+}
+.flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover {
+  color: $colorI;
+  pointer-events: none;
 }
 
 
