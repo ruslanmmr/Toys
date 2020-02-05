@@ -41,6 +41,7 @@
 		"jquery-lazy": "^1.7.10",
 		"scroll-lock": "^2.1.2",
 		"slick-carousel": "^1.8.1",
-		"smooth-scrollbar": "^8.4.0"
+		"smooth-scrollbar": "^8.4.0",
+		"tippy.js": "^5.2.0"
 	}
 }

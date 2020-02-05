@@ -192,7 +192,8 @@ a {
 }
 .input {
   position: relative;
-  input {
+  input,
+  textarea {
     width: 100%;
     display: block;
     outline: none;
@@ -202,12 +203,8 @@ a {
     position: relative;
     font-size: 14px;
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     border-radius: 4px;
     border: none;
-    line-height: 40px;
-    padding: 0 15px;
     background-color: #fff;
     &::placeholder {
       transition: $trs1;
@@ -219,12 +216,25 @@ a {
       }
     }
   }
+  input {
+    line-height: 40px;
+    padding: 0 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  textarea {
+    line-height: 20px;
+    padding: 10px;
+    resize: vertical;
+    min-height: 90px;
+  }
   i {
     position: absolute;
     //font-size: 14px;
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
+    pointer-events: none;
   }
   &.js-picker-date,
   &.js-picker-time {
@@ -236,6 +246,11 @@ a {
     input {
       border: 1px solid $colorH;
       line-height: 38px;
+    }
+    textarea {
+      border: 1px solid $colorH;
+      line-height: 20px;
+      padding: 9px 10px ;
     }
   }
 }
@@ -270,9 +285,9 @@ a {
     z-index: 1;
   }
 }
-
 .tab-block {
   &__head {
+    overflow: hidden;
     .button {
       padding: 0 25px;
     }
@@ -285,10 +300,10 @@ a {
   display: block;
   cursor: pointer;
   transition: $trs1;
-  min-height: 16px;
-  font-size: 16px;
+  min-height: 20px;
+  font-size: 16px !important;
+  line-height: 20px;
   user-select: none;
-  line-height: 1;
   color: $colorE;
   i {
     box-sizing: border-box;
@@ -302,7 +317,7 @@ a {
     background-color: transparent;
     position: absolute;
     left: 0;
-    top: 0;
+    top: 2px;
     z-index: 2;
     font-size: 10px;
     transition: inherit;
@@ -341,11 +356,11 @@ a {
 .radio {
   position: relative;
   padding: 0 0 0 25px;
-  display: inline-block;
+  display: block;
   cursor: pointer;
   transition: $trs1;
   user-select: none;
-  line-height: 1;
+  line-height: 20px;
   color: $colorE;
   &:before {
     box-sizing: border-box;
@@ -358,7 +373,7 @@ a {
     border-radius: 100%;
     position: absolute;
     left: 0;
-    top: 0;
+    top: 2px;
     transition: $trs1;
     z-index: 2;
   }
@@ -372,7 +387,7 @@ a {
     position: absolute;
     z-index: 3;
     left: 5px;
-    top: 5px;
+    top: 7px;
     opacity: 0;
     transition: $trs1;
   }
@@ -474,7 +489,6 @@ a {
 .scroll-container {
   overflow: hidden;
   position: relative;
-  display: flex !important;
   width: 100%;
   &.shadow {
     &:before,
@@ -517,22 +531,30 @@ a {
         background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 2%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0.7) 51%, rgba(255,255,255,0.5) 76%, rgba(255,255,255,0) 100%);
       }
     }
+    &_style4 {
+      &:before {
+        background: linear-gradient(to bottom, rgba(248, 250, 252,1) 0%, rgba(248, 250, 252,1) 2%, rgba(248, 250, 252,0.9) 25%, rgba(248, 250, 252,0.7) 51%, rgba(248, 250, 252,0.5) 76%, rgba(248, 250, 252,0) 100%);
+      }
+      &:after {
+        background: linear-gradient(to top, rgba(248, 250, 252,1) 0%, rgba(248, 250, 252,1) 2%, rgba(248, 250, 252,0.9) 25%, rgba(248, 250, 252,0.7) 51%, rgba(248, 250, 252,0.5) 76%, rgba(248, 250, 252,0) 100%);
+      }
+    }
   }
   .scroll-content {
     position: relative;
     z-index: 1;
-    flex: 1 1 100%;
+  }
+  .scroll-child {
+    overflow: hidden;
   }
   .scrollbar-track-x {
     display: none !important;
   }
   .scrollbar-track-y {
     width: 20px;
-    flex-shrink: 0;
-    height: auto;
+    height: 100%;
     z-index: 3;
     background-color: transparent;
-    position: relative;
     &:after {
       content: '';
       display: block;
@@ -671,6 +693,7 @@ a {
     padding: 0;
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
   }
   &__item {
     color: $colorI;
@@ -838,34 +861,6 @@ a {
   border-radius: 8px;
   background-color: #ecf5fc;
   padding: 15px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  table {
-    color: #000;
-    font-weight: normal;
-    text-align: left;
-    margin-right: 30px;
-    tr {
-      &:not(:last-child) {
-        th {
-          padding-bottom: 5px;
-        }
-      }
-    }
-    th {
-      font-weight: normal;
-      line-height: 1;
-      vertical-align: bottom;
-      &:first-child {
-        text-transform: uppercase;
-        padding-right: 90px;
-      }
-      &:last-child {
-        white-space: nowrap;
-      }
-    }
-  }
   &__section {
     &:last-child {
       display: flex;
@@ -873,20 +868,149 @@ a {
       max-width: 580px;
     }
   }
-  &__price {
-    line-height: 0.8 !important;
-  }
   .button {
     padding: 0 20px;
     margin: 0 20px 0 0;
   }
 }
-//
+//flatpickr
+.flatpickr-day.inRange, .flatpickr-day.nextMonthDay.inRange, .flatpickr-day.nextMonthDay.today.inRange, .flatpickr-day.nextMonthDay:focus, .flatpickr-day.nextMonthDay:hover, .flatpickr-day.prevMonthDay.inRange, .flatpickr-day.prevMonthDay.today.inRange, .flatpickr-day.prevMonthDay:focus, .flatpickr-day.prevMonthDay:hover, .flatpickr-day.today.inRange, .flatpickr-day:focus, .flatpickr-day:hover, .flatpickr-day.today:focus, .flatpickr-day.today:hover {
+  background-color: transparent;
+  border-color: transparent;
+  color: #000;
+}
+.flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover {
+  color: $colorI;
+  pointer-events: none;
+}
 .flatpickr {
+  &-innerContainer {
+    padding: 0 5px 5px 10px;
+  }
+  &-months {
+    margin: 0;
+    padding: 10px;
+    width: 260px;
+    .flatpickr-month {
+      height: auto;
+      flex: 1 1 100%;
+      display: flex;
+    }
+    .flatpickr-current-month {
+      position: relative;
+      height: auto;
+      left: 0;
+      padding: 0;
+      font-size: 16px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      .numInputWrapper {
+        width: 55px;
+        padding: 0 10px;
+        border-radius: 4px;
+        margin-left: 10px;
+        span {
+          opacity: 1;
+          width: 10px;
+          height: 10px;
+          border: 0;
+          padding: 0;
+          line-height: 15px;
+          right: 5px;
+          display: none;
+        }
+        .arrowUp {
+          top: 4px;
+        }
+        .arrowDown {
+          bottom: 6px;
+          top: auto;
+        }
+        &:hover {
+          background-color: transparent;
+        }
+        &.touch,
+        &.hover {
+          background-color: $colorB;
+          color: #fff;
+        }
+        input.cur-year {
+          padding: 0;
+          line-height: 30px;
+          width: 100%;
+        }
+      }
+      .flatpickr-monthDropdown-months {
+        transform: translateY(-1px);
+        padding: 0 10px;
+        border-radius: 4px;
+        transition: $trs1;
+        margin: 0;
+        &:hover {
+          background-color: transparent;
+        }
+        &.hover,
+        &.touch {
+          background-color: $colorB;
+          color: #fff;
+        }
+      }
+    }
+    .flatpickr-prev-month,
+    .flatpickr-next-month {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      flex-shrink: 0;
+      color: #000;
+      border-radius: 4px;
+      svg {
+        display: none;
+      }
+      &:hover {
+        color: #000;
+      }
+      &:before {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 12px;
+        pointer-events: none;
+      }
+      &.flatpickr-disabled {
+        display: block;
+        pointer-events: none;
+        color: $colorI;
+      }
+      &.hover,
+      &.touch {
+        color: #fff;
+        background-color: $colorB;
+      }
+      &.focus {
+        color: #fff;
+        background-color: $colorB2;
+      }
+    }
+    .flatpickr-next-month {
+      &:before {
+        content: "\f054";
+      }
+    }
+    .flatpickr-prev-month {
+      &:before {
+        content: "\f053";
+      }
+    }
+  }
   &-calendar {
     box-shadow: $shadow1;
-    border-radius: 4px;
-    padding: 10px 5px 5px 10px;
+    border-radius: 8px;
     width: auto;
     span.flatpickr-weekday {
       margin-right: 5px;
@@ -898,6 +1022,7 @@ a {
     height: auto;
     margin: 0 0 15px 0;
     width: 245px;
+    user-select: none;
   }
   &-days {
     width: 245px;
@@ -920,19 +1045,295 @@ a {
     border: none;
     transition: $trs1;
     color: #000;
+    user-select: none;
     &.selected {
       background-color: $colorB;
+      color: #fff;
+      pointer-events: none;
+    }
+    &.touch,
+    &.hover {
+      background-color: $colorB !important;
+      color: #fff !important;
     }
   }
 }
-.flatpickr-day.inRange, .flatpickr-day.nextMonthDay.inRange, .flatpickr-day.nextMonthDay.today.inRange, .flatpickr-day.nextMonthDay:focus, .flatpickr-day.nextMonthDay:hover, .flatpickr-day.prevMonthDay.inRange, .flatpickr-day.prevMonthDay.today.inRange, .flatpickr-day.prevMonthDay:focus, .flatpickr-day.prevMonthDay:hover, .flatpickr-day.today.inRange, .flatpickr-day:focus, .flatpickr-day:hover, .flatpickr-day.today:focus, .flatpickr-day.today:hover {
-  background-color: transparent;
-  border-color: transparent;
-  color: #000;
+.flatpickr-time {
+  border-top: none !important;
+  padding: 5px;
+  max-height: 1000px;
+  display: flex;
+  align-items: center;
+  .flatpickr-time-separator {
+    width: auto;
+  }
+  input {
+    width: 40px;
+    height: 30px;
+    background: transparent !important;
+    order: 2;
+  }
+  .numInputWrapper {
+    background: transparent !important;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: auto;
+    span {
+      opacity: 1;
+      width: 40px;
+      height: 30px;
+      position: relative;
+      flex-shrink: 0;
+      color: #000;
+      padding: 0;
+      border: none;
+      transition: $trs1;
+      border-radius: 4px;
+      &:after {
+        border: none;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        font-size: 12px;
+        pointer-events: none;
+      }
+      &:hover {
+        background-color: transparent;
+      }
+      &.hover,
+      &.touch {
+        color: #fff;
+        background-color: $colorB;
+      }
+      &.focus {
+        color: #fff;
+        background-color: $colorB2;
+      }
+    }
+    .arrowUp {
+      order: 1;
+      &:after {
+        content: '\f077';
+      }
+    }
+    .arrowDown {
+      order: 3;
+      top: auto;
+      &:after {
+        content: '\f078';
+      }
+    }
+  }
 }
-.flatpickr-day.flatpickr-disabled, .flatpickr-day.flatpickr-disabled:hover {
-  color: $colorI;
-  pointer-events: none;
+
+.tab-item {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  &.active {
+    transition: opacity $trs1;
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.dlvr-block {
+  .scroll-container {
+    height: 330px;
+    margin: -15px 0;
+  }
+  .scrollbar-track-y {
+    right: -6px;
+  }
+  .scroll-child {
+    padding: 15px 14px 15px 0;
+  }
+  .map {
+    background-color: #fff;
+    position: relative;
+    background: rgba(0,0,0,.2);
+    height: 300px;
+    border-radius: 4px;
+    overflow: hidden;
+    &__item {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
+}
+.cart-list {
+  .s-item-form {
+    width: 100%;
+    max-width: 360px;
+  }
+  &__head {
+    border-radius: 8px 8px 0 0;
+    background-color: $colorF;
+    display: flex;
+    padding: 0 40px 0 10px;
+    span {
+      line-height: 40px;
+      font-size: 14px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $colorE;
+      font-weight: 700;
+      &:first-child {
+        flex: 1 0 90px;
+        text-align: center;
+        margin-right: 10px;
+      }
+      &:nth-child(2) {
+        flex: 1 1 100%;
+        text-align: left;
+      }
+      &:nth-child(3) {
+        flex: 1 0 130px;
+        text-align: center;
+      }
+      &:nth-child(4) {
+        flex: 1 0 130px;
+        text-align: center;
+        margin-left: 25px;
+      }
+      &:nth-child(5) {
+        flex: 1 0 130px;
+        text-align: center;
+      }
+    }
+  }
+  &__bottom {
+    background-color: #fff;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid #000;
+    border-width: 0 1px 1px 1px;
+    border-style: solid;
+    border-color: $colorB6;
+    padding: 15px;
+    background-color: $colorF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__container {
+    border-color: $colorB6;
+    border-width: 0 1px 0 1px;
+    border-style: solid;
+  }
+  &-block {
+    padding: 10px 40px 10px 10px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid $colorB6;
+    position: relative;
+    &__title {
+      display: none;
+    }
+    &__del {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      color: $colorM;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+      &.hover, 
+      &.touch {
+        color: #000;
+      }
+      &.focus {
+        transform: translateY(-50%) scale(0.9);
+      }
+    }
+  }
+  &-photo {
+    flex: 0 0 90px;
+    margin-right: 10px;
+    &__image {
+      width: 90px;
+      transition: $trs1;
+      &:before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+      }
+      &.touch,
+      &.hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  &-text {
+    flex: 1 1 90%;
+  }
+  &-count {
+    flex: 0 0 130px;
+  }
+  &-discount {
+    flex: 0 0 130px;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 25px;
+    &__item {
+      line-height: 23px;
+    }
+  }
+  &-price {
+    flex: 1 0 130px;
+    text-align: center;
+    .old {
+      color: $colorD;
+      text-decoration: line-through;
+      display: block;
+    }
+    .current {
+      display: block;
+      font-weight: bold;
+      line-height: 1;
+    }
+  }
+}
+.price-total-table {
+  table {
+    font-weight: normal;
+    text-align: left;
+    tr {
+      &:not(:last-child) {
+        th {
+          padding-bottom: 5px;
+        }
+      }
+    }
+    th {
+      font-weight: normal;
+      line-height: 1;
+      vertical-align: bottom;
+      line-height: 20px;
+      &:first-child {
+        text-transform: uppercase;
+        padding-right: 25px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      &:last-child {
+        white-space: nowrap;
+      }
+    }
+  }
+  &__price {
+    line-height: 0.9 !important;
+    font-size: 36px;
+  }
 }
 
 
@@ -956,6 +1357,16 @@ a {
       }
     }
   }
+  .cart-list {
+    &__head  {
+      span:nth-child(4) {
+        margin: 0;
+      }
+    }
+    &-discount {
+      margin: 0;
+    }
+  }
 }
 @media all and(max-width: 768px) {
   .scroll-container {
@@ -975,6 +1386,62 @@ a {
   .mailing {
     &__title {
       font-size: 24px;
+    }
+  }
+  .dlvr-block__map {
+    .map {
+      margin-top: 0;
+    }
+  }
+  .cart-list {
+    .s-item-form {
+      max-width: 500px;
+      margin-bottom: 15px;
+    }
+    &-block {
+      flex-wrap: wrap;
+      padding: 15px;
+      &__del {
+        top: 0;
+        transform: translateY(0) !important;
+      }
+      &__item {
+        flex: 1 1 auto;
+      }
+    }
+    &__head {
+      display: none;
+    }
+    &__bottom {
+      flex-direction: column;
+    }
+    &__container {
+      border-width: 1px 1px 0 1px;
+      border-radius: 8px 8px 0 0;
+      overflow: hidden;
+    }
+    &-text {
+      width: calc(100% - 100px);
+      padding-right: 40px;
+    }
+    &-photo {
+      margin-bottom: 15px;
+    }
+    &-count {
+      max-width: 140px;
+    }
+    &-discount {
+      padding: 0 10px;
+      &__item {
+        display: none;
+        &.color-red {
+          display: block;
+        }
+      }
+    }
+    &-price {
+      text-align: right;
+      max-width: 130px;
     }
   }
 }
@@ -1004,6 +1471,58 @@ a {
       &:nth-child(5),
       &:nth-child(6) {
         display: none;
+      }
+    }
+  }
+  .tab-block {
+    &__head .button {
+      padding: 0 15px;
+    }
+  }
+  .cart-list {
+    &-photo {
+      margin-bottom: 0;
+    }
+    &-count {
+      max-width: 100%;
+      flex: 1 1 100%;
+      margin: 15px 0;
+    }
+    &-discount {
+      padding: 0;
+      text-align: left;
+    }
+    &-price {
+      max-width: 100%;
+      flex: 1 1 50%;
+    }
+  }
+  .price-total-table {
+    table {
+      th {
+        &:first-child {
+          padding-right: 15px;
+          font-size: 14px;
+        }
+      }
+    }
+    &__price {
+      font-size: 28px;
+    }
+  }
+  .order-f-block {
+    padding-bottom: 20px;
+    .price-total-table {
+      table {
+        margin: 0 auto;
+      }
+    }
+    &__section {
+      flex-direction: column;
+      text-align: center;
+      .button {
+        margin: 15px 0 0 0;
+        order: 2;
       }
     }
   }

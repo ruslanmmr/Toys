@@ -41,7 +41,7 @@
     font-size: 18px;
   }
   &__content {
-    max-height: 150px;
+    max-height: 170px;
   }
   .scroll-child {
     padding: 15px 20px;
@@ -73,14 +73,18 @@
     }
     &.active {
       .filter__content {
-        display: block;
+        position: relative;
+        visibility: visible;
+        opacity: 1;
       }
       .filter__container {
         box-shadow: $shadow1;
       }
     }
     &__content {
-      display: none;
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
     }
     &__head {
       display: none;

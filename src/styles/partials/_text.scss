@@ -72,11 +72,23 @@ p {
   display: block;
   text-align: center;
 }
+.t-a-left {
+  text-align: left;
+}
+.t-a-right {
+  text-align: right;
+}
 .color-gray1 {
   color: $colorI;
 }
 .color-gray2 {
   color: $colorE;
+}
+.color-red {
+  color: $colorD;
+}
+.color-black {
+  color: #000;
 }
 .fwb {
   font-weight: 700 !important;
@@ -107,6 +119,9 @@ p {
 }
 .t-size-24 {
   font-size: 24px;
+}
+.t-size-22 {
+  font-size: 22px;
 }
 .t-size-20 {
   font-size: 20px;

@@ -90,6 +90,10 @@ block content
             .pagination
               ul.pagination__list
                 li.pagination__item
+                  a(href="#").modern-page-previous.pagination__link.js-animated
+                    span Предыдущая
+                    i.fas.fa-chevron-left
+                li.pagination__item
                   a(href="#").pagination__link.js-animated.active 1
                 li.pagination__item
                   a(href="#").pagination__link.js-animated 2
@@ -104,8 +108,8 @@ block content
                 li.pagination__item
                   a(href="#").pagination__link.js-animated 30
                 li.pagination__item
-                  a(href="#").pagination__link.js-animated
-                    span Предыдущая
+                  a(href="#").modern-page-next.pagination__link.js-animated
+                    span Следующая
                     i.fas.fa-chevron-right
       section.section
         .section__head

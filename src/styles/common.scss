@@ -27,6 +27,7 @@ $colorI: #a6a6a6;
 $colorJ: #4b4b4b;
 $colorK: #f4f5f6;
 $colorL: #dbeeff;
+$colorM: #b3b3b3;
 
 
 //transition
@@ -45,7 +46,7 @@ body {
   min-width: 320px;
   line-height: 1;
   color: $colorG;
-  background-color: #f8fafc;
+  background-color: hsl(210, 40%, 98%);
   &.fixed {
     overflow: hidden;
   }
@@ -85,6 +86,7 @@ body {
   }
 }
 
+
 @media all and(max-width: 1210px) {
   
 }
@@ -102,6 +104,9 @@ body {
 
 @import '../../node_modules/flatpickr/dist/flatpickr.css';
 @import '../../node_modules//slick-carousel/slick/slick.scss';
+@import '../../node_modules/tippy.js/dist/tippy.css';
+@import '../../node_modules/tippy.js/themes/light-border.css';
+@import '../../node_modules/tippy.js/animations/scale-extreme.css';
 @import "./partials/text";
 @import "./partials/ui";
 @import "./partials/slider";

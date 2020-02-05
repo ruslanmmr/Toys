@@ -123,6 +123,7 @@ import flatpickr from "flatpickr";
 import { Russian } from "flatpickr/dist/l10n/ru.js"
 import "inputmask/lib/extensions/inputmask.numeric.extensions";
 import Inputmask from "inputmask/lib/extensions/inputmask.date.extensions";
+import tippy from 'tippy.js';
 
 $(document).ready(function() {
   $select.init();
@@ -136,6 +137,8 @@ $(document).ready(function() {
   slider.init();
   filter.init();
   picker.init();
+  tabs.init();
+  tooltips.init();
 
   if($('html').hasClass('desktop')) {
     //code
@@ -213,12 +216,24 @@ let $checkbox = {
     })
   }
 }
+let tooltips = {
+  el: '[data-tippy-content]',
+  init: function() {
+    tippy(tooltips.el, {
+      duration: 300,
+      theme: 'light-border',
+      animation: 'scale-extreme',
+      inertia: true
+    });
+  }
+}
 let $nav = {
   trigger: $('.nav-toggle'),
   el: $('.m-nav'),
   overlay: $('.overlay'),
   state: false,
   open: function() {
+    this.resize();
     this.state=true;
     this.el.addClass('active');
     this.trigger.addClass('active');
@@ -227,13 +242,20 @@ let $nav = {
     disablePageScroll();
   },
   close: function() {
+    this.resize();
     this.state=false;
     this.el.removeClass('active');
     this.trigger.removeClass('active');
     this.overlay.removeClass('active');
     enablePageScroll();
   },
+  resize: function() {
+    let w = $(window).height(),
+        p = $('#panel').length>0 ? $('#panel').height() : 0;
+    this.el.outerHeight(w - p)
+  },
   init: function() {
+    this.resize();
     $nav.trigger.on('click', function(event) {
       event.preventDefault();
       if($nav.state==false) {
@@ -247,6 +269,8 @@ let $nav = {
         if($nav.state==true) {
           $nav.close();
         }
+      } else {
+        $nav.resize();
       }
     })
     $nav.overlay.on('click touchstart', function() {
@@ -282,7 +306,8 @@ let $scrollArea = {
     for (let elm of this.elms) {
       let scroll = Scrollbar.init(elm, {
         damping: 0.1,
-        alwaysShowTracks: true
+        alwaysShowTracks: true,
+        thumbMinSize: 100
       });
       setInterval(()=>{
         //scroll.update();
@@ -290,6 +315,7 @@ let $scrollArea = {
     }
   }
 }
+//ctlg
 let catalogue = {
   $toggle: $('.nav__catalogue-trigger'),
   $navTrigger: $('.ctlg-nav-m__item'),
@@ -318,17 +344,27 @@ let catalogue = {
 
     //prevent for touch
     $('.ctlg-nav-m__link').on('click', function(event) {
-      if(!desktop()) {
+      if(!desktop() && $(this).siblings('.ctlg-nav-s').length>0) {
         event.preventDefault();
       }
     })
 
     this.$navTrigger.on('click mouseenter mouseleave', function(event) {
+      let $this = $(this);
+
+      function isLink() {
+        if($this.find('.ctlg-nav-s').length>0) {
+          return false;
+        } else {
+          return true;
+        }
+      }
+
       if(event.type=='mouseenter' && desktop()) {
         $(this).addClass('active');
       } else if(event.type=='mouseleave' && desktop()) {
         catalogue.$navTrigger.removeClass('active');
-      } else if(event.type=='click' && !desktop()) {
+      } else if(event.type=='click' && !desktop() && !isLink()) {
         if(!$(this).hasClass('active')) {
           catalogue.$navTrigger.not($(this)).removeClass('active');
           $(this).addClass('active');
@@ -339,16 +375,30 @@ let catalogue = {
 
     })
 
-    //open nav
+    //toggle nav
     $(document).on('click touchstart', function(event) {
-      if(event.type=='click' && $(event.target).is(catalogue.$toggle)) {
+      if(event.type=='click' && $(event.target).is(catalogue.$toggle) && !desktop()) {
         if(catalogue.state) {
           catalogue.close();
         } else {
           catalogue.open();
         }
       } 
-      else if((event.type=='touchstart' || event.type=='click') && !$(event.target).is(catalogue.$toggle) && $(event.target).closest(catalogue.$nav).length==0) {
+      else if(event.type=='touchstart' && !$(event.target).is(catalogue.$toggle) && $(event.target).closest(catalogue.$nav).length==0) {
+        catalogue.close();
+      }
+    })
+    catalogue.$toggle.on('mouseenter mouseleave', function(event) {
+      if(desktop() && event.type=='mouseenter') {
+        catalogue.open();
+      } else if(desktop() && event.type=='mouseleave') {
+        catalogue.close();
+      }
+    })
+    $parent.on('mouseenter mouseleave', function(event) {
+      if(desktop() && event.type=='mouseenter') {
+        catalogue.open();
+      } else if(desktop() && event.type=='mouseleave') {
         catalogue.close();
       }
     })
@@ -618,17 +668,73 @@ let slider = {
   }
 }
 let tabs = {
+  block: $('.tab-block'),
   init: function() {
+    this.block.each(function() {
 
+      let $parent = $(this),
+          $trigger = $parent.find('.tab-trigger'),
+          $tab = $parent.find('.tab-item'),
+          index = $parent.find('.tab-item.active').length>0 ? $parent.find('.tab-item.active').index() : 0;
+
+      function changeTab() {
+        $tab.removeClass('active').eq(index).addClass('active');
+        $trigger.removeClass('active').eq(index).addClass('active'); 
+      }
+      changeTab();
+
+      $trigger.on('click', function() {
+        index = $(this).data('tab');
+        changeTab();
+      })
+
+    })
   }
 }
 //date/time
 let picker = {
   init: function() {
-    flatpickr(".js-picker-date input", {
+    let $date = $('.js-picker-date'),
+        $time = $('.js-picker-time');
+
+    function addDateEv() {
+      $('.flatpickr-monthDropdown-months, .flatpickr-next-month, .flatpickr-prev-month, .flatpickr-day, .numInputWrapper').addClass('js-animated');
+    }
+    function addTimeEv() {
+      $('.flatpickr-time .numInputWrapper span').addClass('js-animated');
+    }
+
+    flatpickr($date.find('input'), {
       minDate: "today",
       "locale": Russian,
-      disableMobile: "true"
+      disableMobile: "true",
+      dateFormat: "d.m.Y",
+      onReady: function() {
+        addDateEv();
+      },
+      onMonthChange: function() {
+        addDateEv();
+      },
+      onChange: function() {
+        addDateEv();
+      }
+    });
+
+    flatpickr($time.find('input'), {
+      enableTime: true,
+      noCalendar: true,
+      dateFormat: "H:i",
+      time_24hr: true,
+      disableMobile: "true",
+      onReady: function() {
+        addTimeEv();
+      },
+      onMonthChange: function() {
+        addTimeEv();
+      },
+      onChange: function() {
+        addTimeEv();
+      }
     });
   }
 }

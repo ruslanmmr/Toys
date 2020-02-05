@@ -55,7 +55,7 @@
   width: 250px;
   transition: transform $trs2;
   background-color: $colorA;
-  padding-top: 78px;
+  padding-top: 80.5px;
   height: 100vh;
   .scroll-container {
     height: 100%;
@@ -120,6 +120,7 @@
     position: absolute;
     left: 20px;
     top: 0;
+    max-width: 300px;
     &__list {
       margin: 0;
       padding: 15px 0;
@@ -144,7 +145,6 @@
       display: block;
       padding: 5px 30px 5px 20px;
       line-height: 20px;
-      white-space: nowrap;
       position: relative;
       i {
         position: absolute;
@@ -155,6 +155,12 @@
         top: 0;
         text-align: center;
         font-size: 14px;
+      }
+      &:last-child {
+        padding: 5px 20px 5px 20px;
+        i {
+          display: none;
+        }
       }
       &.hover,
       &.touch {
@@ -256,6 +262,7 @@
 @media all and(max-width: 768px) {
   .ctlg-nav-m {
     width: 50%;
+    max-width: 100%;
   }
   .ctlg-nav-s {
     width: 100%;
@@ -322,13 +329,18 @@
       }
     }
     &__link {
-      padding: 12.5px 20px;
-      i {
-        line-height: 45px;
-        width: auto;
-        right: 20px;
-        transform: rotate(90deg);
-        transition: transform $trs2;
+      &:last-child {
+        padding: 12.5px 20px 12.5px 20px;
+      }
+      &:not(:last-child) {
+        padding: 12.5px 40px 12.5px 20px;
+        i {
+          line-height: 45px;
+          width: auto;
+          right: 23px;
+          transform: rotate(90deg);
+          transition: transform $trs2;
+        }
       }
     }
   }
@@ -351,7 +363,7 @@
       }
     }
     &__list {
-      max-height: 307px;
+      height: auto;
     }
     &__link {
       padding: 10px 20px;
