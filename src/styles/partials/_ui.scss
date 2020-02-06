@@ -26,6 +26,7 @@
   position: relative;
   white-space: nowrap;
   text-align: center;
+  color: $colorG;
   * {
     pointer-events: none;
   }
@@ -146,6 +147,9 @@
     border-radius: 4px;
     border: 1px solid $colorB;
     color: $colorB;
+    i {
+      margin-right: 8px;
+    }
     &.touch,
     &.hover,
     &.active {
@@ -230,17 +234,47 @@ a {
   }
   i {
     position: absolute;
-    //font-size: 14px;
+    width: 16px;
+    line-height: 16px;
+    text-align: center;
     top: 50%;
     right: 10px;
     transform: translateY(-50%);
     pointer-events: none;
   }
-  &.js-picker-date,
-  &.js-picker-time {
-    i {
-      color: $colorB;
+  .fa-times,
+  .fa-check {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .fa-check {
+    color: #a0cf46;
+  }
+  .fa-times {
+    color: #d70033;
+    font-size: 18px;
+  }
+  .fa-clock,
+  .fa-calendar-alt {
+    color: $colorB;
+  }
+  &.error {
+    .fa-times {
+      opacity: 1;
+      visibility: visible;
     }
+  }
+  &.succes {
+    .fa-check {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  span {
+    font-size: 14px;
+    margin-top: 4px;
+    color: $colorI;
+    display: block;
   }
   &.bordered {
     input {
@@ -251,6 +285,46 @@ a {
       border: 1px solid $colorH;
       line-height: 20px;
       padding: 9px 10px ;
+    }
+  }
+}
+.js-pass-toggle {
+  width: 40px;
+  height: 40px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  color: $colorM;
+  i {
+    line-height: 40px;
+    text-align: center;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0);
+    pointer-events: none;
+    transition: inherit;
+  }
+  .fa-eye {
+    opacity: 0;
+  }
+  &.touch,
+  &.hover {
+    color: $colorB;
+  }
+  &.focus {
+    color: $colorB2;
+  }
+  &.active {
+    .fa-eye {
+      opacity: 1;
+    }
+    .fa-eye-slash {
+      opacity: 0;
     }
   }
 }
@@ -310,10 +384,10 @@ a {
     display: inline-block;
     line-height: 14px;
     width: 16px;
+    height: 16px;
     text-align: center;
     border-radius: 2px;
     border: 1px solid $colorH;
-    color: transparent;
     background-color: transparent;
     position: absolute;
     left: 0;
@@ -321,6 +395,16 @@ a {
     z-index: 2;
     font-size: 10px;
     transition: inherit;
+    color: #1e0602;
+    text-align: center;
+    &:before {
+      transform: scale(0);
+      opacity: 0;
+      transition: inherit;
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+    }
   }
   input {
     position: absolute;
@@ -330,7 +414,10 @@ a {
   &.checked {
     i {
       background-color: #dbeeff;
-      color: #1e0602;
+      &:before {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
   }
   &.touch,
@@ -725,6 +812,8 @@ a {
   height: 100%;
 }
 .pagination {
+  max-width: 870px;
+  margin: 0 auto;
   &__list {
     margin: 0;
     padding: 0;
@@ -741,12 +830,6 @@ a {
     &:not(:last-child) {
       border-right: 1px solid $colorB6;
     }
-    &:first-child,
-    &:last-child {
-      .pagination__link {
-        padding: 0 30px;
-      }
-    }
   }
   &__link {
     line-height: 50px;
@@ -756,6 +839,10 @@ a {
     width: 100%;
     i {
       display: none;
+    }
+    &.modern-page-next,
+    &.modern-page-previous {
+      padding: 0 30px;
     }
     &.touch,
     &.hover,
@@ -1335,6 +1422,151 @@ a {
     font-size: 36px;
   }
 }
+.profile {
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: $shadow1;
+  padding: 10px;
+  &__bonus-b {
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: $colorO;
+    padding: 20px;
+    text-align: center;
+    line-height: 20px;
+    margin-bottom: 10px;
+    strong {
+      white-space: nowrap;
+      margin: 0 3px;
+    }
+    i {
+      color: $colorI;
+      transition: $trs2;
+      &.touch,
+      &.hover {
+        color: $colorB;
+      }
+    }
+  }
+  &-form {
+    padding: 20px;
+    &__title {
+      margin-bottom: 15px;
+    }
+    &__item {
+      display: flex;
+      .input-label {
+        flex: 0 0 200px;
+        color: $colorE;
+        font-weight: bold;
+        line-height: 20px;
+      }
+      .input {
+        flex: 1 1 auto;
+        min-width: 180px;
+      }
+    }
+  }
+}
+.orders {
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: $shadow1;
+  padding: 30px;
+  .button {
+    max-width: 240px;
+  }
+  &-item {
+    border: 1px solid $colorB6;
+    border-radius: 4px;
+    &__head {
+      background-color: $colorN;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      line-height: 20px;
+    }
+    &__date {
+      color: $colorI;
+    }
+    &__title {
+      color: $colorB;
+      font-size: 15px;
+      text-transform: uppercase;
+      margin-right: 30px;
+      line-height: 20px;
+    }
+    &__left {
+      display: flex;
+      align-items: center;
+    }
+    &__content {
+      background-color: #fff;
+      padding: 20px;
+    }
+    &__r-list {
+      white-space: nowrap;
+      min-width: 260px;
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 15px;
+        border-radius: 4px;
+        background-color: $colorN;
+      }
+      li {
+        line-height: 20px;
+      }
+    }
+    &__l-list {
+      margin: 10px 0 0 0;
+      ul {
+        counter-reset: item;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        &:before {
+          content: counter(item) '. ';
+          counter-increment: item;
+          font-weight: bold;
+        }
+      }
+      
+    }
+  }
+}
+.order-label {
+  display: inline-block;
+  border-width: 2px;
+  border-radius: 2px;
+  border-style: solid;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  padding: 0 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  &_style1 {
+    border-color: $colorD;
+    color: $colorD;
+    background-color: #fff;
+  }
+  &_style2 {
+    border-color: $colorA;
+    color: #000;
+    background-color: $colorA;
+  }
+  &_style3 {
+    border-color: $colorC;
+    color: #000;
+    background-color: $colorC;
+  }
+}
 
 
 @media all and(max-width: 1024px) {
@@ -1342,12 +1574,10 @@ a {
     width: auto;
   }
   .pagination {
-    &__item {
-      &:last-child,
-      &:first-child {
-        .pagination__link {
-          padding: 0;
-        }
+    &__link {
+      &.modern-page-next,
+      &.modern-page-previous {
+        padding: 0 !important;
         span {
           display: none;
         }
@@ -1365,6 +1595,23 @@ a {
     }
     &-discount {
       margin: 0;
+    }
+  }
+  .profile-form__item {
+    display: block;
+    .input-label {
+      margin: 0 0 5px 0;
+      display: block;
+      height: auto;
+    }
+  }
+  .orders-item {
+    &__head {
+      display: block;
+    }
+    &__left {
+      justify-content: space-between;
+      margin-bottom: 10px;
     }
   }
 }
@@ -1444,6 +1691,11 @@ a {
       max-width: 130px;
     }
   }
+  .orders-item {
+    &__l-list {
+      margin: 0;
+    }
+  }
 }
 @media all and(max-width: 576px) {
   .button {
@@ -1464,14 +1716,6 @@ a {
     }
     &__title {
       font-size: 18px;
-    }
-  }
-  .pagination {
-    &__item {
-      &:nth-child(5),
-      &:nth-child(6) {
-        display: none;
-      }
     }
   }
   .tab-block {
@@ -1524,6 +1768,34 @@ a {
         margin: 15px 0 0 0;
         order: 2;
       }
+    }
+  }
+  .profile-form {
+    padding: 10px;
+  }
+  .orders {
+    padding: 0;
+    box-shadow: none;
+    background-color: transparent;
+    .button {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+  .orders-item {
+    box-shadow: $shadow1;
+    border-radius: 8px;
+    overflow: hidden;
+    &__left {
+      display: block;
+    }
+    &__r-list {
+      min-width: 0px;
+      width: 100%;
+    }
+    &__title {
+      display: block;
+      margin: 0 0 10px 0;
     }
   }
 }

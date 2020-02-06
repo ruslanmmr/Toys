@@ -139,6 +139,7 @@ $(document).ready(function() {
   picker.init();
   tabs.init();
   tooltips.init();
+  pass.init();
 
   if($('html').hasClass('desktop')) {
     //code
@@ -289,7 +290,7 @@ let $select = {
   }
 }
 let $mask = {
-  el: document.querySelector('[name="phone"]'),
+  el: document.querySelectorAll('[name="phone"]'),
   init: function() {
     if($mask.el!==null) {
       Inputmask({
@@ -439,6 +440,8 @@ let filter = {
       })
 
     }
+    //fix
+    $('.bx_filter .bx_ui_slider_handle').addClass('js-animated');
   },
   changePos: function() {
     if($window.width()<=768 && this.isReplaced==false) {
@@ -736,5 +739,18 @@ let picker = {
         addTimeEv();
       }
     });
+  }
+}
+//pass
+let pass = {
+  trigger: $('.js-pass-toggle'),
+  init: function() {
+    pass.trigger.on('click', function() {
+      let input = $(this).siblings('input'),
+          type = input.attr('type') == "text" ? "password" : 'text';
+      
+      input.prop('type', type);
+      $(this).toggleClass('active');
+    }) 
   }
 }

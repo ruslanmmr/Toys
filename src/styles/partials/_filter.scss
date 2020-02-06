@@ -20,10 +20,14 @@
     border-radius: 8px;
     overflow: hidden;
   }
-  .checkbox {
+  .checkbox, .radio {
+    margin: 0;
     &:not(:last-child) {
       margin-bottom: 10px;
     }
+  }
+  .button {
+    width: 100%;
   }
 }
 .filter-section {

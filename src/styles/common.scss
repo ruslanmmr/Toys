@@ -28,6 +28,8 @@ $colorJ: #4b4b4b;
 $colorK: #f4f5f6;
 $colorL: #dbeeff;
 $colorM: #b3b3b3;
+$colorN: #f5faff;
+$colorO: #ecf5fc;
 
 
 //transition
@@ -98,7 +100,7 @@ body {
 }
 @media all and(max-width: 576px) {
   .page-content {
-    padding: 20px 0 40px 0;
+    padding: 20px 0 50px 0;
   }
 }
 
@@ -111,6 +113,7 @@ body {
 @import "./partials/ui";
 @import "./partials/slider";
 @import "./partials/header";
+@import "./partials/fix";
 @import "./partials/ctlg";
 @import "./partials/filter";
 @import "./partials/footer";

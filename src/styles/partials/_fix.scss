@@ -1,0 +1,80 @@
+.bx_filter_parameters_box_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.bx_filter .bx_ui_slider_track {
+  width: 100%;
+  margin: 0 10px 15px 10px;
+  border: none;
+  background: $colorH;
+  height: 4px;
+  border-radius: 2px;
+}
+.bx_filter .bx_ui_slider_part {
+  display: none;
+}
+.bx_filter .bx_ui_slider_range {
+  top: 0;
+  bottom: auto;
+  z-index: 90;
+}
+.bx_filter .bx_ui_slider_pricebar_V {
+  background: $colorB;
+  height: 4px;
+  top: 0;
+  bottom: auto;
+  border-radius: 2px;
+}
+.bx_filter .bx_ui_slider_pricebar_VN {
+  display: none;
+}
+.bx_filter .bx_ui_slider_pricebar_VD {
+  display: none;
+}
+.bx_filter .bx_ui_slider_handle {
+  width: 20px;
+  height: 20px;
+  border: 3px solid $colorB;
+  border-radius: 100%;
+  background: #fff !important;
+  margin: 0 !important;
+  top: -8px;
+  transition: none;
+  transition: border-color $trs1;
+  &.right {
+    transform: translateX(10px);
+  }
+  &.left {
+    transform: translateX(-10px);
+  }
+  &.touch,
+  &.hover {
+    border-color: $colorB2;
+  }
+  &.focus {
+    border-color: $colorB2;
+  }
+}
+.bx_filter .bx_filter_parameters_box_container_block {
+  width: 50%;
+  color: $colorG;
+  order: 3;
+}
+.bx_filter .bx_filter_parameters_box_container .bx_filter_input_container {
+  max-width: 100%;
+  background: transparent;
+  height: 40px;
+  input {
+    box-shadow: none;
+    border: 1px solid $colorH;
+    line-height: 38px;
+    border-radius: 4px;
+    height: 40px;
+    padding: 0 15px;
+    outline: none;
+    text-align: center;
+  }
+}
+.bx_filter .bx_ui_slider_part span {
+  display: none;
+}

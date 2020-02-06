@@ -40,26 +40,31 @@
   }
 }
 .mb-30 {
+  display: block;
   &:not(:last-child) {
     margin-bottom: 30px;
   }
 }
 .mb-25 {
+  display: block;
   &:not(:last-child) {
     margin-bottom: 25px;
   }
 }
 .mb-20 {
+  display: block;
   &:not(:last-child) {
     margin-bottom: 20px;
   }
 }
 .mb-15 {
+  display: block;
   &:not(:last-child) {
     margin-bottom: 15px;
   }
 }
 .mb-10 {
+  display: block;
   &:not(:last-child) {
     margin-bottom: 10px;
   }

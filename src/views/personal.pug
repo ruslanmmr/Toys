@@ -1,0 +1,218 @@
+extends layout/layout
+block content
+  include blocks/breadcrumbs
+  .page-content
+    .container
+      main.main
+        section.section
+          .section__head
+            h5.section__title.t-size-30 Профиль пользователя
+          .section__content.tab-block
+            .tab-block__head.mb-25
+              .row.row_compact
+                .col-xl-auto.col-12
+                  a(href="javascript:void(0)" data-tab='0').button.button_style3.js-animated.ttu.tab-trigger
+                    i.fas.fa-user
+                    | личные данные
+                .col-xl-auto.col-12
+                  a(href="javascript:void(0)" data-tab='1').button.button_style3.js-animated.ttu.tab-trigger 
+                    i.fas.fa-list-ul
+                    | история заказов
+            .tab-block__content
+              .tab-item
+                .profile
+                  .profile__bonus-b на вашем бонусном счете: 
+                    strong 999 ₽ 
+                    i.fas.fa-question-circle.js-animated(data-tippy-content='Текст о том, что такое бонусный счет и как накопить много бабла и платить им на сайте')
+                  .profile-form
+                    .row
+                      .col-xl-6.col-12
+                        .profile-form__section
+                          h5.profile-form__title.t-size-24 Контактные данные
+                          .profile-form__item.mb-10
+                            span.input-label Телефон:
+                            .input.bordered.succes
+                              input(type="text" name="phone" placeholder="+7 977 652-73-40")
+                              i.fas.fa-check
+                              i.fas.fa-times
+                          .profile-form__item.mb-10
+                            span.input-label Электронная почта:
+                            .input.bordered.error
+                              input(type="text" placeholder="problem@satra.ru")
+                              i.fas.fa-check
+                              i.fas.fa-times
+                          .profile-form__item.mb-10
+                            span.input-label Телефон:
+                            .input.bordered
+                              input(type="text" name="phone" value='+7 977 652-73-40' placeholder="+7 977 652-73-40")
+                              i.fas.fa-check
+                              i.fas.fa-times
+                          .profile-form__item.mb-10
+                            span.input-label Фамилия:
+                            .input.bordered
+                              input(type="text")
+                              i.fas.fa-check
+                              i.fas.fa-times
+                          .profile-form__item.mb-10
+                            span.input-label Имя:
+                            .input.bordered
+                              input(type="text")
+                              i.fas.fa-check
+                              i.fas.fa-times
+                          .profile-form__item.mb-10
+                            span.input-label Отчество:
+                            .input.bordered
+                              input(type="text")
+                              i.fas.fa-check
+                              i.fas.fa-times
+                      .col-xl-6.col-12
+                        .row
+                          .col-xl-12
+                            .profile-form__section
+                              h5.profile-form__title.t-size-24 Смена пароля
+                              .profile-form__item.mb-10
+                                span.input-label Новый пароль:
+                                .input.bordered
+                                  input(type="password")
+                                  a(href="javascript:void(0)").js-pass-toggle.js-animated
+                                    i.fas.fa-eye
+                                    i.fas.fa-eye-slash
+                              .profile-form__item.mb-10
+                                span.input-label Подтверджение пароля:
+                                .input.bordered
+                                  input(type="password")
+                                  i.fas.fa-check
+                                  i.fas.fa-times
+                                  span Пароль должен содержать не менее 6 символов
+                          .col-xl-12
+                            .profile-form__section
+                              h5.profile-form__title.t-size-24 Уведомления
+                              .profile-form__item.mb-10
+                                span.input-label Включить уведомления:
+                                .profile-form__list
+                                  label.checkbox.js-animated.mb-10 
+                                    i.fas.fa-check
+                                    input(type="checkbox")
+                                    | e-mail
+                                  label.checkbox.js-animated.mb-10 
+                                    i.fas.fa-check
+                                    input(type="checkbox")
+                                    | sms
+              .tab-item.active
+                .orders.mb-30
+                  .orders__container
+                    //item
+                    .orders-item.mb-15
+                      .orders-item__head
+                        .orders-item__left
+                          span.orders-item__title ЗАКАЗ #267355 / 17 ОКТЯБРЯ 2018
+                          .order-label.order-label_style1 ожидает оплаты
+                        span.orders-item__date Дата обновления заказа: 17.10.2018 [09:14]
+                      .orders-item__content
+                        .row
+                          .col-xl.col-sm-12
+                            .orders-item__l-list.color-gray2
+                              span.fwb.ttu.mb-10 СОСТАВ ЗАКАЗА:
+                              ul
+                                li.mb-10 L.O.L. Surprise 559658 Гламурная  
+                                  span.color-gray1 (1шт.)
+                                li.mb-10 Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт 
+                                  span.color-gray1 (1шт.)
+                          .col-xl-auto.col-sm-12
+                            .orders-item__r-list.color-gray2
+                              ul
+                                li.mb-10 Сумма заказа: 1 450 ₽
+                                li.fwb.mb-10 К оплате: 1 450 ₽
+                                li.mb-10
+                                  a(href="#").button.button_style2.color1.js-animated Оплатить
+                                li.mb-10 Картой при получении
+                    //item
+                    .orders-item.mb-15
+                      .orders-item__head
+                        .orders-item__left
+                          span.orders-item__title ЗАКАЗ #267355 / 17 ОКТЯБРЯ 2018
+                          .order-label.order-label_style1 отменен
+                        span.orders-item__date Дата обновления заказа: 17.10.2018 [09:14]
+                      .orders-item__content
+                        .row
+                          .col-xl.col-sm-12
+                            .orders-item__l-list.color-gray2
+                              span.fwb.ttu.mb-10 СОСТАВ ЗАКАЗА:
+                              ul
+                                li.mb-10 L.O.L. Surprise 559658 Гламурная  
+                                  span.color-gray1 (1шт.)
+                                li.mb-10 Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт 
+                                  span.color-gray1 (1шт.)
+                                li.mb-10 L.O.L. Surprise 559658 Гламурная  
+                                  span.color-gray1 (1шт.)
+                                li.mb-10 Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт 
+                                  span.color-gray1 (1шт.)
+                          .col-xl-auto.col-sm-12
+                            .orders-item__r-list.color-gray2
+                              ul
+                                li.mb-10 Сумма заказа: 1 450 ₽
+                                li.fwb.mb-10 К оплате: 1 450 ₽
+                                li.mb-10 Картой при получении
+                    //item
+                    .orders-item.mb-15
+                      .orders-item__head
+                        .orders-item__left
+                          span.orders-item__title ЗАКАЗ #267355 / 17 ОКТЯБРЯ 2018
+                          .order-label.order-label_style2 оплачен
+                        span.orders-item__date Дата обновления заказа: 17.10.2018 [09:14]
+                      .orders-item__content
+                        .row
+                          .col-xl.col-sm-12
+                            .orders-item__l-list.color-gray2
+                              span.fwb.ttu.mb-10 СОСТАВ ЗАКАЗА:
+                              ul
+                                li.mb-10 L.O.L. Surprise 559658 Гламурная  
+                                  span.color-gray1 (1шт.)
+                                li.mb-10 Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт 
+                                  span.color-gray1 (1шт.)
+                                li.mb-10 L.O.L. Surprise 559658 Гламурная  
+                                  span.color-gray1 (1шт.)
+                                li.mb-10 Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт 
+                                  span.color-gray1 (1шт.)
+                          .col-xl-auto.col-sm-12
+                            .orders-item__r-list.color-gray2
+                              ul
+                                li.mb-10 Сумма заказа: 1 450 ₽
+                                li.fwb.mb-10 К оплате: 1 450 ₽
+                                li.mb-10 Картой при получении
+                    //item
+                    .orders-item.mb-15
+                      .orders-item__head
+                        .orders-item__left
+                          span.orders-item__title ЗАКАЗ #267355 / 17 ОКТЯБРЯ 2018
+                          .order-label.order-label_style3 Выполнен
+                        span.orders-item__date Дата обновления заказа: 17.10.2018 [09:14]
+                      .orders-item__content
+                        .row
+                          .col-xl.col-sm-12
+                            .orders-item__l-list.color-gray2
+                              span.fwb.ttu.mb-10 СОСТАВ ЗАКАЗА:
+                              ul
+                                li.mb-10 L.O.L. Surprise 559658 Гламурная  
+                                  span.color-gray1 (1шт.)
+                                li.mb-10 Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт 
+                                  span.color-gray1 (1шт.)
+                          .col-xl-auto.col-sm-12
+                            .orders-item__r-list.color-gray2
+                              ul
+                                li.mb-10 Сумма заказа: 1 450 ₽
+                                li.fwb.mb-10 К оплате: 1 450 ₽
+                                li.mb-10 Картой при получении           
+                //пагниация
+                //Если товаров меньше одной страницы - вообще удалить из dom
+                .pagination
+                  ul.pagination__list
+                    li.pagination__item
+                      a(href="#").pagination__link.js-animated.active 1
+                    li.pagination__item
+                      a(href="#").pagination__link.js-animated 2
+                    li.pagination__item
+                      a(href="#").pagination__link.modern-page-next.js-animated
+                        span Следующая
+                        i.fas.fa-chevron-right
+    
