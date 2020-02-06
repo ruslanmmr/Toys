@@ -140,6 +140,8 @@ $(document).ready(function() {
   tabs.init();
   tooltips.init();
   pass.init();
+  calc.init();
+  inputs.init();
 
   if($('html').hasClass('desktop')) {
     //code
@@ -752,5 +754,59 @@ let pass = {
       input.prop('type', type);
       $(this).toggleClass('active');
     }) 
+  }
+}
+let inputs = {
+  init: function() {
+
+    $(document).on('change input', 'input', function(event) {
+      let $target = $(this);
+      if($target.hasClass('num-only')) {
+        $target.val( $target.val().replace(/\D/, '') )
+      }
+
+    })
+    
+  }
+}
+//calc
+let calc = {
+  element: $('.calc-count-block'),
+  init: function() {
+    this.element.each(function() {
+      let $this = $(this),
+          $plus = $this.find('.js-plus'),
+          $minus = $this.find('.js-minus'),
+          $input = $this.find('input'),
+          val = +$input.val();
+      
+      check();
+
+      $plus.on('click', function() {
+        val++;
+        check();
+      })
+      $minus.on('click', function() {
+        val--;
+        check();
+      })
+      $input.on('change input', function() {
+        setTimeout(function() {
+          val = +$input.val();
+          check();
+        },100)
+      })
+
+      function check() {
+        console.log(val)
+        if(val<1 || val==1) {
+          val=1;
+          $minus.addClass('disabled');
+        } else {
+          $minus.removeClass('disabled');
+        }
+        $input.val(val);
+      }
+    })
   }
 }
