@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>mvToys - Интернет-магазин игрушек</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/common.min.css">
+  </head>
+  <body>
+    <!--page-->
+    <div class="page-wrapper">
+      <!--header-->
+      <header class="header">
+        <div class="header__t-line-section">
+          <div class="container">
+            <ul class="t-line-nav">
+              <li class="t-line-nav__item"><a class="t-line-nav__link js-animated" href="#">О компании</a></li>
+              <li class="t-line-nav__item"><a class="t-line-nav__link js-animated" href="#">Обратная связь</a></li>
+              <li class="t-line-nav__item"><a class="t-line-nav__link js-animated" href="#">Оптовикам</a></li>
+              <li class="t-line-nav__item"><a class="t-line-nav__link js-animated" href="#">Оплата и доставка</a></li>
+            </ul><span class="header__t-info-item">с 9.00 до 21.00, без выходных</span>
+          </div>
+        </div>
+        <div class="m-header-block">
+          <div class="container">
+            <div class="m-header-block__container row">
+              <div class="logo col-xl-auto"><a class="logo__link js-animated" href="/"><img src="img/logos/logo.svg" alt="logo"></a></div>
+              <div class="search col-xl col-12">
+                <form class="search__form" action="#">
+                  <div class="input">
+                    <input type="text" placeholder="Что будем искать?">
+                  </div>
+                  <button class="button search__btn js-animated"><i class="fas fa-search"></i></button>
+                </form>
+              </div>
+              <div class="contacts-block col-xl-auto">
+                <ul class="contacts-block__list">
+                  <li class="contacts-block__item"><a class="contacts-block__link js-animated fwb link link_style2" href="tel:">8 (800) 500-50-50</a></li>
+                  <li class="contacts-block__item"><a class="contacts-block__link js-animated fwb link link_style2" href="tel:">8 (498) 222-33-44</a></li>
+                </ul>
+              </div>
+              <div class="cart-nav-block col-xl-auto"><a class="cart-nav-block__button js-animated" href="#"><i class="fas fa-user"></i>
+                  <div class="cart-nav-block__button-txt">Профиль</div></a><a class="cart-nav-block__button js-animated" href="#"><i class="fas fa-shopping-cart"></i>
+                  <div class="cart-nav-block__button-txt">Корзина</div><span>10</span></a><a class="cart-nav-block__button js-animated nav-toggle" href="javascript:void(0)"><i class="fas fa-bars"></i><i class="fas fa-times"></i>
+                  <div class="cart-nav-block__button-txt">Меню</div></a></div>
+            </div>
+          </div>
+        </div>
+      </header><span class="overlay"></span>
+      <nav class="m-nav">
+        <div class="scroll-container shadow shadow_style2">
+          <div class="scroll-child">
+            <ul class="m-nav__list">
+              <li class="m-nav__item"><a class="m-nav__link button button_style1 type2 js-animated" href="#">мальчики</a></li>
+              <li class="m-nav__item"><a class="m-nav__link button button_style1 type2 js-animated" href="#"> девочки</a></li>
+              <li class="m-nav__item"><a class="m-nav__link button button_style1 type2 js-animated" href="#"> возраст</a></li>
+              <li class="m-nav__item"><a class="m-nav__link button button_style1 type2 js-animated" href="#"> бренды</a></li>
+              <li class="m-nav__item"><a class="m-nav__link button button_style1 type2 js-animated" href="#"> персонажи</a></li>
+              <li class="m-nav__item">
+                <div class="contacts-block">
+                  <ul class="contacts-block__list">
+                    <li class="contacts-block__item"><a class="contacts-block__link js-animated link link_style2" href="tel:">О компании</a></li>
+                    <li class="contacts-block__item"><a class="contacts-block__link js-animated link link_style2" href="tel:">Обратная связь</a></li>
+                    <li class="contacts-block__item"><a class="contacts-block__link js-animated link link_style2" href="tel:">Оптовикам</a></li>
+                    <li class="contacts-block__item"><a class="contacts-block__link js-animated link link_style2" href="tel:">Оплата и доставка</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="m-nav__item">
+                <div class="contacts-block">
+                  <ul class="contacts-block__list">
+                    <li class="contacts-block__item"><a class="contacts-block__link js-animated fwb link link_style2" href="tel:">8 (800) 500-50-50</a></li>
+                    <li class="contacts-block__item"><a class="contacts-block__link js-animated fwb link link_style2" href="tel:">8 (498) 222-33-44</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="page-container">
+        <nav class="nav">
+          <div class="nav__main">
+            <div class="container"><a class="button button_style1 type1 js-animated nav__solo-item nav__catalogue-trigger" href="javascript:void(0)"><span>Каталог игрушек</span><i class="fas fa-chevron-down"></i></a>
+              <ul class="nav__list">
+                <li class="nav__item"><a class="button button_style1 type2 js-animated" href="#"> <span>мальчики</span></a></li>
+                <li class="nav__item"><a class="button button_style1 type2 js-animated" href="#"> <span>девочки</span></a></li>
+                <li class="nav__item dn-800"><a class="button button_style1 type2 js-animated" href="#"> <span>возраст</span></a></li>
+                <li class="nav__item dn-900"><a class="button button_style1 type2 js-animated" href="#"> <span>бренды</span></a></li>
+                <li class="nav__item dn-1024"><a class="button button_style1 type2 js-animated" href="#"> <span>персонажи</span></a></li>
+                <li class="nav__item dn-700"><a class="button button_style1 type2 js-animated" href="#"> <span>РАСПРОДАЖА</span></a></li>
+              </ul><a class="button button_style1 type3 js-animated nav__solo-item" href="#"><span>акции</span><i class="fas fa-tags"></i></a>
+            </div>
+          </div>
+          <div class="ctlg-nav">
+            <div class="container">
+              <!--main item-->
+              <div class="ctlg-nav-m">
+                <ul class="ctlg-nav-m__list">
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Куклы L.O.L.<i class="fas fa-chevron-right"></i></a>
+                                  <div class="ctlg-nav-s">
+                                    <div class="scroll-container shadow shadow_style1">
+                                      <div class="scroll-child">
+                                        <ul class="ctlg-nav-s__list">
+                                          <!--ссылка на родительскую категорию для мобильных-->
+                                          <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Все товары категории</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Enchantimals</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Barbie</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Born</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Monster High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Annabell</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Disney Princess</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Куклы My Little Pony Equestria Girls </a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Холодное сердце</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Shibajuku Girls</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lady Bug</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Мягкие куклы</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Alive</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lalaloopsy</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Конструкторы LEGO Конструкторы LEGO Конструкторы LEGO<i class="fas fa-chevron-right"></i></a></div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Куклы и аксессуары<i class="fas fa-chevron-right"></i></a>
+                                  <div class="ctlg-nav-s">
+                                    <div class="scroll-container shadow shadow_style1">
+                                      <div class="scroll-child">
+                                        <ul class="ctlg-nav-s__list">
+                                          <!--ссылка на родительскую категорию для мобильных-->
+                                          <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Все товары категории</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Enchantimals</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Barbie</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Born</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Monster High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Annabell</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Disney Princess</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Куклы My Little Pony Equestria Girls </a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Холодное сердце</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Shibajuku Girls</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lady Bug</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Мягкие куклы</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Alive</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lalaloopsy</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Настольные игры<i class="fas fa-chevron-right"></i></a></div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Мягкие игрушки<i class="fas fa-chevron-right"></i></a>
+                                  <div class="ctlg-nav-s">
+                                    <div class="scroll-container shadow shadow_style1">
+                                      <div class="scroll-child">
+                                        <ul class="ctlg-nav-s__list">
+                                          <!--ссылка на родительскую категорию для мобильных-->
+                                          <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Все товары категории</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Enchantimals</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Barbie</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Born</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Monster High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Annabell</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Disney Princess</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Куклы My Little Pony Equestria Girls </a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Холодное сердце</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Shibajuku Girls</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lady Bug</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Мягкие куклы</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Alive</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lalaloopsy</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Интерактивные игрушки<i class="fas fa-chevron-right"></i></a>
+                                  <div class="ctlg-nav-s">
+                                    <div class="scroll-container shadow shadow_style1">
+                                      <div class="scroll-child">
+                                        <ul class="ctlg-nav-s__list">
+                                          <!--ссылка на родительскую категорию для мобильных-->
+                                          <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Все товары категории</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Enchantimals</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Barbie</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Born</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Monster High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Annabell</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Disney Princess</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Куклы My Little Pony Equestria Girls </a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Холодное сердце</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Shibajuku Girls</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lady Bug</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Мягкие куклы</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Alive</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lalaloopsy</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Развивающие игры и хобби<i class="fas fa-chevron-right"></i></a></div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Распродажа игрушек<i class="fas fa-chevron-right"></i></a>
+                                  <div class="ctlg-nav-s">
+                                    <div class="scroll-container shadow shadow_style1">
+                                      <div class="scroll-child">
+                                        <ul class="ctlg-nav-s__list">
+                                          <!--ссылка на родительскую категорию для мобильных-->
+                                          <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Все товары категории</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Enchantimals</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Barbie</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Born</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Monster High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Annabell</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Disney Princess</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Куклы My Little Pony Equestria Girls </a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Холодное сердце</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Shibajuku Girls</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lady Bug</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Мягкие куклы</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Alive</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lalaloopsy</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Транспорт<i class="fas fa-chevron-right"></i></a></div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Бластеры Нерф<i class="fas fa-chevron-right"></i></a>
+                                  <div class="ctlg-nav-s">
+                                    <div class="scroll-container shadow shadow_style1">
+                                      <div class="scroll-child">
+                                        <ul class="ctlg-nav-s__list">
+                                          <!--ссылка на родительскую категорию для мобильных-->
+                                          <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Все товары категории</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Enchantimals</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Barbie</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Born</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Monster High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Annabell</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Disney Princess</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Куклы My Little Pony Equestria Girls </a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Холодное сердце</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Shibajuku Girls</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lady Bug</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Мягкие куклы</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Alive</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lalaloopsy</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Игровые наборы<i class="fas fa-chevron-right"></i></a></div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Конструкторы <i class="fas fa-chevron-right"></i></a>
+                                  <div class="ctlg-nav-s">
+                                    <div class="scroll-container shadow shadow_style1">
+                                      <div class="scroll-child">
+                                        <ul class="ctlg-nav-s__list">
+                                          <!--ссылка на родительскую категорию для мобильных-->
+                                          <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Все товары категории</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Enchantimals</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Barbie</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Born</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Monster High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Annabell</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Disney Princess</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Куклы My Little Pony Equestria Girls </a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Холодное сердце</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Shibajuku Girls</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lady Bug</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Мягкие куклы</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Alive</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lalaloopsy</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Радиоуправляемые модели<i class="fas fa-chevron-right"></i></a></div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Отдых и спорт<i class="fas fa-chevron-right"></i></a>
+                                  <div class="ctlg-nav-s">
+                                    <div class="scroll-container shadow shadow_style1">
+                                      <div class="scroll-child">
+                                        <ul class="ctlg-nav-s__list">
+                                          <!--ссылка на родительскую категорию для мобильных-->
+                                          <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Все товары категории</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Enchantimals</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Barbie</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Born</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Monster High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Annabell</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Disney Princess</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Куклы My Little Pony Equestria Girls </a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Холодное сердце</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Shibajuku Girls</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lady Bug</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Мягкие куклы</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Alive</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lalaloopsy</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Косметика и аксессуары<i class="fas fa-chevron-right"></i></a></div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Всё для праздника<i class="fas fa-chevron-right"></i></a></div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Товары для малышей<i class="fas fa-chevron-right"></i></a>
+                                  <div class="ctlg-nav-s">
+                                    <div class="scroll-container shadow shadow_style1">
+                                      <div class="scroll-child">
+                                        <ul class="ctlg-nav-s__list">
+                                          <!--ссылка на родительскую категорию для мобильных-->
+                                          <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Все товары категории</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Enchantimals</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Barbie</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Born</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Monster High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Annabell</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Disney Princess</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Куклы My Little Pony Equestria Girls </a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Холодное сердце</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Shibajuku Girls</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lady Bug</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Ever After High</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Мягкие куклы</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Baby Alive</a></li>
+                                                        <li class="ctlg-nav-s__item"><a class="ctlg-nav-s__link js-animated" href="#">Lalaloopsy</a></li>
+                                        </ul>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="ctlg-nav-m__item"><a class="ctlg-nav-m__link js-animated" href="#">Книги и канцелярия<i class="fas fa-chevron-right"></i></a></div>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <div class="breadcrumbs">
+          <div class="container">
+            <ul class="breadcrumbs__list">
+              <li class="breadcrumbs__item"><a class="breadcrumbs__link js-animated" href="#">Главная</a></li>
+              <li class="breadcrumbs__item"><a class="breadcrumbs__link js-animated" href="#">Каталог игрушек</a></li>
+              <li class="breadcrumbs__item">Куклы LOL</li>
+            </ul>
+          </div>
+        </div>
+        <div class="page-content">
+          <div class="container">
+            <main class="main">
+              <section class="section">
+                <div class="section__head">
+                  <h5 class="section__title t-size-30">Профиль пользователя</h5>
+                </div>
+                <div class="section__content tab-block">
+                  <div class="tab-block__head mb-25">
+                    <div class="row row_compact">
+                      <div class="col-xl-auto col-12"><a class="button button_style3 js-animated ttu tab-trigger" href="javascript:void(0)" data-tab="0"><i class="fas fa-user"></i>личные данные</a></div>
+                      <div class="col-xl-auto col-12"><a class="button button_style3 js-animated ttu tab-trigger" href="javascript:void(0)" data-tab="1"> <i class="fas fa-list-ul"></i>история заказов</a></div>
+                    </div>
+                  </div>
+                  <div class="tab-block__content">
+                    <div class="tab-item">
+                      <div class="profile">
+                        <div class="profile__bonus-b">на вашем бонусном счете: <strong>999 ₽ </strong><i class="fas fa-question-circle js-animated" data-tippy-content="Текст о том, что такое бонусный счет и как накопить много бабла и платить им на сайте"></i></div>
+                        <div class="profile-form">
+                          <div class="row">
+                            <div class="col-xl-6 col-12">
+                              <div class="profile-form__section">
+                                <h5 class="profile-form__title t-size-24">Контактные данные</h5>
+                                <div class="profile-form__item mb-10"><span class="input-label">Телефон:</span>
+                                  <div class="input bordered succes">
+                                    <input type="text" name="phone" placeholder="+7 977 652-73-40"><i class="fas fa-check"></i><i class="fas fa-times"></i>
+                                  </div>
+                                </div>
+                                <div class="profile-form__item mb-10"><span class="input-label">Электронная почта:</span>
+                                  <div class="input bordered error">
+                                    <input type="text" placeholder="problem@satra.ru"><i class="fas fa-check"></i><i class="fas fa-times"></i>
+                                  </div>
+                                </div>
+                                <div class="profile-form__item mb-10"><span class="input-label">Телефон:</span>
+                                  <div class="input bordered">
+                                    <input type="text" name="phone" value="+7 977 652-73-40" placeholder="+7 977 652-73-40"><i class="fas fa-check"></i><i class="fas fa-times"></i>
+                                  </div>
+                                </div>
+                                <div class="profile-form__item mb-10"><span class="input-label">Фамилия:</span>
+                                  <div class="input bordered">
+                                    <input type="text"><i class="fas fa-check"></i><i class="fas fa-times"></i>
+                                  </div>
+                                </div>
+                                <div class="profile-form__item mb-10"><span class="input-label">Имя:</span>
+                                  <div class="input bordered">
+                                    <input type="text"><i class="fas fa-check"></i><i class="fas fa-times"></i>
+                                  </div>
+                                </div>
+                                <div class="profile-form__item mb-10"><span class="input-label">Отчество:</span>
+                                  <div class="input bordered">
+                                    <input type="text"><i class="fas fa-check"></i><i class="fas fa-times"></i>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xl-6 col-12">
+                              <div class="row">
+                                <div class="col-xl-12">
+                                  <div class="profile-form__section">
+                                    <h5 class="profile-form__title t-size-24">Смена пароля</h5>
+                                    <div class="profile-form__item mb-10"><span class="input-label">Новый пароль:</span>
+                                      <div class="input bordered">
+                                        <input type="password"><a class="js-pass-toggle js-animated" href="javascript:void(0)"><i class="fas fa-eye"></i><i class="fas fa-eye-slash"></i></a>
+                                      </div>
+                                    </div>
+                                    <div class="profile-form__item mb-10"><span class="input-label">Подтверджение пароля:</span>
+                                      <div class="input bordered">
+                                        <input type="password"><i class="fas fa-check"></i><i class="fas fa-times"></i><span>Пароль должен содержать не менее 6 символов</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-xl-12">
+                                  <div class="profile-form__section">
+                                    <h5 class="profile-form__title t-size-24">Уведомления</h5>
+                                    <div class="profile-form__item mb-10"><span class="input-label">Включить уведомления:</span>
+                                      <div class="profile-form__list">
+                                        <label class="checkbox js-animated mb-10"> <i class="fas fa-check"></i>
+                                          <input type="checkbox">e-mail
+                                        </label>
+                                        <label class="checkbox js-animated mb-10"> <i class="fas fa-check"></i>
+                                          <input type="checkbox">sms
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-item active">
+                      <div class="orders mb-30">
+                        <div class="orders__container">
+                          <!--item-->
+                          <div class="orders-item mb-15">
+                            <div class="orders-item__head">
+                              <div class="orders-item__left"><span class="orders-item__title">ЗАКАЗ #267355 / 17 ОКТЯБРЯ 2018</span>
+                                <div class="order-label order-label_style1">ожидает оплаты</div>
+                              </div><span class="orders-item__date">Дата обновления заказа: 17.10.2018 [09:14]</span>
+                            </div>
+                            <div class="orders-item__content">
+                              <div class="row">
+                                <div class="col-xl col-sm-12">
+                                  <div class="orders-item__l-list color-gray2"><span class="fwb ttu mb-10">СОСТАВ ЗАКАЗА:</span>
+                                    <ul>
+                                      <li class="mb-10">L.O.L. Surprise 559658 Гламурная  <span class="color-gray1">(1шт.)</span></li>
+                                      <li class="mb-10">Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт <span class="color-gray1">(1шт.)</span></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="col-xl-auto col-sm-12">
+                                  <div class="orders-item__r-list color-gray2">
+                                    <ul>
+                                      <li class="mb-10">Сумма заказа: 1 450 ₽</li>
+                                      <li class="fwb mb-10">К оплате: 1 450 ₽</li>
+                                      <li class="mb-10"><a class="button button_style2 color1 js-animated" href="#">Оплатить</a></li>
+                                      <li class="mb-10">Картой при получении</li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!--item-->
+                          <div class="orders-item mb-15">
+                            <div class="orders-item__head">
+                              <div class="orders-item__left"><span class="orders-item__title">ЗАКАЗ #267355 / 17 ОКТЯБРЯ 2018</span>
+                                <div class="order-label order-label_style1">отменен</div>
+                              </div><span class="orders-item__date">Дата обновления заказа: 17.10.2018 [09:14]</span>
+                            </div>
+                            <div class="orders-item__content">
+                              <div class="row">
+                                <div class="col-xl col-sm-12">
+                                  <div class="orders-item__l-list color-gray2"><span class="fwb ttu mb-10">СОСТАВ ЗАКАЗА:</span>
+                                    <ul>
+                                      <li class="mb-10">L.O.L. Surprise 559658 Гламурная  <span class="color-gray1">(1шт.)</span></li>
+                                      <li class="mb-10">Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт <span class="color-gray1">(1шт.)</span></li>
+                                      <li class="mb-10">L.O.L. Surprise 559658 Гламурная  <span class="color-gray1">(1шт.)</span></li>
+                                      <li class="mb-10">Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт <span class="color-gray1">(1шт.)</span></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="col-xl-auto col-sm-12">
+                                  <div class="orders-item__r-list color-gray2">
+                                    <ul>
+                                      <li class="mb-10">Сумма заказа: 1 450 ₽</li>
+                                      <li class="fwb mb-10">К оплате: 1 450 ₽</li>
+                                      <li class="mb-10">Картой при получении</li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!--item-->
+                          <div class="orders-item mb-15">
+                            <div class="orders-item__head">
+                              <div class="orders-item__left"><span class="orders-item__title">ЗАКАЗ #267355 / 17 ОКТЯБРЯ 2018</span>
+                                <div class="order-label order-label_style2">оплачен</div>
+                              </div><span class="orders-item__date">Дата обновления заказа: 17.10.2018 [09:14]</span>
+                            </div>
+                            <div class="orders-item__content">
+                              <div class="row">
+                                <div class="col-xl col-sm-12">
+                                  <div class="orders-item__l-list color-gray2"><span class="fwb ttu mb-10">СОСТАВ ЗАКАЗА:</span>
+                                    <ul>
+                                      <li class="mb-10">L.O.L. Surprise 559658 Гламурная  <span class="color-gray1">(1шт.)</span></li>
+                                      <li class="mb-10">Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт <span class="color-gray1">(1шт.)</span></li>
+                                      <li class="mb-10">L.O.L. Surprise 559658 Гламурная  <span class="color-gray1">(1шт.)</span></li>
+                                      <li class="mb-10">Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт <span class="color-gray1">(1шт.)</span></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="col-xl-auto col-sm-12">
+                                  <div class="orders-item__r-list color-gray2">
+                                    <ul>
+                                      <li class="mb-10">Сумма заказа: 1 450 ₽</li>
+                                      <li class="fwb mb-10">К оплате: 1 450 ₽</li>
+                                      <li class="mb-10">Картой при получении</li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!--item-->
+                          <div class="orders-item mb-15">
+                            <div class="orders-item__head">
+                              <div class="orders-item__left"><span class="orders-item__title">ЗАКАЗ #267355 / 17 ОКТЯБРЯ 2018</span>
+                                <div class="order-label order-label_style3">Выполнен</div>
+                              </div><span class="orders-item__date">Дата обновления заказа: 17.10.2018 [09:14]</span>
+                            </div>
+                            <div class="orders-item__content">
+                              <div class="row">
+                                <div class="col-xl col-sm-12">
+                                  <div class="orders-item__l-list color-gray2"><span class="fwb ttu mb-10">СОСТАВ ЗАКАЗА:</span>
+                                    <ul>
+                                      <li class="mb-10">L.O.L. Surprise 559658 Гламурная  <span class="color-gray1">(1шт.)</span></li>
+                                      <li class="mb-10">Zuru Metal Machines 6708 Модель машины 1:60 (в ассортименте) 12 шт <span class="color-gray1">(1шт.)</span></li>
+                                    </ul>
+                                  </div>
+                                </div>
+                                <div class="col-xl-auto col-sm-12">
+                                  <div class="orders-item__r-list color-gray2">
+                                    <ul>
+                                      <li class="mb-10">Сумма заказа: 1 450 ₽</li>
+                                      <li class="fwb mb-10">К оплате: 1 450 ₽</li>
+                                      <li class="mb-10">Картой при получении           </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!--пагниация-->
+                      <div class="pagination">
+                        <ul class="pagination__list">
+                          <li class="pagination__item"><a class="pagination__link js-animated active" href="#">1</a></li>
+                          <li class="pagination__item"><a class="pagination__link js-animated" href="#">2</a></li>
+                          <li class="pagination__item"><a class="pagination__link modern-page-next js-animated" href="#"><span>Следующая</span><i class="fas fa-chevron-right"></i></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </main>
+          </div>
+        </div>
+      </div>
+      <section class="mailing">
+        <div class="container">
+          <div class="mailing__container row">
+            <div class="mailing__text col-xl col-md-12">
+              <div class="bg lazy" data-src="img/mail.png"></div>
+              <h5 class="mailing__title">Подпишитесь на рассылку и получайте<br> дополнительные скидки!</h5>
+            </div>
+            <div class="mailing__form col-xl-auto col-md-12">
+              <form class="s-item-form" action="#">
+                <div class="s-item-form__container">
+                  <div class="input">
+                    <input type="email" placeholder="Ваш Email" requied>
+                  </div>
+                  <button class="button button_style2 color2 js-animated">Подписаться</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--footer-->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__container row">
+            <div class="footer__section col-xl-auto col-md-12">
+              <div class="logo"><a class="logo__link js-animated" href="/"><img src="img/logos/logo.svg" alt="logo"></a></div><span class="copy">2019 &copy; mvToys — детские игрушки и игры, товары для творчества и детского спорта с доставкой по всем городам России.</span>
+            </div>
+            <div class="footer__section col-xl-auto col-12">
+              <div class="footer-nav"><span class="footer-nav__title">ИНФОРМАЦИЯ</span>
+                <ul>
+                  <li> <a class="js-animated link link_style2" href="#">Контакты</a></li>
+                  <li> <a class="js-animated link link_style2" href="#">О нас</a></li>
+                  <li> <a class="js-animated link link_style2" href="#">Политика конфиденциальности</a></li>
+                  <li> <a class="js-animated link link_style2" href="#">Публичная оферта</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__section col-xl-auto col-12">
+              <div class="footer-nav"><span class="footer-nav__title">ПОКУПАТЕЛЯМ</span>
+                <ul>
+                  <li> <a class="js-animated link link_style2" href="#">Как оформить заказ</a></li>
+                  <li> <a class="js-animated link link_style2" href="#">Оплата и доставка</a></li>
+                  <li> <a class="js-animated link link_style2" href="#">Возврат и обмен</a></li>
+                  <li> <a class="js-animated link link_style2" href="#">Бренды</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__section col-xl-auto col-12">
+              <div class="contacts-block">
+                <ul class="contacts-block__list">
+                  <li class="contacts-block__item"><a class="contacts-block__link js-animated fwb link link_style2" href="tel:">8 (800) 500-50-50</a></li>
+                  <li class="contacts-block__item"><a class="contacts-block__link js-animated fwb link link_style2" href="tel:">8 (498) 222-33-44</a></li>
+                </ul>
+              </div><a class="js-animated link link_style2 footer__email" href="mailto:support@vmvtoys.ru">support@vmvtoys.ru</a>
+              <div class="socials">
+                <ul class="socials__list">
+                  <li class="socials__item"> <a class="socials__link js-animated" href="#"><i class="fab fa-vk"></i></a></li>
+                  <li class="socials__item"> <a class="socials__link js-animated" href="#"><i class="fab fa-facebook-f"></i></a></li>
+                  <li class="socials__item"> <a class="socials__link js-animated" href="#"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+              </div><img class="footer__payment" src="img/payment.png" alt="payment">
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!--jquery уже включен в сборку-->
+    <script src="js/app.min.js"></script>
+  </body>
+</html>
