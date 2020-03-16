@@ -104,8 +104,7 @@ block content
                   input(type="text" placeholder="Фамилия")
               .col-xl-4.col-md-6.col-12
                 .input.bordered.mb-10
-                  //маска привязана к name="phone"
-                  input(name="phone" type="text" placeholder="Телефон")
+                  input(type="text" placeholder="Телефон").masked
                 .input.bordered.mb-10
                   input(type="email" placeholder="E-mail")
               .col-xl-4.col-md-12
@@ -118,9 +117,11 @@ block content
             .tab-block__head.mb-25
               .row.row_compact
                 .col-xl-auto.col
-                  a(href="javascript:void(0)" data-tab='0').button.button_style3.js-animated.ttu.tab-trigger КУРЬЕРОМ
+                  label(data-tab='0').button.button_style3.js-animated.ttu.tab-trigger КУРЬЕРОМ
+                    input(type="radio" name='delivery')
                 .col-xl-auto.col
-                  a(href="javascript:void(0)" data-tab='1').button.button_style3.js-animated.ttu.tab-trigger самовывоз
+                  label(data-tab='1').button.button_style3.js-animated.ttu.tab-trigger самовывоз
+                    input(type="radio" name='delivery')
             .tab-block__content
               .tab-item
                 .row.row_b-compact

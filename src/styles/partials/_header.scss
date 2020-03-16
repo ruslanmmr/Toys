@@ -44,15 +44,17 @@
 }
 .m-header-block {
   &__container {
-    padding: 20px 0;
+    padding: 15px 0;
     align-items: center;
   }
 }
 .logo {
+  display: flex;
+  align-items: center;
   &__link {
-    display: inline-block;
-    height: 60px;
+    height: 70px;
     pointer-events: none;
+    margin-right: 20px;
     img {
       display: block;
       width: auto;
@@ -64,6 +66,13 @@
     }
     &.focus {
       transform: scale(0.97);
+    }
+  }
+  &__text {
+    text-transform: uppercase;
+    font-weight: 500;
+    span {
+      letter-spacing: 0.165em;
     }
   }
   img {
@@ -184,6 +193,9 @@
     &__link {
       height: 47.5px;
     }
+    &__text {
+      font-size: 14px;
+    }
   }
   .m-header-block__container {
     padding: 15px 0;
@@ -246,6 +258,14 @@
     &__link {
       height: 40px;
       padding: 0.3px 0;
+      margin-right: 10px;
+    }
+    &__text {
+      font-size: 10px;
+      line-height: 1.4;
+      span {
+        line-height: inherit;
+      }
     }
   }
 }

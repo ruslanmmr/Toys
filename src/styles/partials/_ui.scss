@@ -33,6 +33,11 @@
   span {
     line-height: inherit;
   }
+  input {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+  }
   &_style1 {
     line-height: 50px;
     height: 50px;
@@ -1820,6 +1825,11 @@ a {
     }
     &-form {
       padding: 0;
+    }
+  }
+  .pagination {
+    &__link {
+      line-height: 40px;
     }
   }
 }

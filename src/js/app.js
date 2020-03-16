@@ -292,7 +292,7 @@ let $select = {
   }
 }
 let $mask = {
-  el: document.querySelectorAll('[name="phone"]'),
+  el: document.querySelectorAll('.masked'),
   init: function() {
     if($mask.el!==null) {
       Inputmask({
@@ -356,7 +356,7 @@ let catalogue = {
       let $this = $(this);
 
       function isLink() {
-        if($this.find('.ctlg-nav-s').length>0) {
+        if($this.find('.ctlg-nav-s').length>0 && $(event.target).closest('.ctlg-nav-s').length==0) {
           return false;
         } else {
           return true;
@@ -764,7 +764,6 @@ let inputs = {
       if($target.hasClass('num-only')) {
         $target.val( $target.val().replace(/\D/, '') )
       }
-
     })
     
   }

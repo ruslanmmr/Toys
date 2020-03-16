@@ -245,17 +245,17 @@
   }
 }
 @media all and(max-width: 1024px) {
-  .dn-1024 {
+  .nav__item:nth-child(5) {
     display: none;
   }
 }
 @media all and(max-width: 900px) {
-  .dn-900 {
+  .nav__item:nth-child(3) {
     display: none;
   }
 }
 @media all and(max-width: 800px) {
-  .dn-800 {
+  .nav__item:nth-child(4) {
     display: none;
   }
 }
@@ -280,7 +280,7 @@
   }
 }
 @media all and(max-width: 700px) {
-  .dn-700 {
+  .nav__item:nth-child(6) {
     display: none;
   }
 }
