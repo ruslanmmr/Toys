@@ -121,8 +121,7 @@ import slick from "slick-carousel";
 window.Lazy = require('jquery-lazy');
 import flatpickr from "flatpickr";
 import { Russian } from "flatpickr/dist/l10n/ru.js"
-import "inputmask/lib/extensions/inputmask.numeric.extensions";
-import Inputmask from "inputmask/lib/extensions/inputmask.date.extensions";
+import Inputmask from "inputmask";
 import tippy from 'tippy.js';
 
 $(document).ready(function() {
@@ -780,7 +779,6 @@ let calc = {
           val = +$input.val();
       
       check();
-
       $plus.on('click', function() {
         val++;
         check();
