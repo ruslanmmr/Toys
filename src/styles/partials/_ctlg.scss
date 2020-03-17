@@ -4,6 +4,21 @@
     font-weight: 700;
     font-size: 30px;
   }
+  &__links {
+    .toggle-content {
+      margin-top: 20px;
+    }
+  }
+}
+@media all and(min-width: 577px) {
+  .ctlg__links {
+    .toggle-button {
+      display: none !important;
+    }
+    .toggle-content {
+      display: block !important;
+    }
+  }
 }
 .catalogue-card {
   .button {

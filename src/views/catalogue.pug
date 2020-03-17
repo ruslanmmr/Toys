@@ -27,26 +27,30 @@ block content
             //блок в котоырй будет перемещаться фильтр для мобильных
             .js-m-filter-parent.mb-20
             //ссылки каталога
-            .ctlg__links.mb-20
-              .row.row_compact
-                .col-xl-auto
-                  a(href="#").button.button_style3.js-animated Домики для кукол ЛОЛ
-                .col-xl-auto
-                  a(href="#").button.button_style3.js-animated Куклы ЛОЛ Winter Disco
-                .col-xl-auto
-                  a(href="#").button.button_style3.js-animated Куклы OMG
-                .col-xl-auto
-                  a(href="#").button.button_style3.js-animated Игровые наборы ЛОЛ
-                .col-xl-auto
-                  a(href="#").button.button_style3.js-animated Лол Питомцы
-                .col-xl-auto
-                  a(href="#").button.button_style3.js-animated Куклы ЛОЛ чемодан
-                .col-xl-auto
-                  a(href="#").button.button_style3.js-animated Куклы ЛОЛ 4 серия
-                .col-xl-auto
-                  a(href="#").button.button_style3.js-animated Куклы ЛОЛ 5 серия
-                .col-xl-auto
-                  a(href="#").button.button_style3.js-animated Куклы ЛОЛ шар
+            .ctlg__links.toggle-group.mb-20
+              a(href="javascript:void(0);" data-show-text='Подкатегории' data-hide-text='Скрыть').button.button_style3.js-animated.toggle-button  
+                span Подкатегории
+                i.fas.fa-th
+              .toggle-content
+                .row.row_compact
+                  .col-xl-auto
+                    a(href="#").button.button_style3.js-animated Домики для кукол ЛОЛ
+                  .col-xl-auto
+                    a(href="#").button.button_style3.js-animated Куклы ЛОЛ Winter Disco
+                  .col-xl-auto
+                    a(href="#").button.button_style3.js-animated Куклы OMG
+                  .col-xl-auto
+                    a(href="#").button.button_style3.js-animated Игровые наборы ЛОЛ
+                  .col-xl-auto
+                    a(href="#").button.button_style3.js-animated Лол Питомцы
+                  .col-xl-auto
+                    a(href="#").button.button_style3.js-animated Куклы ЛОЛ чемодан
+                  .col-xl-auto
+                    a(href="#").button.button_style3.js-animated Куклы ЛОЛ 4 серия
+                  .col-xl-auto
+                    a(href="#").button.button_style3.js-animated Куклы ЛОЛ 5 серия
+                  .col-xl-auto
+                    a(href="#").button.button_style3.js-animated Куклы ЛОЛ шар
             //сортировка
             .ctlg-sorting.mb-20
               .ctlg-sorting-section

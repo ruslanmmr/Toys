@@ -142,6 +142,8 @@ $(document).ready(function() {
   calc.init();
   inputs.init();
 
+  toggleblocks();
+
   if($('html').hasClass('desktop')) {
     //code
   }
@@ -330,18 +332,25 @@ let catalogue = {
         $subnav = $('.ctlg-nav-s__list'),
         $trigger = $('.ctlg-nav-m__item');
 
+    $parent.css('min-width', catalogue.$toggle.outerWidth())
+
     $subnav.each(function() {
       let items = $(this).find('.ctlg-nav-s__item'),
           allHeight = 0;
 
-      $(this).height(h);
-
       items.each(function() {
         allHeight = allHeight + $(this).height();
       })
-      if(allHeight>h) {
+      if(allHeight/1.9>h) {
         $(this).addClass('extended');
+        $(this).height(allHeight/1.9);
+      } else {
+        $(this).height(h);
+        if(allHeight>h) {
+          $(this).addClass('extended');
+        }
       }
+
     })
 
     //prevent for touch
@@ -806,4 +815,53 @@ let calc = {
       }
     })
   }
+}
+
+//toggle blocks
+function toggleblocks() {
+  let $container = $('.toggle-group'),
+      $btns,
+      $content;
+
+  $(document).on('click', '.toggle-button', function(event) {
+    event.preventDefault();
+
+    $container = $(this).closest('.toggle-group');
+    $content = $container.find('.toggle-content').eq(0);
+    $btns = $container.find('.toggle-button').not($content.find('.toggle-button'));
+
+
+    if($container.hasClass('active')) {
+      $container.removeClass('active');
+      $content.removeClass('active');
+      $btns.each(function() {
+        $(this).removeClass('active');
+        if($(this).data('show-text')!==undefined) {
+          if($(this).find('span').length>0) {
+            $(this).find('span').text($(this).data('show-text'))
+          } else {
+            $(this).text($(this).data('show-text'))
+          }
+        }
+      })
+    } else {
+      $container.addClass('active');
+      $content.addClass('active');
+      $btns.each(function() {
+        $(this).addClass('active');
+        if($(this).data('hide-text')!==undefined) {
+          if($(this).find('span').length>0) {
+            $(this).find('span').text($(this).data('hide-text'))
+            console.log('2')
+          } else {
+            $(this).text($(this).data('hide-text'))
+          }  
+        }
+      })
+    }
+
+
+  })
+
+
 }

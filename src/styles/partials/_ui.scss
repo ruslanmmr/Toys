@@ -168,6 +168,27 @@
       background-color: $colorB2;
       border-color: $colorB2;
     }
+    &.toggle-button {
+      height: 45px;
+      line-height: 43px;
+      text-transform: uppercase;
+      font-weight: 700;
+      i {
+        line-height: inherit;
+        margin-left: 15px;
+        line-height: 43px;
+      }
+      &.active {
+        pointer-events: all;
+        i {
+          display: none;
+        }
+        &.touch,
+        &.hover {
+          background-color: $colorB2;
+        }
+      }
+    }
   }
 }
 a {
@@ -372,6 +393,15 @@ a {
     }
   }
 }
+
+
+.toggle-content {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+
 //checkboxes
 .checkbox {
   position: relative;
