@@ -125,3 +125,15 @@ mixin card5()
           a(href="#").catalogue-card__title.js-animated L.O.L. Surprise 560579 Кукла OMG Neonlicious 23 см
           span.catalogue-card__art Код товара 
             strong 559658
+
+mixin card6(title, text, href)
+  .catalogue-card.col-xl-3.col-md-4.col-sm-6.col-12
+    .catalogue-card__container.js-animated
+      .catalogue-card__image
+        a(href="#").cover-box.cover-box_contain
+          img(data-src=href alt="image").lazy
+      .catalogue-card__content
+        .catalogue-card__top
+          a(href="#").catalogue-card__title.t-size-24=title
+          p=text
+          

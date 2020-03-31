@@ -64,6 +64,10 @@
 @media all and(max-width: 576px) {
   .footer {
     text-align: center;
+    .logo {
+      display: flex;
+      justify-content: center;
+    }
     &__container {
       justify-content: center;
     }

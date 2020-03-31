@@ -1,0 +1,82 @@
+.popup#auth
+  h5.popup__title.t-size-24.mb-30 Войти в личный кабинет
+  form(action="#").form.mb-20
+    .input.bordered.mb-20
+      input(type="text" placeholder="Логин")
+    .input.bordered.mb-20
+      input(type="password" placeholder="Пароль")
+      a(href="javascript:void(0);").js-pass-toggle
+        i.fas.fa-eye-slash
+        i.fas.fa-eye
+    .form__item.row.row_ai-c 
+      .col-xl-auto
+        a(href="#").link Забыли пароль?
+      .col-xl
+        button.button.button_style2.color1 Войти
+  .mb-20
+    span.display-block.text-center.mb-10 или войти с помощью
+    .socials
+      ul.socials__list
+        li.socials__item  
+          a(href="#").socials__link
+            i.fab.fa-vk
+        li.socials__item  
+          a(href="#").socials__link
+            i.fab.fa-facebook-f
+        li.socials__item  
+          a(href="#").socials__link
+            i.fab.fa-twitter
+        li.socials__item  
+          a(href="#").socials__link
+            i.fab.fa-odnoklassniki
+        li.socials__item  
+          a(href="#").socials__link
+            i.fab.fa-google
+        li.socials__item  
+          a(href="#").socials__link
+            i.fab.fa-yandex
+            
+  .text-center
+    a(href="#registration" data-fancybox data-touch='false').link
+      | Зарегистрироваться
+
+.popup#registration
+  h5.popup__title.t-size-24.mb-30 Регистрация
+  form(action="#").form.mb-20
+    .input.bordered.mb-20
+      input(type="text" placeholder="Логин/Телефон/Email")
+    .input.bordered.mb-20
+      input(type="password" placeholder="Пароль")
+    .input.bordered.mb-20
+      input(type="password" placeholder="Пароль еще раз")
+    .form__item.mb-20
+      label.checkbox
+        input(type="checkbox" value="check")
+        i.fas.fa-check
+        | Я соглашаюсь с 
+        a(href="#").link правилами сайта
+        |.
+    .form__item
+      button.button.button_style2.color1 Зарегистрироваться
+  .text-center
+    a(href="#auth" data-fancybox data-touch='false').link Войти
+
+.popup.message-popup#cart
+  h5.message-popup__title.t-size-24.mb-20
+    i.fas.fa-check
+    | Товар добавлен в корзину
+  .mb-20
+    .row.row_md.row_ai-c
+      .col-xl-auto
+        a(href="#").message-popup__image.cover-box.cover-box_contain
+          img(data-src="img/Layer 348.png" alt="img").lazy
+      .col-xl
+        a(href="#").message-popup__title.link.link_style2 L.O.L. Surprise 559658 Гламурная
+        br
+        span.color-gray2 Код товара  
+          strong 559658
+  .row.row_md
+    .col-xl-auto
+      a(href="javascript:void(0);" data-fancybox-close).button.button_style3 Продолжить покупки
+    .col-xl-auto
+      a(href="cart.html").button.button_style2.color1 Перейти в корзину

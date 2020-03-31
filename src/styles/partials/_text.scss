@@ -4,12 +4,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #000;
   line-height: 1.1;
 }
-span, p, a, li {
-  line-height: 1.5;
-}
-a {
-  display: inline-block;
-}
 p {
   margin: 0;
   color: $colorE;
@@ -66,7 +60,6 @@ p {
     }
   }
 }
-
 
 .t-a-center {
   display: block;

@@ -25,39 +25,106 @@
   <body>
     <!--page-->
     <div class="page-wrapper">
+      <!--messages-->
+      <div class="popup" id="auth">
+        <h5 class="popup__title t-size-24 mb-30">Войти в личный кабинет</h5>
+        <form class="form mb-20" action="#">
+          <div class="input bordered mb-20">
+            <input type="text" placeholder="Логин">
+          </div>
+          <div class="input bordered mb-20">
+            <input type="password" placeholder="Пароль"><a class="js-pass-toggle" href="javascript:void(0);"><i class="fas fa-eye-slash"></i><i class="fas fa-eye"></i></a>
+          </div>
+          <div class="form__item row row_ai-c"> 
+            <div class="col-xl-auto"><a class="link" href="#">Забыли пароль?</a></div>
+            <div class="col-xl">
+              <button class="button button_style2 color1">Войти</button>
+            </div>
+          </div>
+        </form>
+        <div class="mb-20"><span class="display-block text-center mb-10">или войти с помощью</span>
+          <div class="socials">
+            <ul class="socials__list">
+              <li class="socials__item"> <a class="socials__link" href="#"><i class="fab fa-vk"></i></a></li>
+              <li class="socials__item"> <a class="socials__link" href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li class="socials__item"> <a class="socials__link" href="#"><i class="fab fa-twitter"></i></a></li>
+              <li class="socials__item"> <a class="socials__link" href="#"><i class="fab fa-odnoklassniki"></i></a></li>
+              <li class="socials__item"> <a class="socials__link" href="#"><i class="fab fa-google"></i></a></li>
+              <li class="socials__item"> <a class="socials__link" href="#"><i class="fab fa-yandex"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="text-center"><a class="link" href="#registration" data-fancybox data-touch="false">Зарегистрироваться</a></div>
+      </div>
+      <div class="popup" id="registration">
+        <h5 class="popup__title t-size-24 mb-30">Регистрация</h5>
+        <form class="form mb-20" action="#">
+          <div class="input bordered mb-20">
+            <input type="text" placeholder="Логин/Телефон/Email">
+          </div>
+          <div class="input bordered mb-20">
+            <input type="password" placeholder="Пароль">
+          </div>
+          <div class="input bordered mb-20">
+            <input type="password" placeholder="Пароль еще раз">
+          </div>
+          <div class="form__item mb-20">
+            <label class="checkbox">
+              <input type="checkbox" value="check"><i class="fas fa-check"></i>Я соглашаюсь с <a class="link" href="#">правилами сайта</a>.
+            </label>
+          </div>
+          <div class="form__item">
+            <button class="button button_style2 color1">Зарегистрироваться</button>
+          </div>
+        </form>
+        <div class="text-center"><a class="link" href="#auth" data-fancybox data-touch="false">Войти</a></div>
+      </div>
+      <div class="popup message-popup" id="cart">
+        <h5 class="message-popup__title t-size-24 mb-20"><i class="fas fa-check"></i>Товар добавлен в корзину</h5>
+        <div class="mb-20">
+          <div class="row row_md row_ai-c">
+            <div class="col-xl-auto"><a class="message-popup__image cover-box cover-box_contain" href="#"><img class="lazy" data-src="img/Layer 348.png" alt="img"></a></div>
+            <div class="col-xl"><a class="message-popup__title link link_style2" href="#">L.O.L. Surprise 559658 Гламурная</a><br><span class="color-gray2">Код товара  <strong>559658</strong></span></div>
+          </div>
+        </div>
+        <div class="row row_md">
+          <div class="col-xl-auto"><a class="button button_style3" href="javascript:void(0);" data-fancybox-close>Продолжить покупки</a></div>
+          <div class="col-xl-auto"><a class="button button_style2 color1" href="cart.html">Перейти в корзину</a></div>
+        </div>
+      </div>
       <!--header-->
       <header class="header">
         <div class="header__t-line-section">
           <div class="container">
             <ul class="t-line-nav">
-              <li class="t-line-nav__item"><a class="t-line-nav__link js-animated" href="#">О компании</a></li>
-              <li class="t-line-nav__item"><a class="t-line-nav__link js-animated" href="#">Обратная связь</a></li>
-              <li class="t-line-nav__item"><a class="t-line-nav__link js-animated" href="#">Оптовикам</a></li>
-              <li class="t-line-nav__item"><a class="t-line-nav__link js-animated" href="#">Оплата и доставка</a></li>
+              <li class="t-line-nav__item"><a class="t-line-nav__link" href="#">О компании</a></li>
+              <li class="t-line-nav__item"><a class="t-line-nav__link" href="#">Обратная связь</a></li>
+              <li class="t-line-nav__item"><a class="t-line-nav__link" href="#">Оптовикам</a></li>
+              <li class="t-line-nav__item"><a class="t-line-nav__link" href="#">Оплата и доставка</a></li>
             </ul><span class="header__t-info-item">с 9.00 до 21.00, без выходных</span>
           </div>
         </div>
         <div class="m-header-block">
           <div class="container">
             <div class="m-header-block__container row">
-              <div class="logo col-xl-auto"><a class="logo__link js-animated" href="/"><img src="img/logos/logo-new2.svg" alt="logo"></a><span class="logo__text">Мы любим<br> <span>игрушки</span></span></div>
+              <div class="logo col-xl-auto"><a class="logo__link" href="/"><img src="img/logos/logo-new2.svg" alt="logo"></a><span class="logo__text">Мы любим<br> <span>игрушки</span></span></div>
               <div class="search col-xl col-12">
                 <form class="search__form" action="#">
                   <div class="input">
                     <input type="text" placeholder="Что будем искать?">
                   </div>
-                  <button class="button search__btn js-animated"><i class="fas fa-search"></i></button>
+                  <button class="button search__btn"><i class="fas fa-search"></i></button>
                 </form>
               </div>
               <div class="contacts-block col-xl-auto">
                 <ul class="contacts-block__list">
-                  <li class="contacts-block__item"><a class="contacts-block__link js-animated fwb link link_style2" href="tel:">8 (800) 500-50-50</a></li>
-                  <li class="contacts-block__item"><a class="contacts-block__link js-animated fwb link link_style2" href="tel:">8 (498) 222-33-44</a></li>
+                  <li class="contacts-block__item"><a class="contacts-block__link fwb link link_style2" href="tel:">8 (800) 500-50-50</a></li>
+                  <li class="contacts-block__item"><a class="contacts-block__link fwb link link_style2" href="tel:">8 (498) 222-33-44</a></li>
                 </ul>
               </div>
-              <div class="cart-nav-block col-xl-auto"><a class="cart-nav-block__button js-animated" href="#"><i class="fas fa-user"></i>
-                  <div class="cart-nav-block__button-txt">Профиль</div></a><a class="cart-nav-block__button js-animated" href="#"><i class="fas fa-shopping-cart"></i>
-                  <div class="cart-nav-block__button-txt">Корзина</div><span>10</span></a><a class="cart-nav-block__button js-animated nav-toggle" href="javascript:void(0)"><i class="fas fa-bars"></i><i class="fas fa-times"></i>
+              <div class="cart-nav-block col-xl-auto"><a class="cart-nav-block__button" href="#auth" data-fancybox><i class="fas fa-user"></i>
+                  <div class="cart-nav-block__button-txt">Профиль</div></a><a class="cart-nav-block__button" href="#"><i class="fas fa-shopping-cart"></i>
+                  <div class="cart-nav-block__button-txt">Корзина</div><span>10</span></a><a class="cart-nav-block__button nav-toggle" href="javascript:void(0)"><i class="fas fa-bars"></i><i class="fas fa-times"></i>
                   <div class="cart-nav-block__button-txt">Меню</div></a></div>
             </div>
           </div>
@@ -826,7 +893,7 @@
         <div class="container">
           <div class="footer__container row">
             <div class="footer__section col-xl-auto col-md-12">
-              <div class="logo"><a class="logo__link js-animated" href="/"><img src="img/logos/logo.svg" alt="logo"></a></div><span class="copy">2019 &copy; mvToys — детские игрушки и игры, товары для творчества и детского спорта с доставкой по всем городам России.</span>
+              <div class="logo"><a class="logo__link js-animated" href="/"><img src="img/logos/logo-new2.svg" alt="logo"></a><span class="logo__text">Мы любим<br> <span>игрушки</span></span></div><span class="copy">2019 &copy; mvToys — детские игрушки и игры, товары для творчества и детского спорта с доставкой по всем городам России.</span>
             </div>
             <div class="footer__section col-xl-auto col-12">
               <div class="footer-nav"><span class="footer-nav__title">ИНФОРМАЦИЯ</span>

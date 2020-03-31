@@ -91,7 +91,6 @@ block content
                     tr.color-black
                       th.fwb Итого:
                       th.fwb.price-total-table__price 30 999 ₽
-
         section.section
           .section__head
             h5.section__title.t-size-30 Контактные данные
@@ -116,11 +115,12 @@ block content
           .section__content.tab-block
             .tab-block__head.mb-25
               .row.row_compact
-                .col-xl-auto.col
+                .col-xl-auto
                   label(data-tab='0').button.button_style3.js-animated.ttu.tab-trigger КУРЬЕРОМ
                     input(type="radio" name='delivery')
-                .col-xl-auto.col
-                  label(data-tab='1').button.button_style3.js-animated.ttu.tab-trigger самовывоз
+                .col-xl-auto
+                  label(data-tab='1').button.button_style3.tab-trigger
+                    img(src="img/logo.png", alt="pickpoint")
                     input(type="radio" name='delivery')
             .tab-block__content
               .tab-item

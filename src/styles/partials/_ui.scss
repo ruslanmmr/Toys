@@ -7,8 +7,7 @@
   height: 40px;
   transition: inherit;
 }
-.js-animated {
-  user-select: none;
+a,button,label {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   transition: $trs1;
 }
@@ -27,6 +26,7 @@
   white-space: nowrap;
   text-align: center;
   color: $colorG;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   * {
     pointer-events: none;
   }
@@ -107,6 +107,7 @@
     height: 40px;
     padding: 0 10px;
     border-radius: 4px;
+    min-width: 40px;
     &.color1 {
       background-color: $colorA;
       &.touch,
@@ -152,8 +153,15 @@
     border-radius: 4px;
     border: 1px solid $colorB;
     color: $colorB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     i {
       margin-right: 8px;
+    }
+    img {
+      height: 20px;
+      width: auto;
     }
     &.touch,
     &.hover,
@@ -190,6 +198,32 @@
       }
     }
   }
+  &_style4 {
+    line-height: 38px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid $colorB;
+    padding: 10px 15px !important;
+    img {
+      height: 100%;
+      width: auto;
+      display: block;
+    }
+    &.touch,
+    &.hover,
+    &.active {
+
+    }
+    &.active {
+      pointer-events: none;
+    }
+    &.focus {
+
+    }
+  }
+  &_w100 {
+    width: 100%;
+  }
 }
 a {
   color: inherit;
@@ -202,6 +236,7 @@ a {
 .link {
   text-decoration: none;
   color: $colorB;
+  transition: $trs1;
   &.touch,
   &.hover {
     color: $colorB2;
@@ -798,6 +833,7 @@ a {
     color: #fff;
     font-size: 20px;
     color: #fff !important;
+    transition: $trs1;
     &.hover,
     &.touch {
       background-color: $colorB2;
@@ -998,6 +1034,7 @@ a {
   .button {
     padding: 0 20px;
     margin: 0 20px 0 0;
+    flex-shrink: 0;
   }
 }
 //flatpickr
@@ -1387,7 +1424,6 @@ a {
     margin-right: 10px;
     &__image {
       width: 90px;
-      transition: $trs1;
       &:before {
         content: '';
         display: block;
@@ -1608,8 +1644,84 @@ a {
   }
 }
 
+.popup {
+  display: none;
+  width: 100%;
+  max-width: 400px;
+  .fancybox-close-small {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .button {
+    width: 100%;
+  }
+  .socials {
+    &__list {
+      justify-content: center;
+    }
+  }
+  &__title {
+    border-bottom: 1px solid $colorI;
+    padding-bottom: 7px;
+  }
+}
+.message-popup {
+  max-width: 100%;
+  width: auto;
+  padding: 40px 20px 20px 20px;
+  &__title {
+    i {
+      color: $colorC;
+      margin-right: 15px;
+    }
+  }
+  &__image {
+    width: 90px;
+    &:before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+    &.touch,
+    &.hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+
+.stock-block-p {
+  background-color: #fff;
+  box-shadow: $shadow1;
+  border-radius: 8px;
+  overflow: hidden;
+  &__title {
+    font-size: 24px;
+    display: inline-block;
+  }
+  &__content {
+    padding: 20px;
+  }
+  &__image {
+    display: block;
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 37%;
+    }
+  }
+}
+
 
 @media all and(max-width: 1024px) {
+  .stock-block-p {
+    &__image {
+      &::before {
+        padding-top: 50%;
+      }
+    }
+  }
   .kids-kategory {
     width: auto;
   }
@@ -1861,5 +1973,8 @@ a {
     &__link {
       line-height: 40px;
     }
+  }
+  .popup {
+    padding: 40px 20px;
   }
 }

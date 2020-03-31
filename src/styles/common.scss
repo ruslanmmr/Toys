@@ -1,6 +1,8 @@
 @import "./partials/normalize";
 @import "./partials/fonts";
 
+
+
 //color 
 $colorA: #ffcc00;
 $colorA2: #ffdd55;
@@ -10,7 +12,7 @@ $colorB: #5ba4e4;
 $colorB2: #3087d3;
 $colorB3: #2378c2;
 $colorB4: #e8f4ff;
-$colorB5: #f9fcff;
+$colorB5: #f9fcff; 
 $colorB6: #e3e8ea;
 $colorB7: #cdd4d7;
 $colorB8: #c5cbce; 
@@ -46,9 +48,9 @@ body {
   font-family: $font1;
   font-size: 16px;
   min-width: 320px;
-  line-height: 1;
+  line-height: 1.5;
   color: $colorG;
-  background-color: hsl(210, 40%, 98%);
+  background-color: #f8fafc;
   &.fixed {
     overflow: hidden;
   }
@@ -109,7 +111,10 @@ body {
 @import '../../node_modules/tippy.js/dist/tippy.css';
 @import '../../node_modules/tippy.js/themes/light-border.css';
 @import '../../node_modules/tippy.js/animations/scale-extreme.css';
+@import "./partials/fancybox";
+@import "./partials/helpers";
 @import "./partials/text";
+@import "./partials/messages";
 @import "./partials/ui";
 @import "./partials/slider";
 @import "./partials/header";

@@ -123,6 +123,7 @@ import flatpickr from "flatpickr";
 import { Russian } from "flatpickr/dist/l10n/ru.js"
 import Inputmask from "inputmask";
 import tippy from 'tippy.js';
+window.fancybox = require("@fancyapps/fancybox");
 
 $(document).ready(function() {
   $select.init();
@@ -141,6 +142,8 @@ $(document).ready(function() {
   pass.init();
   calc.init();
   inputs.init();
+
+  modals();status
 
   toggleblocks();
 
@@ -174,7 +177,7 @@ function desktop() {
 
 let animatedElements = {
   init: function() {
-    $(document).on('mouseenter mouseleave touchstart touchend mousedown mouseup', '.js-animated', function(event) {
+    $(document).on('mouseenter mouseleave touchstart touchend mousedown mouseup', 'a, button, label, .js-animated', function(event) {
       let $target = $(this);
   
       if(event.type=='touchstart' && !$('html').hasClass('desktop')) {
@@ -718,7 +721,6 @@ let picker = {
     }
 
     flatpickr($date.find('input'), {
-      minDate: "today",
       "locale": Russian,
       disableMobile: "true",
       dateFormat: "d.m.Y",
@@ -817,6 +819,55 @@ let calc = {
   }
 }
 
+//modals/popups
+function modals() {
+  $.fancybox.defaults.btnTpl.close = '<button data-fancybox-close class="button fancybox-button fancybox-button--close" title="{{CLOSE}}"></button>';
+  $.fancybox.defaults.btnTpl.arrowLeft = '<button data-fancybox-prev class="button fancybox-button fancybox-button--arrow_left" title="{{PREV}}"></button>';
+  $.fancybox.defaults.btnTpl.arrowRight = '<button data-fancybox-prev class="button fancybox-button fancybox-button--arrow_right" title="{{PREV}}"></button>';
+  $.fancybox.defaults.btnTpl.zoom = '<button data-fancybox-zoom class="button fancybox-button fancybox-button--zoom" title="{{ZOOM}}"></button>';
+  $.fancybox.defaults.btnTpl.download = '<a download data-fancybox-download class="button fancybox-button fancybox-button--download" href="javascript:;" title="{{DOWNLOAD}}"></a>';
+  $.fancybox.defaults.btnTpl.slideShow = '<button data-fancybox-play class="button fancybox-button fancybox-button--play" title="{{PLAY_START}}"></button>';
+  $.fancybox.defaults.btnTpl.smallBtn = '<button type="button" data-fancybox-close class="button fancybox-button fancybox-close-small" title="{{CLOSE}}"><i class="fas fa-times"></i></button>';
+  $.fancybox.defaults.btnTpl.thumbs = '<button data-fancybox-thumbs class="button fancybox-button fancybox-button--thumbs" title="{{THUMBS}}"></button>';
+  $.fancybox.defaults.i18n.ru = {
+    CLOSE       : 'Закрыть',
+    NEXT        : 'Следующий слайд',
+    PREV        : 'Предидущий слайд',
+    ERROR       : 'Ошибка загрузки, попробуйте позже.',
+    PLAY_START  : 'Запустить слайд-шоу',
+    PLAY_STOP   : 'Остановить слайд-шоу',
+    FULL_SCREEN : 'Полноэкранный режим',
+    THUMBS      : 'Миниатюры',
+    DOWNLOAD    : 'Загрузить',
+    SHARE       : 'Поделиться',
+    ZOOM        : 'Увеличить'
+  };
+  $.fancybox.defaults.lang = 'ru';
+  $.fancybox.defaults.loop = true;
+  $.fancybox.defaults.autoFocus = false;
+  $.fancybox.defaults.animationEffect = 'fade';
+  $.fancybox.defaults.backFocus = 'false';
+  $.fancybox.defaults.touch = false;
+  $.fancybox.defaults.animationDuration = 500;
+
+
+
+  let $old;
+  $('[data-fancybox]').fancybox({
+    beforeShow: function(instance) {
+      if($old!==undefined) {
+        setTimeout(function(){
+          $old.close();
+          $old = instance;
+        })
+      } else {
+        $old = instance;
+      }
+    }
+  });
+  
+}
+
 //toggle blocks
 function toggleblocks() {
   let $container = $('.toggle-group'),
@@ -865,3 +916,7 @@ function toggleblocks() {
 
 
 }
+
+
+//open popup
+//$.fancybox.open([{src:'#cart'}]);

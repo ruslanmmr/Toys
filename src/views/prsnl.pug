@@ -19,86 +19,108 @@ block content
                     i.fas.fa-list-ul
                     | история заказов
             .tab-block__content
-              .tab-item
+              .tab-item.active
                 .profile
                   .profile__bonus-b на вашем бонусном счете: 
                     strong 999 ₽ 
                     i.fas.fa-question-circle.js-animated(data-tippy-content='Текст о том, что такое бонусный счет и как накопить много бабла и платить им на сайте')
                   .profile-form
                     .row
-                      .col-xl-6.col-12
-                        .profile-form__section
-                          h5.profile-form__title.t-size-24 Контактные данные
-                          .profile-form__item.mb-10
-                            span.input-label Телефон:
-                            .input.bordered.succes
-                              input(type="text" name="phone" placeholder="+7 977 652-73-40")
+                      //группа
+                      .profile-form__section.col-xl-6.col-12
+                        h5.profile-form__title.mb-20.t-size-24 Контактные данные
+                        .profile-form__item.mb-10
+                          span.input-label Телефон:
+                          .input.bordered.succes
+                            input(type="text" name="phone" placeholder="+7 977 652-73-40")
+                            i.fas.fa-check
+                            i.fas.fa-times
+                        .profile-form__item.mb-10
+                          span.input-label Электронная почта:
+                          .input.bordered.error
+                            input(type="text" placeholder="problem@satra.ru")
+                            i.fas.fa-check
+                            i.fas.fa-times
+                        .profile-form__item.mb-10
+                          span.input-label Телефон:
+                          .input.bordered
+                            input(type="text" name="phone" value='+7 977 652-73-40' placeholder="+7 977 652-73-40")
+                            i.fas.fa-check
+                            i.fas.fa-times
+                        .profile-form__item.mb-10
+                          span.input-label Фамилия:
+                          .input.bordered
+                            input(type="text")
+                            i.fas.fa-check
+                            i.fas.fa-times
+                        .profile-form__item.mb-10
+                          span.input-label Имя:
+                          .input.bordered
+                            input(type="text")
+                            i.fas.fa-check
+                            i.fas.fa-times
+                        .profile-form__item.mb-10
+                          span.input-label Отчество:
+                          .input.bordered
+                            input(type="text")
+                            i.fas.fa-check
+                            i.fas.fa-times
+                      //группа
+                      .profile-form__section.col-xl-6.col-12
+                        h5.profile-form__title.mb-20.t-size-24 День рождения моего ребенка
+                        .profile-form__children.mb-10
+                          .profile-form__group.row.row_compact
+                            .col-xl
+                              .input.bordered
+                                input(type="text" placeholder='Имя')
+                            .col-xl
+                              .input.bordered.mb-10.js-picker-date
+                                input(type="text" placeholder="Дата")
+                                i.far.fa-calendar-alt
+                            .col-xl-auto
+                              a(href="javascript:void(0);" data-tippy-content='Удалить').button.button_style2.color3
+                                i.fas.fa-times
+                        .mb-20
+                          .row
+                            .col-xl-auto.col-12
+                              a(href="javascript:void(0);").button.button_style2.button_w100.color2 Добавить строку
+                        .message.message_info  Мы подарим Вам дополнительную скидку на день рождения Вашего ребенка. Скидка будет действовать 7 дней до дня рождения и 7 дней после.
+                      //группа
+                      .profile-form__section.col-xl-6.col-12
+                        h5.profile-form__title.mb-20.t-size-24 Смена пароля
+                        .profile-form__item.mb-10
+                          span.input-label Новый пароль:
+                          .input.bordered
+                            input(type="password")
+                            a(href="javascript:void(0)").js-pass-toggle.js-animated
+                              i.fas.fa-eye
+                              i.fas.fa-eye-slash
+                        .profile-form__item.mb-10
+                          span.input-label Подтверджение пароля:
+                          .input.bordered
+                            input(type="password")
+                            i.fas.fa-check
+                            i.fas.fa-times
+                            span Пароль должен содержать не менее 6 символов
+                        
+                      //группа
+                      .profile-form__section.col-xl-6.col-12
+                        h5.profile-form__title.mb-20.t-size-24 Уведомления
+                        .profile-form__item.mb-10
+                          span.input-label Включить уведомления:
+                          .profile-form__list
+                            label.checkbox.js-animated.mb-10 
                               i.fas.fa-check
-                              i.fas.fa-times
-                          .profile-form__item.mb-10
-                            span.input-label Электронная почта:
-                            .input.bordered.error
-                              input(type="text" placeholder="problem@satra.ru")
+                              input(type="checkbox")
+                              | e-mail
+                            label.checkbox.js-animated.mb-10 
                               i.fas.fa-check
-                              i.fas.fa-times
-                          .profile-form__item.mb-10
-                            span.input-label Телефон:
-                            .input.bordered
-                              input(type="text" name="phone" value='+7 977 652-73-40' placeholder="+7 977 652-73-40")
-                              i.fas.fa-check
-                              i.fas.fa-times
-                          .profile-form__item.mb-10
-                            span.input-label Фамилия:
-                            .input.bordered
-                              input(type="text")
-                              i.fas.fa-check
-                              i.fas.fa-times
-                          .profile-form__item.mb-10
-                            span.input-label Имя:
-                            .input.bordered
-                              input(type="text")
-                              i.fas.fa-check
-                              i.fas.fa-times
-                          .profile-form__item.mb-10
-                            span.input-label Отчество:
-                            .input.bordered
-                              input(type="text")
-                              i.fas.fa-check
-                              i.fas.fa-times
-                      .col-xl-6.col-12
-                        .row
-                          .col-xl-12
-                            .profile-form__section
-                              h5.profile-form__title.t-size-24 Смена пароля
-                              .profile-form__item.mb-10
-                                span.input-label Новый пароль:
-                                .input.bordered
-                                  input(type="password")
-                                  a(href="javascript:void(0)").js-pass-toggle.js-animated
-                                    i.fas.fa-eye
-                                    i.fas.fa-eye-slash
-                              .profile-form__item.mb-10
-                                span.input-label Подтверджение пароля:
-                                .input.bordered
-                                  input(type="password")
-                                  i.fas.fa-check
-                                  i.fas.fa-times
-                                  span Пароль должен содержать не менее 6 символов
-                          .col-xl-12
-                            .profile-form__section
-                              h5.profile-form__title.t-size-24 Уведомления
-                              .profile-form__item.mb-10
-                                span.input-label Включить уведомления:
-                                .profile-form__list
-                                  label.checkbox.js-animated.mb-10 
-                                    i.fas.fa-check
-                                    input(type="checkbox")
-                                    | e-mail
-                                  label.checkbox.js-animated.mb-10 
-                                    i.fas.fa-check
-                                    input(type="checkbox")
-                                    | sms
-              .tab-item.active
+                              input(type="checkbox")
+                              | sms
+                      //группа
+                      .profile-form__section.col-xl-auto.col-12
+                        button.button.button_style2.button_w100.color1 Сохранить изменения
+              .tab-item
                 .orders.mb-30
                   .orders__container
                     //item

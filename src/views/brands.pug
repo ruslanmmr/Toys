@@ -1,0 +1,46 @@
+extends layout/layout
+block content
+  include blocks/breadcrumbs
+  .page-content
+    .container
+      main.main
+        section.section
+          .section__head
+            h5.section__title.t-size-30 ИГРУШКИ ПО БРЕНДАМ
+          .section__content.mb-30
+            .row
+              include blocks/ctlg-cards
+              +card6('LEGO', 'Живая классика, свобода творчества и конструирования!', 'https://cdn.toy.ru/upload/iblock/8e8/lego.png')
+              +card6('Crate Creatures', 'Милые интерактивные монстры', 'https://cdn.toy.ru/upload/iblock/d24/cratecreaturessurprise.png')
+              +card6('LEGO', 'Живая классика, свобода творчества и конструирования!', 'https://cdn.toy.ru/upload/iblock/8e8/lego.png')
+              +card6('Crate Creatures', 'Милые интерактивные монстры', 'https://cdn.toy.ru/upload/iblock/d24/cratecreaturessurprise.png')
+              +card6('LEGO', 'Живая классика, свобода творчества и конструирования!', 'https://cdn.toy.ru/upload/iblock/8e8/lego.png')
+              +card6('Crate Creatures', 'Милые интерактивные монстры', 'https://cdn.toy.ru/upload/iblock/d24/cratecreaturessurprise.png')
+              +card6('LEGO', 'Живая классика, свобода творчества и конструирования!', 'https://cdn.toy.ru/upload/iblock/8e8/lego.png')
+              +card6('Crate Creatures', 'Милые интерактивные монстры', 'https://cdn.toy.ru/upload/iblock/d24/cratecreaturessurprise.png')
+              +card6('LEGO', 'Живая классика, свобода творчества и конструирования!', 'https://cdn.toy.ru/upload/iblock/8e8/lego.png')
+              +card6('Crate Creatures', 'Милые интерактивные монстры', 'https://cdn.toy.ru/upload/iblock/d24/cratecreaturessurprise.png')
+          .pagination
+            ul.pagination__list
+              li.pagination__item
+                a(href="#").modern-page-previous.pagination__link.js-animated.disabled
+                  span Предыдущая
+                  i.fas.fa-chevron-left
+              li.pagination__item
+                a(href="#").pagination__link.js-animated.active 1
+              li.pagination__item
+                a(href="#").pagination__link.js-animated 2
+              li.pagination__item
+                a(href="#").pagination__link.js-animated 3
+              li.pagination__item
+                a(href="#").pagination__link.js-animated 4
+              li.pagination__item
+                a(href="#").pagination__link.js-animated 5
+              li.pagination__item
+                a(href="#").pagination__link.js-animated ...
+              li.pagination__item
+                a(href="#").pagination__link.js-animated 30
+              li.pagination__item
+                a(href="#").pagination__link.modern-page-next.js-animated
+                  span Следующая
+                  i.fas.fa-chevron-right
