@@ -1667,7 +1667,7 @@ a {
   }
 }
 .message-popup {
-  max-width: 100%;
+  max-width: 500px;
   width: auto;
   padding: 40px 20px 20px 20px;
   &__title {
@@ -1976,5 +1976,8 @@ a {
   }
   .popup {
     padding: 40px 20px;
+  }
+  .message-popup {
+    padding: 40px 20px 20px 20px;
   }
 }

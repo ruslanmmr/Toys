@@ -479,7 +479,7 @@ let filter = {
     this.$trigger.find('span').text(this.$trigger.data('show-text'))
   }
 }
-let images = {
+window.images = {
   init: function() {
     $(window).resize(function(){
       images.loaded = $('.lazy.loaded');
@@ -708,7 +708,7 @@ let tabs = {
   }
 }
 //date/time
-let picker = {
+window.picker = {
   init: function() {
     let $date = $('.js-picker-date'),
         $time = $('.js-picker-time');
@@ -849,8 +849,12 @@ function modals() {
   $.fancybox.defaults.backFocus = 'false';
   $.fancybox.defaults.touch = false;
   $.fancybox.defaults.animationDuration = 500;
-
-
+  $.fancybox.defaults.beforeShow = function() {
+    images.load();
+  };
+  $.fancybox.defaults.afterShow = function() {
+    images.load();
+  };
 
   let $old;
   $('[data-fancybox]').fancybox({
@@ -916,7 +920,3 @@ function toggleblocks() {
 
 
 }
-
-
-//open popup
-//$.fancybox.open([{src:'#cart'}]);

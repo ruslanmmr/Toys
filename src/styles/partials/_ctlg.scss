@@ -202,6 +202,12 @@
   &__title {
     margin-bottom: 30px;
   }
+  &__slider {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   &__slider,
   .ctlg-i-description {
     border-radius: 8px;
@@ -340,6 +346,29 @@
       color: $colorD;
       white-space: nowrap;
       display: inline-block;
+    }
+  } 
+  &__icon {
+    text-decoration: none;
+    display: inline-block;
+    line-height: 20px;
+    strong {
+      color: $colorG2;
+    }
+    i {
+      font-size: 20px;
+      line-height: 1;
+      color: $colorG2;
+      margin-right: 10px;
+      transition: inherit;
+      transform: translateY(1px);
+    }
+    &.touch,
+    &.hover {
+      color: $colorB;
+      strong, i {
+        color: $colorB;
+      }
     }
   }
 }
