@@ -37,7 +37,7 @@
 		"flatpickr": "^4.6.3",
 		"gsap": "^3.0.4",
 		"inputmask": "^5.0.0",
-		"jquery": "^3.4.1",
+		"jquery": "^3.5.0",
 		"jquery-lazy": "^1.7.10",
 		"scroll-lock": "^2.1.2",
 		"slick-carousel": "^1.8.1",
