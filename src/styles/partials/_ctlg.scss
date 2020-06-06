@@ -22,7 +22,7 @@
 }
 
 .catalogue-card {
-  .button {
+  .button.js-animated {
     padding: 0 10px;
     display: block;
     margin: 0 0 0 auto;
@@ -51,7 +51,7 @@
       transition: $trs2;
       height: 100%;
       .lazy {
-        padding: 20px;
+        padding: 10px;
       }
       &.touch,
       &.hover {
@@ -274,7 +274,7 @@
   flex-direction: column;
   height: 100%;
   .calc-count-block,
-  .button {
+  .button.js-animated {
     width: 150px;
   }
   .tab-trigger {

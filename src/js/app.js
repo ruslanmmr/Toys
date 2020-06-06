@@ -132,8 +132,7 @@ $(document).ready(function() {
   animatedElements.init();
   $nav.init();
   catalogue.init();
-  $scrollArea.init();
-  images.init();
+  images.load();
   slider.init();
   filter.init();
   picker.init();
@@ -143,7 +142,7 @@ $(document).ready(function() {
   calc.init();
   inputs.init();
 
-  modals();status
+  modals();
 
   toggleblocks();
 
@@ -152,14 +151,10 @@ $(document).ready(function() {
   }
 })
 
-
 window.addEventListener('load',function(){ 
-  //code
+  $scrollArea.init();
 }, false);
 
-$(window).resize(function () {
-  
-})
 
 const $window = {
   width: function() {
@@ -174,25 +169,101 @@ function desktop() {
     return false;
   }
 }
+function getUrlParams(url) {
+
+  // извлекаем строку из URL или объекта window
+  var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
+
+  // объект для хранения параметров
+  var obj = {};
+
+  // если есть строка запроса
+  if (queryString) {
+
+    // данные после знака # будут опущены
+    queryString = queryString.split('#')[0];
+
+    // разделяем параметры
+    var arr = queryString.split('&');
+
+    for (var i=0; i<arr.length; i++) {
+      // разделяем параметр на ключ => значение
+      var a = arr[i].split('=');
+
+      // обработка данных вида: list[]=thing1&list[]=thing2
+      var paramNum = undefined;
+      var paramName = a[0].replace(/\[\d*\]/, function(v) {
+        paramNum = v.slice(1,-1);
+        return '';
+      });
+
+      // передача значения параметра ('true' если значение не задано)
+      var paramValue = typeof(a[1])==='undefined' ? true : a[1];
+
+      // преобразование регистра
+      paramName = paramName.toLowerCase();
+      paramValue = paramValue.toLowerCase();
+
+      // если ключ параметра уже задан
+      if (obj[paramName]) {
+        // преобразуем текущее значение в массив
+        if (typeof obj[paramName] === 'string') {
+          obj[paramName] = [obj[paramName]];
+        }
+        // если не задан индекс...
+        if (typeof paramNum === 'undefined') {
+          // помещаем значение в конец массива
+          obj[paramName].push(paramValue);
+        }
+        // если индекс задан...
+        else {
+          // размещаем элемент по заданному индексу
+          obj[paramName][paramNum] = paramValue;
+        }
+      }
+      // если параметр не задан, делаем это вручную
+      else {
+        obj[paramName] = paramValue;
+      }
+    }
+  }
+
+  return obj;
+}
 
 let animatedElements = {
   init: function() {
     $(document).on('mouseenter mouseleave touchstart touchend mousedown mouseup', 'a, button, label, .js-animated', function(event) {
       let $target = $(this);
-  
-      if(event.type=='touchstart' && !$('html').hasClass('desktop')) {
+
+      //mobile events
+    if(!device.desktop()) {
+
+      if(event.type=='touchstart') {
         $target.addClass('touch');
-      } else if(event.type=='mouseenter' && $('html').hasClass('desktop')) {
+      } else if(event.type=='touchend') {
+        setTimeout(function(){
+          $target.removeClass('touch');
+        }, 100)
+      }
+
+    } 
+    //desktop events
+    else {
+      
+      if(event.type=='mouseenter') {
         $target.addClass('hover');
-      } else if(event.type=='mousedown' && $('html').hasClass('desktop')) {
+      } else if(event.type=='mousedown') {
         $target.addClass('focus');
-      } else if(event.type=='mouseup' && $('html').hasClass('desktop')) {
+      } else if(event.type=='mouseup') {
         $target.removeClass('focus');
       } else {
-        $target.removeClass('touch');
         $target.removeClass('hover');
         $target.removeClass('focus');
       }
+
+    }  
+
     })
   }
 }
@@ -316,9 +387,6 @@ let $scrollArea = {
         alwaysShowTracks: true,
         thumbMinSize: 100
       });
-      setInterval(()=>{
-        //scroll.update();
-      }, 500)
     }
   }
 }
@@ -378,7 +446,9 @@ let catalogue = {
         $(this).addClass('active');
       } else if(event.type=='mouseleave' && desktop()) {
         catalogue.$navTrigger.removeClass('active');
-      } else if(event.type=='click' && !desktop() && !isLink()) {
+      } 
+      
+      else if(event.type=='click' && !desktop() && !isLink()) {
         if(!$(this).hasClass('active')) {
           catalogue.$navTrigger.not($(this)).removeClass('active');
           $(this).addClass('active');
@@ -480,13 +550,6 @@ let filter = {
   }
 }
 window.images = {
-  init: function() {
-    $(window).resize(function(){
-      images.loaded = $('.lazy.loaded');
-      images.resize(images.loaded);
-    })
-    images.load();
-  },
   load: function() {
     images.el = $('.lazy').not('.loaded');
     if(images.el.length>0) {
@@ -498,32 +561,9 @@ window.images = {
         visibleOnly: false,
         afterLoad: function(element) {
           $(element).addClass('loaded');
-          images.resize($(element));
         }
       });
     }
-  },
-  resize: function(element) {
-    element.each(function() {
-      let $this = $(this),
-          box = $this.parent();
-      if(!box.hasClass('cover-box_size-auto')) {
-        let boxH = box.height(),
-            boxW = box.width();
-        setTimeout(function() {
-          let imgH = $this.height(),
-              imgW = $this.width();
-          if ((boxW / boxH) >= (imgW / imgH)) {
-            $this.addClass('ww').removeClass('wh');
-          } else {
-            $this.addClass('wh').removeClass('ww');
-          }
-          $this.addClass('visible');
-        }, 300)
-      } else {
-        $this.addClass('visible');
-      }
-    })
   }
 }
 let slider = {
@@ -821,14 +861,14 @@ let calc = {
 
 //modals/popups
 function modals() {
-  $.fancybox.defaults.btnTpl.close = '<button data-fancybox-close class="button fancybox-button fancybox-button--close" title="{{CLOSE}}"></button>';
-  $.fancybox.defaults.btnTpl.arrowLeft = '<button data-fancybox-prev class="button fancybox-button fancybox-button--arrow_left" title="{{PREV}}"></button>';
-  $.fancybox.defaults.btnTpl.arrowRight = '<button data-fancybox-prev class="button fancybox-button fancybox-button--arrow_right" title="{{PREV}}"></button>';
-  $.fancybox.defaults.btnTpl.zoom = '<button data-fancybox-zoom class="button fancybox-button fancybox-button--zoom" title="{{ZOOM}}"></button>';
-  $.fancybox.defaults.btnTpl.download = '<a download data-fancybox-download class="button fancybox-button fancybox-button--download" href="javascript:;" title="{{DOWNLOAD}}"></a>';
-  $.fancybox.defaults.btnTpl.slideShow = '<button data-fancybox-play class="button fancybox-button fancybox-button--play" title="{{PLAY_START}}"></button>';
+  $.fancybox.defaults.btnTpl.close = '<button data-fancybox-close class="button fancybox-button fancybox-button--close" title="{{CLOSE}}"><i class="fas fa-times"></i></button>';
+  $.fancybox.defaults.btnTpl.arrowLeft = '<button data-fancybox-prev class="button fancybox-button fancybox-button--arrow_left" title="{{PREV}}"><i class="fas fa-arrow-left"></i></button>';
+  $.fancybox.defaults.btnTpl.arrowRight = '<button data-fancybox-prev class="button fancybox-button fancybox-button--arrow_right" title="{{NEXT}}"><i class="fas fa-arrow-right"></i></button>';
+  $.fancybox.defaults.btnTpl.zoom = '<button data-fancybox-zoom class="button fancybox-button fancybox-button--zoom" title="{{ZOOM}}"><i class="fas fa-search-plus"></i></button>';
+  $.fancybox.defaults.btnTpl.download = '<a download data-fancybox-download class="button fancybox-button fancybox-button--download" href="javascript:;" title="{{DOWNLOAD}}"><i class="fas fa-download"></i></a>';
+  $.fancybox.defaults.btnTpl.slideShow = '<button data-fancybox-play class="button fancybox-button fancybox-button--play" title="{{PLAY_START}}"><i class="fas fa-play"></i><i class="fas fa-pause"></i></button>';
   $.fancybox.defaults.btnTpl.smallBtn = '<button type="button" data-fancybox-close class="button fancybox-button fancybox-close-small" title="{{CLOSE}}"><i class="fas fa-times"></i></button>';
-  $.fancybox.defaults.btnTpl.thumbs = '<button data-fancybox-thumbs class="button fancybox-button fancybox-button--thumbs" title="{{THUMBS}}"></button>';
+  $.fancybox.defaults.btnTpl.thumbs = '<button data-fancybox-thumbs class="button fancybox-button fancybox-button--thumbs" title="{{THUMBS}}"><i class="fas fa-grip-vertical"></i></button>';
   $.fancybox.defaults.i18n.ru = {
     CLOSE       : 'Закрыть',
     NEXT        : 'Следующий слайд',
@@ -846,7 +886,7 @@ function modals() {
   $.fancybox.defaults.loop = true;
   $.fancybox.defaults.autoFocus = false;
   $.fancybox.defaults.animationEffect = 'fade';
-  $.fancybox.defaults.backFocus = 'false';
+  $.fancybox.defaults.backFocus = false;
   $.fancybox.defaults.touch = false;
   $.fancybox.defaults.animationDuration = 500;
   $.fancybox.defaults.beforeShow = function() {
@@ -857,8 +897,10 @@ function modals() {
   };
 
   let $old;
+
   $('[data-fancybox]').fancybox({
     beforeShow: function(instance) {
+      console.log('show')
       if($old!==undefined) {
         setTimeout(function(){
           $old.close();
@@ -869,6 +911,21 @@ function modals() {
       }
     }
   });
+
+  //slider
+  $('[data-fancybox="gallery"]').fancybox({
+    touch: true
+  });
+
+  //get 
+  if(getUrlParams().auth=='popup') {
+    $.fancybox.open({
+      src: '#auth',
+      beforeShow: function(instance) {
+        $old = instance;
+      }
+    })
+  }
   
 }
 
@@ -920,3 +977,4 @@ function toggleblocks() {
 
 
 }
+

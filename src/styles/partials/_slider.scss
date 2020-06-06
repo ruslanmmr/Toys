@@ -236,6 +236,34 @@
       display: block;
       padding-top: 70%;
     }
+    &.cover-box {
+      i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 28px;
+        display: block;
+        line-height: 50px;
+        width: 50px;
+        text-align: center;
+        border-radius: 4px;
+        background-color: $colorB;
+        color: #fff;
+        transition: $trs2;
+        opacity: 0;
+        z-index: 2;
+      }
+      &.touch,
+      &.hover {
+        .lazy {
+          opacity: 0.8;
+        }
+        i {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 

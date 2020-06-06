@@ -1,0 +1,258 @@
+.button {
+  display: block;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  background-color: transparent;
+  box-shadow: none;
+  border: 0;
+  appearance: none;
+  padding: 0;
+  transition: $trs1;
+  position: relative;
+  white-space: nowrap;
+  text-align: center;
+  color: $colorG;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  * {
+    pointer-events: none;
+  }
+  span {
+    line-height: inherit;
+  }
+  input {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+  }
+  &_style1 {
+    line-height: 50px;
+    height: 50px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    white-space: nowrap;
+    i {
+      font-size: 16px;
+      line-height: 50px;
+      transition: transform $trs2;
+      &:first-child {
+        margin-right: 15px;
+      }
+      &:last-child {
+        margin-left: 15px;
+      }
+    }
+    &.type1 {
+      background-color: $colorB;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      &.touch,
+      &.hover {
+        background-color: $colorB2;
+      }
+      &.focus {
+        background-color: $colorB3;
+      }
+      &.active {
+        i {
+          transform: translateY(-3%) rotate(180deg);
+        }
+      }
+    }
+    &.type2 {
+      background-color: $colorA;
+      text-align: center;
+      i {
+        font-size: 14px;
+      }
+      &.touch,
+      &.hover {
+        background-color: $colorA2;
+      }
+      &.focus {
+        background-color: $colorA3;
+      }
+    }
+    &.type3 {
+      background-color: $colorD;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      &.touch,
+      &.hover {
+        background-color: $colorD2;
+      }
+      &.focus {
+        background-color: $colorD3;
+      }
+    }
+  }
+  &_style2 {
+    line-height: 40px;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 4px;
+    min-width: 40px;
+    &.color1 {
+      background-color: $colorA;
+      &.touch,
+      &.hover {
+        background-color: $colorA2;
+      }
+      &.focus {
+        background-color: $colorA3;
+      }
+    }
+    &.color2 {
+      background-color: $colorB;
+      color: #fff;
+      &.touch,
+      &.hover {
+        background-color: $colorB2;
+      }
+      &.focus {
+        background-color: $colorB3;
+      }
+    }
+    &.color3 {
+      background-color: $colorB6;
+      color: $colorE;
+      &.touch,
+      &.hover {
+        background-color: $colorB7;
+      }
+      &.focus {
+        background-color: $colorB8;
+      }
+    }
+    &.size2 {
+      line-height: 45px;
+      height: 45px;
+      font-size: 18px;
+    }
+  }
+  &_style3 {
+    line-height: 38px;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 4px;
+    border: 1px solid $colorB;
+    color: $colorB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+      margin-right: 8px;
+    }
+    img {
+      height: 20px;
+      width: auto;
+    }
+    &.touch,
+    &.hover,
+    &.active {
+      background-color: $colorB;
+      color: #fff;
+    }
+    &.active {
+      pointer-events: none;
+    }
+    &.focus {
+      background-color: $colorB2;
+      border-color: $colorB2;
+    }
+    &.toggle-button {
+      height: 45px;
+      line-height: 43px;
+      text-transform: uppercase;
+      font-weight: 700;
+      i {
+        line-height: inherit;
+        margin-left: 15px;
+        line-height: 43px;
+      }
+      &.active {
+        pointer-events: all;
+        i {
+          display: none;
+        }
+        &.touch,
+        &.hover {
+          background-color: $colorB2;
+        }
+      }
+    }
+  }
+  &_style4 {
+    line-height: 38px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid $colorB;
+    padding: 10px 15px !important;
+    img {
+      height: 100%;
+      width: auto;
+      display: block;
+    }
+    &.active {
+      pointer-events: none;
+    }
+  }
+  &_w100 {
+    width: 100%;
+  }
+  &_notsale {
+    width: 100%;
+    line-height: 40px;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: default;
+    background-color: $colorB6;
+  }
+}
+a {
+  color: inherit;
+  &.touch,
+  &.hover {
+    text-decoration: none;
+    color: #000;
+  }
+}
+.link {
+  text-decoration: none;
+  color: $colorB;
+  transition: $trs1;
+  &.touch,
+  &.hover {
+    color: $colorB2;
+  }
+  &.focus {
+    color: $colorB3;
+  }
+  &_style2 {
+    color: inherit;
+    &.touch,
+    &.hover {
+      color: $colorB;
+    }
+    &.focus {
+      color: $colorB2;
+    }
+  }
+}
+
+@media all and(max-width: 576px) {
+  .button {
+    &_style1 {
+      line-height: 45px;
+      height: 45px;
+      i {
+        line-height: 45px;
+      }
+    }
+  }
+}

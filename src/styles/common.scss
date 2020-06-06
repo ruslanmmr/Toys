@@ -111,8 +111,9 @@ body {
 @import '../../node_modules/tippy.js/dist/tippy.css';
 @import '../../node_modules/tippy.js/themes/light-border.css';
 @import '../../node_modules/tippy.js/animations/scale-extreme.css';
-@import "./partials/fancybox";
 @import "./partials/helpers";
+@import "./partials/buttons";
+@import "./partials/fancybox";
 @import "./partials/text";
 @import "./partials/messages";
 @import "./partials/ui";
