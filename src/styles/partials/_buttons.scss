@@ -95,6 +95,9 @@
     padding: 0 10px;
     border-radius: 4px;
     min-width: 40px;
+    i {
+      margin-right: 10px;
+    }
     &.color1 {
       background-color: $colorA;
       &.touch,

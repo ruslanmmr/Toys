@@ -141,6 +141,7 @@ $(document).ready(function() {
   pass.init();
   calc.init();
   inputs.init();
+  toggleSearch();
 
   modals();
 
@@ -978,3 +979,15 @@ function toggleblocks() {
 
 }
 
+/* MOBILE SEARCH TOGGLE */
+function toggleSearch() {
+  let $open = $('.cart-nav-block__search-open'),
+      $close = $('.search__close'),
+      $search = $('.header .search');
+  $open.on('click', function(){
+    $search.fadeIn(300);
+  })
+  $close.on('click', function(){
+    $search.fadeOut(300);
+  })
+}

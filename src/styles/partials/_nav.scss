@@ -87,6 +87,10 @@
         left: 20px
       }
     }
+    &_button {
+      padding: 0 20px 15px 20px;
+      display: none;
+    }
   }
   &__list {
     margin: 0;
@@ -95,6 +99,7 @@
   }
   &__link {
     height: 45px;
+    line-height: 45px;
     padding: 0 20px;
     width: 100%;
     text-align: left !important;
@@ -304,6 +309,9 @@
 @media all and(max-width: 576px) {
   .m-nav {
     padding-top: 60px;
+    &__item_button {
+      display: block;
+    }
   }
   .nav {
     &__list {

@@ -114,7 +114,7 @@
                     <input type="text" placeholder="Что будем искать?">
                   </div>
                   <button class="button search__btn"><i class="fas fa-search"></i></button>
-                </form>
+                </form><a class="search__close" href="javascript:boid(0);"><i class="fas fa-times"></i></a>
               </div>
               <div class="contacts-block col-xl-auto">
                 <ul class="contacts-block__list">
@@ -122,7 +122,7 @@
                   <li class="contacts-block__item"><a class="contacts-block__link fwb link link_style2" href="tel:">8 (498) 222-33-44</a></li>
                 </ul>
               </div>
-              <div class="cart-nav-block col-xl-auto"><a class="cart-nav-block__button" href="#auth" data-fancybox><i class="fas fa-user"></i>
+              <div class="cart-nav-block col-xl-auto"><a class="cart-nav-block__button cart-nav-block__search-open" href="javascript:void(0);"><i class="fas fa-search"></i></a><a class="cart-nav-block__button" href="#auth" data-fancybox><i class="fas fa-user"></i>
                   <div class="cart-nav-block__button-txt">Профиль</div></a><a class="cart-nav-block__button" href="#"><i class="fas fa-shopping-cart"></i>
                   <div class="cart-nav-block__button-txt">Корзина</div><span>10</span></a><a class="cart-nav-block__button nav-toggle" href="javascript:void(0)"><i class="fas fa-bars"></i><i class="fas fa-times"></i>
                   <div class="cart-nav-block__button-txt">Меню</div></a></div>
@@ -134,6 +134,7 @@
         <div class="scroll-container shadow shadow_style2">
           <div class="scroll-child">
             <ul class="m-nav__list">
+              <li class="m-nav__item m-nav__item_button"><a class="button button_style2 color2" href="#auth" data-fancybox><i class="fas fa-user"></i><span>Личный кабинет</span></a></li>
               <li class="m-nav__item"><a class="m-nav__link button button_style1 type2 js-animated" href="#">мальчики</a></li>
               <li class="m-nav__item"><a class="m-nav__link button button_style1 type2 js-animated" href="#"> девочки</a></li>
               <li class="m-nav__item"><a class="m-nav__link button button_style1 type2 js-animated" href="#"> возраст</a></li>
